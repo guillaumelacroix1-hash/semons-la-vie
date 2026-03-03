@@ -28,7 +28,7 @@ const Navbar = () => {
                     <a href="#" className="nav-cta" onClick={() => setMenuOpen(false)}>Prendre RDV</a>
                 </div>
 
-                <div className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+                <div className={`mobile-toggle ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
                     <span></span>
                     <span></span>
                     <span></span>

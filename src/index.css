@@ -105,6 +105,16 @@ button {
   padding: 8rem 0;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+}
+
 /* ========== BUTTONS ========== */
 .btn-primary {
   display: inline-flex;
