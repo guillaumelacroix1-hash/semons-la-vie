@@ -719,7 +719,23 @@
     }
 
     .services-cards-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1.25rem;
+        margin: 0 -2rem;
+        padding: 0.5rem 2rem 2rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .services-cards-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-card-link {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
     }
 
     .pricing-cards {
@@ -746,6 +762,13 @@
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-cards-grid {
+        margin: 0 -1.25rem;
+        padding: 0.5rem 1.25rem 2rem;
     }
 }
 
