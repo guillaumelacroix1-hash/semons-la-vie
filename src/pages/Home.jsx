@@ -367,9 +367,10 @@ const Home = () => {
             {/* Quote / CTA Section */}
             <section className="quote-section">
                 <div className="quote-bg">
-                    <video autoPlay muted loop playsInline>
-                        <source src="https://videos.pexels.com/video-files/2871916/2871916-hd_1920_1080_24fps.mp4" type="video/mp4" />
-                    </video>
+                    <img
+                        src="https://whitesmoke-gazelle-148393.hostingersite.com/wp-content/uploads/2025/11/semons-la-vie.jpeg"
+                        alt="Plumes violettes"
+                    />
                 </div>
                 <div className="quote-overlay">
                     <div className="quote-card animate-in">
