@@ -1,0 +1,250 @@
+/* ===================================
+   Service Card — Carousel Image Cards
+   =================================== */
+
+.service-card-carousel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 480px;
+    min-width: 0;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-decoration: none;
+    color: white;
+}
+
+.service-card-carousel:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(64, 59, 174, 0.25);
+}
+
+/* Background image */
+.service-card-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.service-card-carousel:hover .service-card-image img {
+    transform: scale(1.08);
+}
+
+/* Gradient overlay */
+.service-card-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to top,
+            rgba(30, 27, 27, 0.85) 0%,
+            rgba(30, 27, 27, 0.55) 35%,
+            rgba(30, 27, 27, 0.1) 65%,
+            transparent 100%);
+    transition: opacity 0.4s ease;
+}
+
+.service-card-carousel:hover .service-card-overlay {
+    background: linear-gradient(to top,
+            rgba(64, 59, 174, 0.85) 0%,
+            rgba(64, 59, 174, 0.45) 40%,
+            rgba(64, 59, 174, 0.05) 70%,
+            transparent 100%);
+}
+
+/* Content */
+.service-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.service-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.service-card-carousel:hover .service-card-icon {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    border-color: var(--color-primary);
+}
+
+.service-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+    letter-spacing: 0.3px;
+}
+
+.service-card-desc {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+    margin-bottom: 0.25rem;
+}
+
+.service-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease, gap 0.3s ease;
+}
+
+.service-card-carousel:hover .service-card-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card-link:hover {
+    gap: 0.75rem;
+}
+
+/* ===================================
+   Services Carousel — Swiper Overrides
+   =================================== */
+
+.services-carousel-section {
+    padding: 6rem 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.services-carousel-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://whitesmoke-gazelle-148393.hostingersite.com/wp-content/uploads/2025/11/white-wall-with-shadows-from-tropical-plants-with-2025-01-10-15-03-12-utc-scaled.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+.services-carousel-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.services-carousel-wrapper .swiper {
+    overflow: visible;
+    padding-bottom: 3.5rem;
+}
+
+.services-carousel-wrapper .swiper-slide {
+    height: auto;
+}
+
+/* Swiper pagination */
+.services-carousel-wrapper .swiper-pagination {
+    bottom: 0 !important;
+}
+
+.services-carousel-wrapper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: var(--color-tertiary);
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.services-carousel-wrapper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: var(--color-secondary);
+    width: 28px;
+    border-radius: 5px;
+}
+
+/* Swiper navigation arrows */
+.services-nav-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.services-nav-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.services-nav-btn:hover {
+    background: var(--color-secondary);
+    color: white;
+    transform: scale(1.08);
+    box-shadow: var(--shadow-md);
+}
+
+.services-nav-btn.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .service-card-carousel {
+        height: 400px;
+    }
+
+    .service-card-title {
+        font-size: 1.3rem;
+    }
+
+    .service-card-desc {
+        font-size: 0.8rem;
+    }
+
+    .service-card-content {
+        padding: 1.5rem 1.25rem;
+    }
+}
