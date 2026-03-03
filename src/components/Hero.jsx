@@ -7,8 +7,8 @@ const Hero = () => {
     return (
         <section className="hero">
             <div className="hero-bg">
-                <video autoPlay muted loop playsInline>
-                    <source src="https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4" type="video/mp4" />
+                <video autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920&q=80&fit=crop">
+                    <source src="https://videos.pexels.com/video-files/4829553/4829553-hd_1920_1080_25fps.mp4" type="video/mp4" />
                 </video>
             </div>
 
