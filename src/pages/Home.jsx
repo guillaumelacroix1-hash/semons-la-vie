@@ -112,7 +112,7 @@ const Home = () => {
                     <div className="text-center" style={{ marginBottom: '4rem' }}>
                         <span className="section-label">Mes services</span>
                         <h2 className="section-title">
-                            Des accompagnements sur-mesure pour ton bien-être
+                            Des accompagnements sur-mesure<br />pour ton bien-être
                         </h2>
                     </div>
                     <div className="services-showcase-grid">
@@ -134,7 +134,6 @@ const Home = () => {
             <section className="practices-section" id="pratiques">
                 <div className="container">
                     <div className="text-center">
-                        <Link to="/qui-suis-je" className="section-pill">Découvrir mes accompagnements</Link>
                         <span className="section-label">Comment cela fonctionne ?</span>
                         <h2 className="section-title">
                             Déroulement des accompagnements
@@ -354,7 +353,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* How It Works */}
+            {/* How It Works — Timeline en quinconce */}
             <section className="how-section">
                 <div className="container">
                     <div className="text-center">
@@ -362,26 +361,47 @@ const Home = () => {
                         <h2 className="section-title">Ton parcours en 4 étapes</h2>
                     </div>
 
-                    <div className="steps-grid">
-                        <div className="step-card">
-                            <div className="step-number">1</div>
-                            <h4>Prise de contact</h4>
-                            <p>Un premier échange par téléphone ou par mail pour comprendre tes besoins et t'orienter vers l'accompagnement adapté.</p>
-                        </div>
-                        <div className="step-card">
-                            <div className="step-number">2</div>
-                            <h4>Bilan personnalisé</h4>
-                            <p>Lors de notre première rencontre, nous faisons ensemble un bilan complet de ta vitalité, tes habitudes et tes objectifs.</p>
-                        </div>
-                        <div className="step-card">
-                            <div className="step-number">3</div>
-                            <h4>Plan d'action</h4>
-                            <p>Je te propose un programme sur-mesure avec des conseils pratiques, des exercices et un suivi adapté à ton rythme.</p>
-                        </div>
-                        <div className="step-card">
-                            <div className="step-number">4</div>
-                            <h4>Suivi & évolution</h4>
-                            <p>Des séances de suivi régulières pour ajuster ton programme et célébrer tes progrès vers un mieux-être durable.</p>
+                    <div className="steps-timeline">
+                        {/* Courbe SVG derrière */}
+                        <svg className="steps-curve" viewBox="0 0 1000 600" fill="none" preserveAspectRatio="none">
+                            <path
+                                d="M 0 300 C 150 80, 350 80, 500 300 S 850 520, 1000 300"
+                                stroke="var(--color-primary)"
+                                strokeWidth="2"
+                                strokeDasharray="8 6"
+                                opacity="0.25"
+                            />
+                        </svg>
+
+                        <div className="steps-zigzag">
+                            <div className="step-item step-top">
+                                <div className="step-card">
+                                    <div className="step-number">1</div>
+                                    <h4>Prise de contact</h4>
+                                    <p>Un premier échange par téléphone ou par mail pour comprendre tes besoins et t'orienter vers l'accompagnement adapté.</p>
+                                </div>
+                            </div>
+                            <div className="step-item step-bottom">
+                                <div className="step-card">
+                                    <div className="step-number">2</div>
+                                    <h4>Bilan personnalisé</h4>
+                                    <p>Lors de notre première rencontre, nous faisons ensemble un bilan complet de ta vitalité, tes habitudes et tes objectifs.</p>
+                                </div>
+                            </div>
+                            <div className="step-item step-top">
+                                <div className="step-card">
+                                    <div className="step-number">3</div>
+                                    <h4>Plan d'action</h4>
+                                    <p>Je te propose un programme sur-mesure avec des conseils pratiques, des exercices et un suivi adapté à ton rythme.</p>
+                                </div>
+                            </div>
+                            <div className="step-item step-bottom">
+                                <div className="step-card">
+                                    <div className="step-number">4</div>
+                                    <h4>Suivi & évolution</h4>
+                                    <p>Des séances de suivi régulières pour ajuster ton programme et célébrer tes progrès vers un mieux-être durable.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
