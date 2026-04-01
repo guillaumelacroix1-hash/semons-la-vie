@@ -1,0 +1,51 @@
+/* ========== SVG SELF-DRAWING ANIMATION ========== */
+
+.draw-svg-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.draw-svg-wrap svg {
+    overflow: visible;
+}
+
+/* Before animation: paths are invisible strokes */
+.draw-svg-wrap svg path {
+    fill: transparent;
+    stroke: var(--draw-color, #333);
+    stroke-width: 1.2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: fill 1.2s ease;
+}
+
+/* Trigger: draw the stroke */
+.draw-svg-wrap.animate svg path {
+    animation: drawPath 3.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    animation-delay: var(--draw-delay, 0ms);
+}
+
+/* After draw completes: fill in the color */
+.draw-svg-wrap.filled svg path {
+    fill: var(--draw-color, #333);
+    stroke: var(--draw-color, #333);
+    stroke-width: 0;
+}
+
+@keyframes drawPath {
+    0% {
+        stroke-dashoffset: 1000;
+        fill: transparent;
+    }
+    70% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill: var(--draw-color, #333);
+    }
+}

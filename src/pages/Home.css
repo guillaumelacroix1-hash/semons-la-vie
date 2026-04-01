@@ -4,6 +4,7 @@
 .about-section {
     padding: 8rem 0;
     background: white;
+    position: relative;
 }
 
 .about-grid {
@@ -25,6 +26,23 @@
     border-radius: var(--radius-xl);
 }
 
+.about-content {
+    position: relative;
+    z-index: 1;
+}
+
+.about-mandala {
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 380px;
+    height: 380px;
+    opacity: 1;
+    pointer-events: none;
+    will-change: transform;
+    z-index: -1;
+}
+
 .about-content .section-label {
     color: var(--color-primary);
 }
@@ -41,115 +59,360 @@
     margin-bottom: 1.5rem;
 }
 
-/* Services Section */
-.services-section {
+/* ========== SERVICES SHOWCASE — Image Cards on sage bg ========== */
+.services-showcase {
     padding: 8rem 0;
     background: var(--color-sage);
 }
 
-.services-cards-grid {
+.services-showcase-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    gap: 1.5rem;
 }
 
-.service-card-link {
-    text-decoration: none;
-    color: inherit;
+.services-showcase-grid .service-card-carousel {
+    border-radius: var(--radius-xl);
+    height: 420px;
 }
 
-.service-card-link::after {
-    display: none !important;
+.services-showcase-grid .service-card-overlay {
+    background: linear-gradient(to top,
+            rgba(20, 18, 40, 0.9) 0%,
+            rgba(20, 18, 40, 0.55) 40%,
+            rgba(20, 18, 40, 0.12) 70%,
+            transparent 100%);
 }
 
-.service-card {
-    background: white;
-    border-radius: var(--radius-lg);
+.services-showcase-grid .service-card-carousel:hover .service-card-overlay {
+    background: linear-gradient(to top,
+            rgba(64, 59, 174, 0.92) 0%,
+            rgba(64, 59, 174, 0.5) 45%,
+            rgba(64, 59, 174, 0.08) 75%,
+            transparent 100%);
+}
+
+.services-showcase-grid .service-card-content {
+    padding: 2.5rem 2rem;
+}
+
+.services-showcase-grid .service-card-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .services-showcase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-showcase-grid .service-card-carousel {
+        height: 400px;
+    }
+}
+
+/* ========== DÉROULEMENT DES ACCOMPAGNEMENTS ========== */
+.practices-section {
+    padding: 6rem 0;
+    background: #fff;
+    position: relative;
+}
+
+.practices-section .section-label {
+    color: var(--color-primary);
+}
+
+.practices-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 3.5rem;
+}
+
+.practice-card {
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.section-pill {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    background: var(--color-bg-light, #f5f3ff);
+    color: var(--color-primary);
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: var(--radius-full, 50px);
+    border: 1px solid rgba(91, 94, 171, 0.15);
+    margin-bottom: 1rem;
     transition: var(--transition);
-    height: 100%;
+}
+
+.section-pill:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+.practice-icon {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.75rem;
+}
+
+.practice-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-heading);
+    margin-bottom: 1rem;
+}
+
+.practice-card p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--color-text);
+}
+
+@media (max-width: 900px) {
+    .practices-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ========== SERVICES TABS — Switch layout ========== */
+.services-tabs-section {
+    padding: 8rem 0;
+    background: var(--color-sage);
+}
+
+.services-tabs-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 4rem;
+}
+
+.services-tabs-header-left .section-title {
+    text-align: left;
+}
+
+.services-tabs-header-left .section-label {
+    text-align: left;
+    display: block;
+}
+
+.services-tabs-header-right p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+.services-tabs-layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* Tab buttons — vertical list */
+.services-tabs-list {
     display: flex;
     flex-direction: column;
+    gap: 0.75rem;
 }
 
-.service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 40px rgba(91, 94, 171, 0.12);
+.services-tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.75rem;
+    background: white;
+    border: 2px solid transparent;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.service-card-img-wrapper {
+.services-tab-btn:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(91, 94, 171, 0.1);
+}
+
+.services-tab-btn.active {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: 0 8px 28px rgba(91, 94, 171, 0.3);
+    transform: translateX(4px);
+}
+
+.services-tab-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(91, 94, 171, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.services-tab-btn.active .services-tab-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.services-tab-label {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-heading);
+    transition: color 0.3s ease;
+}
+
+.services-tab-btn.active .services-tab-label {
+    color: white;
+}
+
+/* Tab content panels */
+.services-tab-content {
+    position: relative;
+    min-height: 480px;
+}
+
+.services-tab-panel {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: white;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.services-tab-panel.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    position: relative;
+}
+
+.services-tab-image {
     position: relative;
     overflow: hidden;
 }
 
-.service-card-img {
+.services-tab-image img {
     width: 100%;
-    aspect-ratio: 16/9;
+    height: 320px;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    display: block;
+    transition: transform 0.6s ease;
 }
 
-.service-card:hover .service-card-img {
-    transform: scale(1.04);
+.services-tab-panel.active:hover .services-tab-image img {
+    transform: scale(1.03);
 }
 
-.service-card-icon-badge {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(91, 94, 171, 0.3);
+.services-tab-info {
+    padding: 2.5rem;
 }
 
-.service-card-body {
-    padding: 2rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.service-card-title {
+.services-tab-info h3 {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size: 1.6rem;
     color: var(--color-heading);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
-.service-card-desc {
-    font-size: 0.95rem;
-    line-height: 1.75;
-    color: var(--color-text-light);
-    flex: 1;
-    margin-bottom: 1.25rem;
+.services-tab-info p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1.75rem;
 }
 
-.service-card-cta {
-    font-family: var(--font-ui);
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--color-primary);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: gap 0.3s ease;
+@media (max-width: 1000px) {
+    .services-tabs-header {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .services-tab-content {
+        min-height: auto;
+    }
+
+    .services-tab-image img {
+        height: 260px;
+    }
 }
 
-.service-card:hover .service-card-cta {
-    gap: 0.7rem;
+@media (max-width: 1000px) {
+    .services-tabs-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .services-tabs-list {
+        flex-direction: row;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        gap: 0.5rem;
+    }
+
+    .services-tabs-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .services-tab-btn {
+        flex: 0 0 auto;
+        padding: 1rem 1.25rem;
+    }
+
+    .services-tab-btn:hover,
+    .services-tab-btn.active {
+        transform: none;
+    }
 }
 
-.service-image {
-    width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    border-radius: var(--radius-lg);
+@media (max-width: 600px) {
+    .services-tab-label {
+        font-size: 0.9rem;
+    }
+
+    .services-tab-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .services-tab-info {
+        padding: 1.75rem;
+    }
+
+    .services-tab-image img {
+        height: 200px;
+    }
 }
 
 /* Quote / CTA Section */
@@ -248,12 +511,6 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-.pricing-icon {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 0.75rem;
-}
-
 .pricing-name {
     font-family: var(--font-heading);
     font-size: 1.25rem;
@@ -295,31 +552,11 @@
     color: var(--color-text);
 }
 
-.pricing-features li.feature-no {
-    color: var(--color-text-light);
-    opacity: 0.5;
-}
-
-.feature-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
+.feature-dot {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    font-size: 0.75rem;
-    font-weight: 700;
     flex-shrink: 0;
-}
-
-.feature-yes .feature-icon {
-    background: linear-gradient(135deg, #A8E6A3, #7BC67E);
-    color: white;
-}
-
-.feature-no .feature-icon {
-    background: #eee;
-    color: #bbb;
 }
 
 .pricing-footer {
@@ -551,6 +788,11 @@
     color: var(--color-primary);
 }
 
+.workshop-tag.sage {
+    background: #D4E2D4;
+    color: #4A6B4A;
+}
+
 .workshop-card h4 {
     font-family: var(--font-heading);
     font-size: 1.15rem;
@@ -592,6 +834,14 @@
 
 .workshop-link:hover {
     gap: 0.6rem;
+}
+
+.workshops-note {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin-top: 2.5rem;
+    line-height: 1.7;
 }
 
 /* ========== FINAL CTA ========== */
@@ -718,26 +968,6 @@
         max-width: 100%;
     }
 
-    .services-cards-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 1.25rem;
-        margin: 0 -2rem;
-        padding: 0.5rem 2rem 2rem;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-
-    .services-cards-grid::-webkit-scrollbar {
-        display: none;
-    }
-
-    .service-card-link {
-        flex: 0 0 85%;
-        scroll-snap-align: center;
-    }
-
     .pricing-cards {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -765,12 +995,6 @@
     }
 }
 
-@media (max-width: 768px) {
-    .services-cards-grid {
-        margin: 0 -1.25rem;
-        padding: 0.5rem 1.25rem 2rem;
-    }
-}
 
 @media (max-width: 600px) {
     .steps-grid {

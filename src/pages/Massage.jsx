@@ -1,44 +1,51 @@
 import React from 'react';
-import { Sparkles } from 'lucide-react';
+import ServiceSidebar from '../components/ServiceSidebar';
 import './ServicePage.css';
 
 const Massage = () => {
     return (
         <div className="service-page animate-in">
-            <div className="container">
-                <div className="service-page-header" style={{ textAlign: 'right' }}>
-                    <div className="title-badge purple">
-                        <Sparkles size={20} /> Massage AromaTouch®
-                    </div>
+            {/* Hero Banner */}
+            <div className="service-hero-banner">
+                <div className="service-hero-banner-bg">
+                    <img
+                        src="https://whitesmoke-gazelle-148393.hostingersite.com/wp-content/uploads/2025/11/blurred-green-palm-leaves-on-off-white-background-2025-02-09-23-48-36-utc-1024x1536.jpg"
+                        alt="Massage AromaTouch"
+                    />
                 </div>
-
-                <div className="pricing-list">
-                    <div className="pricing-item">
-                        <div className="pricing-item-info">
-                            <h3 className="pricing-item-title">AromaTouch® Équilibre (1h)</h3>
-                            <p className="pricing-item-desc">
-                                Un massage aux huiles essentielles pour harmoniser corps, cœur & esprit.
-                                Un moment de profonde détente pour relâcher le stress et soutenir ton bien-être global.
-                            </p>
-                        </div>
-                        <span className="price-tag">65€</span>
+                <div className="service-hero-banner-content">
+                    <h1>Massage AromaTouch®</h1>
+                    <p className="hero-subtitle">
+                        Une véritable parenthèse de détente pour harmoniser les énergies et revenir à soi.
+                    </p>
+                    <p className="hero-desc">
+                        Un soin doux et enveloppant réalisé avec des huiles essentielles. Ce massage rééquilibre
+                        le système nerveux, soutient l'immunité et favorise un profond relâchement du corps et du mental.
+                    </p>
+                    <div className="service-hero-meta-row">
+                        <span className="service-meta-tag">Visio ou présentiel</span>
                     </div>
+                    <a href="#" className="btn-primary">Prendre RDV</a>
                 </div>
+            </div>
 
-                <div className="packs-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
-                    <div className="pack-card" style={{ borderTopColor: 'var(--color-primary)' }}>
-                        <h4 className="pack-card-title">AromaTouch® Saisons</h4>
-                        <p className="pack-card-subtitle">(pack 4 massages)</p>
-                    </div>
-                    <div className="pack-card" style={{ borderTopColor: 'var(--color-primary)' }}>
-                        <p className="pricing-item-desc" style={{ marginBottom: '1.5rem' }}>
-                            Un rituel de 4 massages, à programmer au fil des saisons, pour accompagner
-                            ton corps dans ses transitions naturelles. Un rendez-vous bien-être pour
-                            renforcer ton immunité et maintenir ton équilibre toute l'année.
+            {/* Two-column layout */}
+            <div className="service-layout">
+                <ServiceSidebar active="Massage AromaTouch®" />
+
+                <div className="service-content">
+                    <div className="service-content-section">
+                        <h2>Un massage aux huiles essentielles</h2>
+                        <p>
+                            Un soin doux et enveloppant réalisé avec des huiles essentielles. Ce massage rééquilibre
+                            le système nerveux, soutient l'immunité et favorise un profond relâchement du corps et du mental.
+                            Une véritable parenthèse de détente pour harmoniser les énergies et revenir à soi.
                         </p>
-                        <div className="pack-card-price">
-                            <span className="price-tag"><span className="old">260€</span> 220€</span>
-                        </div>
+                    </div>
+
+                    <div className="service-reserve">
+                        <h2>Réserver une séance</h2>
+                        <a href="#" className="btn-primary">Prendre RDV</a>
                     </div>
                 </div>
             </div>

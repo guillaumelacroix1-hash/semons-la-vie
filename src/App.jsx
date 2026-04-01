@@ -7,6 +7,10 @@ import Naturopathy from './pages/Naturopathy';
 import Sophrology from './pages/Sophrology';
 import Culinary from './pages/Culinary';
 import Massage from './pages/Massage';
+import About from './pages/About';
+import Phytotherapy from './pages/Phytotherapy';
+import NutritionalBalance from './pages/NutritionalBalance';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
             <Route path="/sophrologie" element={<Sophrology />} />
             <Route path="/ateliers-culinaires" element={<Culinary />} />
             <Route path="/massage" element={<Massage />} />
+            <Route path="/qui-suis-je" element={<About />} />
+            <Route path="/phytotherapie" element={<Phytotherapy />} />
+            <Route path="/reequilibrage-alimentaire" element={<NutritionalBalance />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />

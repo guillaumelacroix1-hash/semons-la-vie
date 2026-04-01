@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
+    const bgRef = useRef(null);
+
+    useEffect(() => {
+        const video = bgRef.current;
+        if (video) {
+            video.play().catch(() => {});
+        }
+
+        const handleScroll = () => {
+            if (!bgRef.current) return;
+            const scrollY = window.scrollY;
+            const scale = 1 + scrollY * 0.0003;
+            bgRef.current.style.transform = `scale(${Math.min(scale, 1.15)})`;
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <section className="hero">
             <div className="hero-bg">
-                <video autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920&q=80&fit=crop">
-                    <source src="https://videos.pexels.com/video-files/4829553/4829553-hd_1920_1080_25fps.mp4" type="video/mp4" />
+                <video ref={bgRef} autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920&q=80&fit=crop">
+                    <source src={`${import.meta.env.BASE_URL}hero.mp4`} type="video/mp4" />
                 </video>
             </div>
 
