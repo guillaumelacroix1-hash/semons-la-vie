@@ -7,7 +7,7 @@
     background: white;
 }
 
-/* Hero */
+/* ========== HERO — 2 colonnes ========== */
 .about-hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -29,6 +29,14 @@
     font-size: 1.3rem;
     font-style: italic;
     color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+.about-hero-intro {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--color-text);
+    margin-bottom: 1rem;
 }
 
 .about-hero-image {
@@ -44,10 +52,9 @@
     object-fit: cover;
 }
 
-/* Story sections */
+/* ========== STORY — texte continu + image flottante ========== */
 .about-story {
-    max-width: 800px;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .about-story h2 {
@@ -57,7 +64,11 @@
     margin-bottom: 1.5rem;
 }
 
-.about-story p {
+.about-story-body {
+    max-width: 850px;
+}
+
+.about-story-body p {
     font-size: 1.05rem;
     line-height: 1.9;
     color: var(--color-text);
@@ -67,7 +78,7 @@
 .about-aside-image {
     float: right;
     width: 280px;
-    margin: 0 0 1.5rem 2rem;
+    margin: 0 0 1.5rem 2.5rem;
     border-radius: var(--radius-lg);
     overflow: hidden;
 }
@@ -78,51 +89,50 @@
     object-fit: cover;
 }
 
-/* Formations */
-.about-formations {
-    margin-bottom: 4rem;
-}
-
-.about-formations h2 {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    color: var(--color-heading);
-    margin-bottom: 2rem;
-}
-
-.formations-grid {
+/* ========== FORMATIONS — alternance image/texte ========== */
+.about-formation-row {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 5rem;
 }
 
-.formation-card {
-    padding: 2rem;
-    background: var(--color-bg-light);
+.about-formation-row.reverse {
+    direction: rtl;
+}
+
+.about-formation-row.reverse > * {
+    direction: ltr;
+}
+
+.about-formation-image {
     border-radius: var(--radius-lg);
-    border-left: 3px solid var(--color-primary);
-    transition: all 0.25s ease;
+    overflow: hidden;
+    aspect-ratio: 4/3;
 }
 
-.formation-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
+.about-formation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.formation-card h3 {
+.about-formation-text h2 {
     font-family: var(--font-heading);
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    margin-bottom: 0.75rem;
+    font-size: 1.6rem;
+    color: var(--color-heading);
+    margin-bottom: 1.25rem;
 }
 
-.formation-card p {
-    font-size: 0.95rem;
-    line-height: 1.7;
+.about-formation-text p {
+    font-size: 1.02rem;
+    line-height: 1.85;
     color: var(--color-text);
+    margin-bottom: 1rem;
 }
 
-/* Pratiques */
+/* ========== PRATIQUES ========== */
 .about-pratiques {
     text-align: center;
     padding: 4rem 2rem;
@@ -153,7 +163,7 @@
     justify-content: center;
 }
 
-/* Quote */
+/* ========== QUOTE ========== */
 .about-quote {
     text-align: center;
     padding: 4rem 2rem;
@@ -176,7 +186,7 @@
     color: var(--color-text-light);
 }
 
-/* Responsive */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     .about-hero {
         grid-template-columns: 1fr;
@@ -195,10 +205,17 @@
     .about-aside-image {
         float: none;
         width: 100%;
-        margin: 1rem 0 1.5rem;
+        margin: 0 0 1.5rem;
     }
 
-    .formations-grid {
+    .about-formation-row,
+    .about-formation-row.reverse {
         grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 2rem;
+    }
+
+    .about-formation-image {
+        order: -1;
     }
 }
