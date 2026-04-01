@@ -36,7 +36,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="nav-inner">
                 <Link to="/" className="nav-logo">
-                    <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="Semons la Vie" />
+                    <img src={`${import.meta.env.BASE_URL}logo replace.2.png`} alt="Semons la Vie" />
                 </Link>
 
                 <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
@@ -75,9 +75,9 @@ const Navbar = () => {
                     </div>
 
                     <Link to="/qui-suis-je" onClick={closeAll}>Qui suis-je ?</Link>
-                    <Link to="/ateliers-culinaires" onClick={closeAll}>Ateliers</Link>
+                    <Link to="/evenements" onClick={closeAll}>Événements</Link>
                     <Link to="/contact" onClick={closeAll}>Me contacter</Link>
-                    <a href="#" className="nav-cta" onClick={closeAll}>Prendre RDV</a>
+                    <a href="https://www.sumupbookings.com/semons-la-vie" target="_blank" rel="noopener noreferrer" className="nav-cta" onClick={closeAll}>Prendre RDV</a>
                 </div>
 
                 <div className={`mobile-toggle ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>

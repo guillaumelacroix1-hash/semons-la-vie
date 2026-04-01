@@ -10,14 +10,26 @@
 /* ========== HERO — Full-width image background with text overlay ========== */
 .service-hero-banner {
     position: relative;
-    width: 100%;
-    min-height: 480px;
+    width: auto;
+    min-height: 45vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    margin-top: 0;
+    margin: 0.5rem 1.25rem;
+    border-radius: var(--radius-xl);
+}
+
+.service-hero-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-xl);
+    box-shadow: inset 0 0 120px 40px var(--service-color, transparent);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 .service-hero-banner-bg {
@@ -30,30 +42,28 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.1s linear;
+    will-change: transform;
 }
 
 .service-hero-banner-bg::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(30, 27, 27, 0.45) 0%,
-        rgba(91, 94, 171, 0.55) 100%
-    );
+    background: linear-gradient(to top, rgba(30, 27, 27, 0.7) 0%, rgba(30, 27, 27, 0.35) 100%);
 }
 
 .service-hero-banner-content {
     position: relative;
     z-index: 1;
     max-width: 700px;
-    padding: 4rem 2rem;
+    padding: 4rem;
     color: white;
 }
 
 .service-hero-banner-content h1 {
     font-family: var(--font-heading);
-    font-size: 3.2rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     color: white;
     margin-bottom: 1rem;
     line-height: 1.15;
@@ -62,16 +72,16 @@
 .service-hero-banner-content .hero-subtitle {
     font-family: var(--font-heading);
     font-size: 1.15rem;
-    font-style: italic;
+    font-style: normal;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
 
 .service-hero-banner-content .hero-desc {
-    font-size: 1rem;
-    line-height: 1.75;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2rem;
 }
 
@@ -80,7 +90,7 @@
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     flex-wrap: wrap;
 }
 
@@ -98,9 +108,67 @@
 
 .service-meta-price {
     font-weight: 700;
-    background: var(--color-accent);
-    color: var(--color-heading);
-    border: none;
+}
+
+/* Sidebar booking card */
+.sidebar-booking {
+    background: var(--service-color, var(--color-primary));
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    text-align: center;
+    color: white;
+}
+
+.sidebar-booking-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.sidebar-booking h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-booking p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.25rem;
+}
+
+.sidebar-booking-btn {
+    width: 100%;
+    background: white !important;
+    font-weight: 700;
+}
+
+.sidebar-booking-btn:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-booking-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: var(--transition);
+}
+
+.sidebar-booking-phone:hover {
+    color: white;
 }
 
 /* ========== TWO-COLUMN LAYOUT: Sticky sidebar + Content ========== */
@@ -211,15 +279,15 @@
 
 .service-content-section h2 {
     font-family: var(--font-heading);
-    font-size: 1.7rem;
+    font-size: clamp(2rem, 3vw, 2.6rem);
     color: var(--color-heading);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .service-content-section h3 {
     font-family: var(--font-heading);
-    font-size: 1.15rem;
-    color: var(--color-primary);
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    color: var(--service-color, var(--color-primary));
     margin-bottom: 0.75rem;
     margin-top: 2rem;
 }
@@ -236,18 +304,29 @@
 }
 
 .service-content-section ul {
-    margin: 0.75rem 0 1.5rem 1.25rem;
+    margin: 0.75rem 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .service-content-section li {
     font-size: 0.98rem;
-    line-height: 1.8;
+    line-height: 1.7;
     color: var(--color-text);
-    padding: 0.15rem 0;
+    padding: 0.35rem 0 0.35rem 1.5rem;
+    position: relative;
 }
 
-.service-content-section li::marker {
-    color: var(--color-primary);
+.service-content-section li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.85em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--service-color, var(--color-primary));
 }
 
 /* Inline link */
@@ -345,14 +424,205 @@
     margin-bottom: 1.25rem;
 }
 
+/* ========== GALLERY ========== */
+.service-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.service-gallery-item {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 1;
+}
+
+.service-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.service-gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+@media (max-width: 600px) {
+    .service-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========== LIGHTBOX ========== */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.25s ease;
+}
+
+.lightbox-img {
+    max-width: 85vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.lightbox-close:hover { opacity: 1; }
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 1rem;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover { opacity: 1; }
+
+.lightbox-prev { left: 1rem; }
+.lightbox-next { right: 1rem; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ========== PACKS / TARIFS ========== */
+.service-packs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.service-pack-card {
+    position: relative;
+    padding: 1.5rem 1.75rem;
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-light);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.service-pack-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.service-pack-card.featured {
+    background: linear-gradient(135deg, rgba(91, 94, 171, 0.06), rgba(91, 94, 171, 0.02));
+    border-color: rgba(91, 94, 171, 0.15);
+}
+
+.service-pack-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--color-primary);
+    color: white;
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: var(--radius-full);
+    margin-bottom: 0.75rem;
+}
+
+.service-pack-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-pack-header h4 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--color-heading);
+    margin: 0;
+}
+
+.service-pack-price {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.service-pack-price s {
+    color: var(--color-text-light);
+    font-weight: 400;
+    margin-right: 0.4rem;
+}
+
+.service-pack-card p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+.service-pack-features {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.service-pack-features li {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.service-pack-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 900px) {
     .service-hero-banner {
-        min-height: 380px;
-    }
-
-    .service-hero-banner-content h1 {
-        font-size: 2.4rem;
+        min-height: 35vh;
     }
 
     .service-layout {
@@ -380,15 +650,27 @@
 
 @media (max-width: 480px) {
     .service-hero-banner {
-        min-height: 320px;
+        min-height: 30vh;
+        margin: 0.25rem 0.75rem;
     }
 
-    .service-hero-banner-content h1 {
-        font-size: 2rem;
+    .service-hero-banner-content {
+        padding: 2rem 1.5rem;
     }
 
     .service-hero-meta-row {
         flex-direction: column;
         gap: 0.75rem;
+    }
+
+    .lightbox-close {
+        font-size: 3rem;
+        top: 0.75rem;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 2.5rem;
+        padding: 1.5rem;
     }
 }

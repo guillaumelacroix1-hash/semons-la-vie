@@ -132,12 +132,219 @@
     margin-bottom: 1rem;
 }
 
+/* ========== MES VALEURS ========== */
+.about-valeurs {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.about-valeurs-header {
+    margin-bottom: 3rem;
+}
+
+.about-valeurs-icon-top {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+}
+
+.about-valeurs-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.about-valeurs-header h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--color-sage-dark);
+    margin: 0.75rem auto 0;
+}
+
+.about-valeurs-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+}
+
+.about-valeur-item {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.about-valeur-icon {
+    margin-bottom: 1rem;
+}
+
+.about-valeur-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.about-valeur-item p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* ========== MON PARCOURS — Certifications ========== */
+.about-parcours-certif {
+    position: relative;
+    margin-bottom: 5rem;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-parcours-certif-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.about-parcours-certif-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-parcours-certif-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.about-parcours-certif-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--radius-xl);
+    padding: 3.5rem 3rem;
+    max-width: 600px;
+    text-align: center;
+    margin: 2rem;
+}
+
+.about-parcours-certif-card h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.about-parcours-certif-card h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color-sage-dark);
+    margin: 0.75rem auto 0;
+}
+
+.about-parcours-intro {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin: 1.5rem 0 2rem;
+}
+
+.about-parcours-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.about-parcours-item {
+    text-align: center;
+}
+
+.about-parcours-item-icon {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.about-parcours-item h4 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+}
+
+.about-parcours-school {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.about-parcours-closing {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-primary);
+    line-height: 1.6;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .about-valeurs-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .about-valeur-item:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-parcours-certif {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-valeurs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-valeur-item:last-child {
+        grid-column: auto;
+    }
+
+    .about-parcours-certif-card {
+        padding: 2.5rem 1.75rem;
+        margin: 1rem;
+    }
+}
+
 /* ========== PRATIQUES ========== */
 .about-pratiques {
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
     background: var(--color-bg-light);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     margin-bottom: 4rem;
 }
 
@@ -153,37 +360,141 @@
     line-height: 1.7;
     color: var(--color-text);
     max-width: 700px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 2.5rem;
 }
 
-.about-pratiques-links {
-    display: flex;
-    flex-wrap: wrap;
+.about-pratiques-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-pratique-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--color-heading);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.about-pratique-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.about-pratique-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+}
+
+.about-pratique-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.about-pratique-arrow {
+    margin-left: auto;
+    opacity: 0.3;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.about-pratique-card:hover .about-pratique-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+    color: var(--color-primary);
 }
 
 /* ========== QUOTE ========== */
 .about-quote {
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
     margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-quote-mandala {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 280px;
+    opacity: 0.08;
+    pointer-events: none;
 }
 
 .about-quote blockquote {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
     font-style: italic;
     color: var(--color-primary);
-    line-height: 1.5;
-    max-width: 700px;
-    margin: 0 auto 1rem;
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    position: relative;
 }
 
 .about-quote-author {
     font-family: var(--font-body);
     font-size: 1rem;
     color: var(--color-text-light);
+    position: relative;
+}
+
+/* ========== CTA ========== */
+.about-cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    border-radius: var(--radius-xl);
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.about-cta .section-label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.about-cta h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.about-cta p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 550px;
+    margin: 0 auto 2rem;
+}
+
+.about-cta .btn-primary {
+    background: white;
+    color: var(--color-primary);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-cta .btn-primary:hover {
+    background: var(--color-bg-light);
+    transform: translateY(-2px);
 }
 
 /* ========== RESPONSIVE ========== */
@@ -217,5 +528,15 @@
 
     .about-formation-image {
         order: -1;
+    }
+
+    .about-pratiques-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .about-pratiques-grid {
+        grid-template-columns: 1fr;
     }
 }

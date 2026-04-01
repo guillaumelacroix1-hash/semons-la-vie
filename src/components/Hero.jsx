@@ -26,7 +26,7 @@ const Hero = () => {
         <section className="hero">
             <div className="hero-bg">
                 <video ref={bgRef} autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920&q=80&fit=crop">
-                    <source src={`${import.meta.env.BASE_URL}hero.mp4`} type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}hero2.mp4`} type="video/mp4" />
                 </video>
             </div>
 
@@ -47,8 +47,7 @@ const Hero = () => {
                         tu cultives jour après jour sérénité, confiance et vitalité.
                     </p>
                     <div className="hero-buttons">
-                        <Link to="/#about" className="btn-primary">À propos de moi</Link>
-                        <a href="#" className="btn-outline">Réserver une séance</a>
+                        <Link to="/qui-suis-je" className="btn-primary">À propos de moi</Link>
                     </div>
                 </div>
             </div>

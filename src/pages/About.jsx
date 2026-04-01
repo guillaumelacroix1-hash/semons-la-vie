@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Feather, Users, HeartHandshake, Ear } from 'lucide-react';
 import './About.css';
 
 const About = () => {
@@ -28,7 +28,7 @@ const About = () => {
                     </div>
                     <div className="about-hero-image">
                         <img
-                            src="https://whitesmoke-gazelle-148393.hostingersite.com/wp-content/uploads/2025/11/VirginieDumoulinChaphotographie-2025-Violettesaintes-561_2-1-scaled.jpg"
+                            src={`${import.meta.env.BASE_URL}chloe-2.jpeg`}
                             alt="Chloé Wisser"
                         />
                     </div>
@@ -147,42 +147,133 @@ const About = () => {
                     </div>
                 </section>
 
-                {/* Mes pratiques */}
+                {/* Mes valeurs */}
+                <section className="about-valeurs">
+                    <div className="about-valeurs-header">
+                        <img
+                            src="https://whitesmoke-gazelle-148393.hostingersite.com/wp-content/uploads/2025/10/icon-semons-la-vie.svg"
+                            alt=""
+                            className="about-valeurs-icon-top"
+                        />
+                        <h2>Mes valeurs</h2>
+                    </div>
+                    <div className="about-valeurs-grid">
+                        <div className="about-valeur-item">
+                            <div className="about-valeur-icon" style={{ color: '#ffcf00' }}>
+                                <Sparkles size={32} />
+                            </div>
+                            <h3>Joie & gratitude</h3>
+                            <p>Savourer chaque instant et honorer ce qui nous nourrit.</p>
+                        </div>
+                        <div className="about-valeur-item">
+                            <div className="about-valeur-icon" style={{ color: '#bdd7ba' }}>
+                                <Feather size={32} />
+                            </div>
+                            <h3>Douceur & bienveillance</h3>
+                            <p>Accueillir, sans jugement envers soi ou les autres.</p>
+                        </div>
+                        <div className="about-valeur-item">
+                            <div className="about-valeur-icon" style={{ color: '#6e70cc' }}>
+                                <Users size={32} />
+                            </div>
+                            <h3>Transmission</h3>
+                            <p>Partager mes savoirs pour te rendre autonome.</p>
+                        </div>
+                        <div className="about-valeur-item">
+                            <div className="about-valeur-icon" style={{ color: '#ffcfe7' }}>
+                                <HeartHandshake size={32} />
+                            </div>
+                            <h3>Santé responsable</h3>
+                            <p>Bio, local, de saison pour un bien-être durable.</p>
+                        </div>
+                        <div className="about-valeur-item">
+                            <div className="about-valeur-icon" style={{ color: '#403bae' }}>
+                                <Ear size={32} />
+                            </div>
+                            <h3>Écoute & partage</h3>
+                            <p>Suivre ton instinct et grandir ensemble.</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Mon parcours — certifications */}
+                <section className="about-parcours-certif">
+                    <div className="about-parcours-certif-bg">
+                        <img
+                            src="https://whitesmoke-gazelle-148393.hostingersite.com/wp-content/uploads/2025/04/61-about-5.webp"
+                            alt="Parcours"
+                        />
+                    </div>
+                    <div className="about-parcours-certif-card">
+                        <h2>Mon parcours</h2>
+                        <p className="about-parcours-intro">
+                            Mon chemin a commencé par une licence de psychologie, puis s'est enrichi au fil des années :
+                        </p>
+                        <div className="about-parcours-list">
+                            <div className="about-parcours-item">
+                                <div className="about-parcours-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12s1.5 2 4 2 4-2 4-2"/><path d="M9 8h.01"/><path d="M15 8h.01"/><path d="M12 2a7 7 0 0 0-7 7c0 1 .5 3 3 5l4 3 4-3c2.5-2 3-4 3-5a7 7 0 0 0-7-7z"/></svg>
+                                </div>
+                                <h4>Sophrologie</h4>
+                                <span className="about-parcours-school">(Institut Aliotta, 2019)</span>
+                            </div>
+                            <div className="about-parcours-item">
+                                <div className="about-parcours-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 6c-1.5 0-3 .5-3 2s1.5 2 3 2 3 .5 3 2-1.5 2-3 2"/><circle cx="12" cy="12" r="10"/><path d="M7 20.7a5 5 0 0 1 5-4.7 5 5 0 0 1 5 4.7"/><path d="M12 2v2"/><path d="M12 20v2"/></svg>
+                                </div>
+                                <h4>Crusine vivante</h4>
+                                <span className="about-parcours-school">(Les cRAWquantes, 2022)</span>
+                            </div>
+                            <div className="about-parcours-item">
+                                <div className="about-parcours-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                                </div>
+                                <h4>Naturopathie</h4>
+                                <span className="about-parcours-school">(École Dargère Univers, 2021–2024)</span>
+                            </div>
+                            <div className="about-parcours-item">
+                                <div className="about-parcours-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 11v4a5 5 0 0 0 10 0v-4"/><path d="M12 11V3"/><path d="M9 7l3-3 3 3"/><path d="M4 15h16"/></svg>
+                                </div>
+                                <h4>AromaTouch Technique®</h4>
+                                <span className="about-parcours-school">(dōTerra, 2025)</span>
+                            </div>
+                        </div>
+                        <p className="about-parcours-closing">
+                            Un parcours au croisement du corps, des émotions et de la nature… que je mets
+                            aujourd'hui au service de ton bien-être.
+                        </p>
+                    </div>
+                </section>
+
+                {/* Mes pratiques — avec icônes SVG custom */}
                 <section className="about-pratiques">
                     <h2>Mes pratiques</h2>
                     <p>
                         Explore ton corps, ton souffle et tes émotions pour une transformation en douceur :
                         de la compréhension à l'harmonisation physique, émotionnelle et énergétique.
                     </p>
-                    <div className="about-pratiques-links">
-                        <Link to="/naturopathie" className="btn-outline">
-                            Naturopathie <ArrowRight size={16} />
-                        </Link>
-                        <Link to="/sophrologie" className="btn-outline">
-                            Sophrologie <ArrowRight size={16} />
-                        </Link>
-                        <Link to="/massage" className="btn-outline">
-                            Massage AromaTouch® <ArrowRight size={16} />
-                        </Link>
-                        <Link to="/ateliers-culinaires" className="btn-outline">
-                            Ateliers culinaires <ArrowRight size={16} />
-                        </Link>
+                    <div className="about-pratiques-grid reveal-stagger">
+                        {[
+                            { name: 'Naturopathie', icon: 'naturopathie', link: '/naturopathie', color: '#ffcf00' },
+                            { name: 'Sophrologie', icon: 'sophrologie', link: '/sophrologie', color: '#E8C8D8' },
+                            { name: 'Phytothérapie', icon: 'phytotherapie', link: '/phytotherapie', color: '#7AA476' },
+                            { name: 'Rééquilibrage alimentaire', icon: 'reequilibrage', link: '/reequilibrage-alimentaire', color: '#A8C5A0' },
+                            { name: 'Massage AromaTouch®', icon: 'massage', link: '/massage', color: '#6e70cc' },
+                            { name: 'Ateliers de crusine', icon: 'crusine', link: '/ateliers-culinaires', color: '#bdd7ba' },
+                        ].map((s) => (
+                            <Link to={s.link} key={s.name} className="about-pratique-card">
+                                <div className="about-pratique-icon" style={{ background: `${s.color}20`, color: s.color }}>
+                                    <img src={`${import.meta.env.BASE_URL}icons/service/${s.icon}.svg`} alt="" />
+                                </div>
+                                <span>{s.name}</span>
+                                <ArrowRight size={14} className="about-pratique-arrow" />
+                            </Link>
+                        ))}
                     </div>
                 </section>
 
-                {/* Citation */}
-                <section className="about-quote">
-                    <blockquote>
-                        «&nbsp;Je fais ma part, j'ouvre mon cœur et je laisse rayonner ma lumière&nbsp;»
-                    </blockquote>
-                    <p className="about-quote-author">— Chloé Wisser</p>
-                </section>
 
-                {/* CTA */}
-                <section className="reserve-section">
-                    <h2>Réserver une séance</h2>
-                    <a href="#" className="btn-primary">Prendre RDV</a>
-                </section>
             </div>
         </div>
     );

@@ -6,7 +6,6 @@
     padding: 1rem 0;
     transition: var(--transition);
     background: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .navbar.scrolled {
@@ -24,12 +23,12 @@
 }
 
 .nav-logo img {
-    height: 64px;
+    height: 80px;
     transition: var(--transition);
 }
 
 .navbar.scrolled .nav-logo img {
-    height: 44px;
+    height: 52px;
 }
 
 .nav-links {
@@ -307,5 +306,19 @@
 
     .nav-sub-menu a {
         text-align: center;
+    }
+
+    .nav-dropdown-menu {
+        max-width: calc(100vw - 2rem);
+    }
+
+    .nav-sub-menu {
+        max-width: calc(100vw - 2rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-logo img {
+        height: 56px;
     }
 }

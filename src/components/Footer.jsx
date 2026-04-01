@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-grid">
                     <div className="footer-logo">
-                        <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="Semons la Vie" />
+                        <img src={`${import.meta.env.BASE_URL}logo replace.2.png`} alt="Semons la Vie" />
                     </div>
                     <div className="footer-col">
                         <h4>Adresse</h4>

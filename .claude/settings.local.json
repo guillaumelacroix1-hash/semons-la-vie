@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:whitesmoke-gazelle-148393.hostingersite.com)",
+      "Bash(npm --version)",
+      "Bash(npm install:*)",
+      "Bash(claude --version)",
+      "Bash(ffprobe -v error -show_entries stream=codec_name,codec_type,width,height,duration -of default \"d:/Antigravity Projects/Semons la vie/public/hero.mp4\")",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(where python:*)",
+      "Bash(where python3:*)"
+    ]
+  }
+}

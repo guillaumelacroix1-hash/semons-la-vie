@@ -3,9 +3,22 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import './ServiceCard.css';
 
-const ServiceCard = ({ title, description, link, icon, image }) => {
+const hexToRgb = (hex) => {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `${r}, ${g}, ${b}`;
+};
+
+const ServiceCard = ({ title, description, link, icon, image, color }) => {
+    const rgb = color ? hexToRgb(color) : '64, 59, 174';
     return (
-        <Link to={link} className="service-card-carousel">
+        <Link to={link} className="service-card-carousel" style={{
+            '--card-color': color,
+            '--card-color-dark': `rgba(${rgb}, 0.92)`,
+            '--card-color-mid': `rgba(${rgb}, 0.65)`,
+            '--card-color-light': `rgba(${rgb}, 0.15)`,
+        }}>
             <div className="service-card-image">
                 <img src={image} alt={title} />
             </div>
