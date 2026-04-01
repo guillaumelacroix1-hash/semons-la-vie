@@ -9,7 +9,19 @@
       "Skill(update-config)",
       "Skill(update-config:*)",
       "Bash(where python:*)",
-      "Bash(where python3:*)"
+      "Bash(where python3:*)",
+      "Bash(ffmpeg -version)",
+      "Bash(where ffmpeg:*)",
+      "Bash(winget install:*)",
+      "Bash(/c/Users/guill/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1-full_build/bin/ffmpeg.exe -version)",
+      "Bash(/c/Users/guill/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1-full_build/bin/ffmpeg.exe -i 'd:/Antigravity Projects/Semons la vie/public/hero2.mp4' -vframes 1 -q:v 2 'd:/Antigravity Projects/Semons la vie/public/hero2-poster.jpg' -y)",
+      "Bash(/c/Users/guill/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1-full_build/bin/ffmpeg.exe -i 'd:/Antigravity Projects/Semons la vie/public/hero2.mp4' -c:v libx264 -crf 28 -preset slow -vf scale=1280:-2 -an -movflags +faststart 'd:/Antigravity Projects/Semons la vie/public/hero2-compressed.mp4' -y)",
+      "Bash(/c/Users/guill/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1-full_build/bin/ffmpeg.exe -i 'd:/Antigravity Projects/Semons la vie/public/footer.mp4' -c:v libx264 -crf 28 -preset slow -vf scale=1280:-2 -an -movflags +faststart 'd:/Antigravity Projects/Semons la vie/public/footer-compressed.mp4' -y)",
+      "Bash(mv hero2.mp4 hero2-original.mp4)",
+      "Bash(mv hero2-compressed.mp4 hero2.mp4)",
+      "Bash(mv footer.mp4 footer-original.mp4)",
+      "Bash(mv footer-compressed.mp4 footer.mp4)",
+      "Bash(rm hero.mp4)"
     ]
   }
 }

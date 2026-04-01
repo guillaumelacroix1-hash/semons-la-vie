@@ -25,7 +25,7 @@ const Hero = () => {
     return (
         <section className="hero">
             <div className="hero-bg">
-                <video ref={bgRef} autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920&q=80&fit=crop">
+                <video ref={bgRef} autoPlay muted loop playsInline poster={`${import.meta.env.BASE_URL}hero2-poster.jpg`}>
                     <source src={`${import.meta.env.BASE_URL}hero2.mp4`} type="video/mp4" />
                 </video>
             </div>

@@ -689,7 +689,7 @@ const Home = () => {
             {/* Quote / CTA Section */}
             <section className="quote-section">
                 <div className="quote-bg">
-                    <video autoPlay muted loop playsInline>
+                    <video autoPlay muted loop playsInline poster={`${import.meta.env.BASE_URL}footer-poster.jpg`}>
                         <source src={`${import.meta.env.BASE_URL}footer.mp4`} type="video/mp4" />
                     </video>
                 </div>
