@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import ServiceSidebar from '../components/ServiceSidebar';
 import ServiceHeroZoom from '../components/ServiceHeroZoom';
+import PageBottom from '../components/PageBottom';
 import './ServicePage.css';
 
 const crusineImages = [
@@ -58,10 +59,11 @@ const Culinary = () => {
     const [lightboxIndex, setLightboxIndex] = useState(null);
 
     return (
+        <>
         <div className="service-page animate-in" style={{ '--service-color': '#7AA476' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">
-                <ServiceHeroZoom src={`${import.meta.env.BASE_URL}services/crusine.jpeg`} alt="Ateliers de Crusine" />
+                <ServiceHeroZoom src={`${import.meta.env.BASE_URL}crusine/WhatsApp%20Image%202026-04-01%20at%2015.16.23%20(5).jpeg`} alt="Ateliers de Crusine" />
                 <div className="service-hero-banner-content">
                     <h1>Ateliers de Crusine</h1>
                     <p className="hero-subtitle">
@@ -264,6 +266,8 @@ const Culinary = () => {
                 </div>
             )}
         </div>
+        <PageBottom />
+        </>
     );
 };
 

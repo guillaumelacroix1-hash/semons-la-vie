@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import ServiceSidebar from '../components/ServiceSidebar';
 import ServiceHeroZoom from '../components/ServiceHeroZoom';
+import PageBottom from '../components/PageBottom';
 import './ServicePage.css';
 
 const faqData = [
@@ -43,10 +44,11 @@ const FaqItem = ({ question, answer }) => {
 
 const Naturopathy = () => {
     return (
-        <div className="service-page animate-in" style={{ '--service-color': '#FFCF00' }}>
+        <>
+        <div className="service-page animate-in" style={{ '--service-color': '#FFCF00', '--service-btn-text': '#7A6200' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">
-                <ServiceHeroZoom src={`${import.meta.env.BASE_URL}services/Naturopathie.jpg`} alt="Naturopathie" />
+                <ServiceHeroZoom src={`${import.meta.env.BASE_URL}services/Naturopathie2.jpg`} alt="Naturopathie" />
                 <div className="service-hero-banner-content">
                     <h1>Naturopathie</h1>
                     <p className="hero-subtitle">
@@ -212,7 +214,7 @@ const Naturopathy = () => {
                                     <h4>Pack Harmonie</h4>
                                     <span className="service-pack-price"><s>200€</s> 180€</span>
                                 </div>
-                                <p>Parcours de base + 1 séance de suivi. Pour amorcer le changement et retrouver ton équilibre intérieur.</p>
+                                <p>Parcours de base + 1 séance de suivi. Pour amorcer des changements concrets et retrouver un équilibre qui te correspond.</p>
                             </div>
                             <div className="service-pack-card featured">
                                 <span className="service-pack-badge">Recommandé</span>
@@ -220,14 +222,14 @@ const Naturopathy = () => {
                                     <h4>Pack Renaissance</h4>
                                     <span className="service-pack-price"><s>260€</s> 230€</span>
                                 </div>
-                                <p>Parcours de base + 2 séances de suivi. Pour consolider tes nouvelles habitudes et régénérer ton énergie durablement.</p>
+                                <p>Parcours de base + 2 séances de suivi. Pour ancrer durablement tes nouvelles habitudes et retrouver une énergie stable au quotidien.</p>
                             </div>
                             <div className="service-pack-card featured">
                                 <div className="service-pack-header">
                                     <h4>Pack Éclat</h4>
                                     <span className="service-pack-price"><s>320€</s> 290€</span>
                                 </div>
-                                <p>Parcours de base + 3 séances de suivi. Bonus offerts : 1 massage AromaTouch des mains (15 mn) + 1 échantillon d'huile essentielle dōTerra au choix.</p>
+                                <p>Parcours de base + 3 séances de suivi + bonus : rituel AromaTouch des mains et échantillon d'une huile essentielle de ton choix. Pour aller plus loin, ancrer les changements en profondeur et t'installer durablement dans un nouvel équilibre.</p>
                             </div>
                             <div className="service-pack-card">
                                 <div className="service-pack-header">
@@ -264,6 +266,8 @@ const Naturopathy = () => {
                 </div>
             </div>
         </div>
+        <PageBottom />
+        </>
     );
 };
 

@@ -36,7 +36,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="nav-inner">
                 <Link to="/" className="nav-logo">
-                    <img src={`${import.meta.env.BASE_URL}logo replace.2.png`} alt="Semons la Vie" />
+                    <img src={`${import.meta.env.BASE_URL}logo-replace4.png`} alt="Semons la Vie" />
                 </Link>
 
                 <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
@@ -60,10 +60,14 @@ const Navbar = () => {
                                 onMouseEnter={() => !menuOpen && setNaturoSubOpen(true)}
                                 onMouseLeave={() => !menuOpen && setNaturoSubOpen(false)}
                             >
-                                <Link to="/naturopathie" onClick={closeAll}>
+                                <button
+                                    className="nav-sub-trigger"
+                                    onClick={() => setNaturoSubOpen(!naturoSubOpen)}
+                                >
                                     Naturopathie <span className="dropdown-arrow">›</span>
-                                </Link>
+                                </button>
                                 <div className="nav-sub-menu">
+                                    <Link to="/naturopathie" onClick={closeAll}>Mon approche en naturopathie</Link>
                                     <Link to="/phytotherapie" onClick={closeAll}>Phytothérapie</Link>
                                     <Link to="/reequilibrage-alimentaire" onClick={closeAll}>Rééquilibrage alimentaire</Link>
                                 </div>

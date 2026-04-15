@@ -7,10 +7,10 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="container">
+                <div className="footer-logo">
+                    <img src={`${import.meta.env.BASE_URL}logo-replace4.png`} alt="Semons la Vie" />
+                </div>
                 <div className="footer-grid">
-                    <div className="footer-logo">
-                        <img src={`${import.meta.env.BASE_URL}logo replace.2.png`} alt="Semons la Vie" />
-                    </div>
                     <div className="footer-col">
                         <h4>Adresse</h4>
                         <p>Espace Honnebee<br />35, rue des Vauzelles<br />16100 Châteaubernard</p>
@@ -26,8 +26,8 @@ const Footer = () => {
                             <a href="mailto:contact@semons-la-vie.fr"><Mail size={14} style={{ marginRight: 6, verticalAlign: 'middle' }} />contact@semons-la-vie.fr</a>
                         </p>
                         <div className="footer-socials">
-                            <a href="#" aria-label="Facebook"><Facebook size={16} /></a>
-                            <a href="#" aria-label="Instagram"><Instagram size={16} /></a>
+                            <a href="https://www.facebook.com/share/19gMCjSjFE/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook size={16} /></a>
+                            <a href="https://www.instagram.com/semonslavie" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={16} /></a>
                         </div>
                     </div>
                 </div>

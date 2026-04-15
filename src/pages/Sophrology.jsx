@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import ServiceSidebar from '../components/ServiceSidebar';
 import ServiceHeroZoom from '../components/ServiceHeroZoom';
+import PageBottom from '../components/PageBottom';
 import './ServicePage.css';
 
 const faqData = [
@@ -43,7 +44,8 @@ const FaqItem = ({ question, answer }) => {
 
 const Sophrology = () => {
     return (
-        <div className="service-page animate-in" style={{ '--service-color': '#E8C8D8' }}>
+        <>
+        <div className="service-page animate-in" style={{ '--service-color': '#E8C8D8', '--service-btn-text': '#8B3A60' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">
                 <ServiceHeroZoom src={`${import.meta.env.BASE_URL}services/Sophrologie.jpg`} alt="Sophrologie" />
@@ -250,6 +252,8 @@ const Sophrology = () => {
                 </div>
             </div>
         </div>
+        <PageBottom />
+        </>
     );
 };
 

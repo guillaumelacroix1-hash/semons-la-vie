@@ -1,135 +1,220 @@
 /* ========== ABOUT / QUI SUIS-JE PAGE ========== */
 
 .about-page {
-    padding-top: 120px;
+    padding-top: 0;
     padding-bottom: 4rem;
     min-height: 100vh;
     background: white;
 }
 
-/* ========== HERO — 2 colonnes ========== */
-.about-hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+/* ========== BANNER HERO — style événements ========== */
+.about-banner {
+    position: relative;
+    min-height: 45vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    margin: 0.5rem 1.25rem;
+    border-radius: var(--radius-xl);
     margin-bottom: 5rem;
 }
 
-.about-hero h1 {
+.about-banner-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.about-banner-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+}
+
+.about-banner-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(30, 27, 27, 0.8) 0%, rgba(30, 27, 27, 0.2) 100%);
+}
+
+.about-banner-content {
+    position: relative;
+    z-index: 2;
+    padding: 4rem;
+    max-width: 700px;
+    color: white;
+}
+
+.about-banner-content h1 {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
-    color: var(--color-heading);
-    margin-bottom: 0.5rem;
-    line-height: 1.1;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: white;
+    margin-bottom: 0.25rem;
+    line-height: 1.15;
 }
 
 .about-hero-subtitle {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-style: italic;
-    color: var(--color-primary);
-    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
 }
 
-.about-hero-intro {
-    font-size: 1.05rem;
-    line-height: 1.85;
-    color: var(--color-text);
-    margin-bottom: 1rem;
-}
-
-.about-hero-image {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    aspect-ratio: 3/4;
-    max-height: 550px;
-}
-
-.about-hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* ========== STORY — texte continu + image flottante ========== */
-.about-story {
+/* ========== MON HISTOIRE — photo + texte ========== */
+.about-story-section {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+    align-items: start;
     margin-bottom: 5rem;
 }
 
-.about-story h2 {
+.about-story-photo {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    position: sticky;
+    top: 100px;
+}
+
+.about-story-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-story-text h2 {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: var(--color-heading);
     margin-bottom: 1.5rem;
 }
 
-.about-story-body {
-    max-width: 850px;
-}
-
-.about-story-body p {
-    font-size: 1.05rem;
+.about-story-text p {
+    font-size: 1.02rem;
     line-height: 1.9;
     color: var(--color-text);
     margin-bottom: 1.5rem;
 }
 
-.about-aside-image {
-    float: right;
-    width: 280px;
-    margin: 0 0 1.5rem 2.5rem;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-}
-
-.about-aside-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* ========== FORMATIONS — alternance image/texte ========== */
-.about-formation-row {
+/* ========== MOSAÏQUE — layout asymétrique ========== */
+.about-mosaic-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
     margin-bottom: 5rem;
 }
 
-.about-formation-row.reverse {
-    direction: rtl;
-}
-
-.about-formation-row.reverse > * {
-    direction: ltr;
-}
-
-.about-formation-image {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    aspect-ratio: 4/3;
-}
-
-.about-formation-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.about-formation-text h2 {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    color: var(--color-heading);
-    margin-bottom: 1.25rem;
-}
-
-.about-formation-text p {
+.about-mosaic-left p,
+.about-mosaic-right p {
     font-size: 1.02rem;
-    line-height: 1.85;
+    line-height: 1.9;
     color: var(--color-text);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-mosaic-img-large {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.about-mosaic-img-large img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-mosaic-thumbs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-mosaic-thumbs img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+}
+
+.about-mosaic-img-plate {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.about-mosaic-img-plate img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========== CLOSING — texte gauche + image droite ========== */
+.about-closing-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+.about-closing-text p {
+    font-size: 1.02rem;
+    line-height: 1.9;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.about-closing-image {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.about-closing-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-closing-quote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    color: var(--color-heading);
+    line-height: 1.4;
+    margin-top: 1.5rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .about-banner {
+        min-height: 35vh;
+        margin: 0.5rem;
+    }
+
+    .about-banner-content {
+        padding: 2rem;
+    }
+
+    .about-story-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-story-photo {
+        position: relative;
+        top: 0;
+    }
+
+    .about-mosaic-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-closing-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 /* ========== MES VALEURS ========== */
@@ -142,169 +227,138 @@
     margin-bottom: 3rem;
 }
 
-.about-valeurs-icon-top {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 1rem;
-}
-
-.about-valeurs-header h2 {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    position: relative;
-    display: inline-block;
-}
-
-.about-valeurs-header h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 2px;
-    background: var(--color-sage-dark);
-    margin: 0.75rem auto 0;
-}
-
 .about-valeurs-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .about-valeur-item {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 2rem 1.25rem;
+    background: var(--color-bg-light);
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-valeur-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 .about-valeur-icon {
-    margin-bottom: 1rem;
+    margin: 0 auto 1.25rem;
+}
+
+.about-valeur-icon img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
 }
 
 .about-valeur-item h3 {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: var(--color-primary);
     margin-bottom: 0.75rem;
 }
 
 .about-valeur-item p {
-    font-size: 0.85rem;
-    line-height: 1.6;
+    font-size: 0.88rem;
+    line-height: 1.65;
     color: var(--color-text-light);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 500;
 }
 
-/* ========== MON PARCOURS — Certifications ========== */
-.about-parcours-certif {
-    position: relative;
+/* ========== MON PARCOURS — Timeline ========== */
+.about-parcours {
     margin-bottom: 5rem;
+    padding: 5rem 0;
+    background: var(--color-bg-light);
     border-radius: var(--radius-xl);
+}
+
+.parcours-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+    padding: 0 2rem;
+}
+
+.parcours-card {
+    position: relative;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: center;
     overflow: hidden;
-    min-height: 650px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.parcours-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.parcours-card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.parcours-year {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.9rem;
+    border-radius: 50px;
+    margin-bottom: 1.25rem;
+}
+
+.parcours-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto 1.25rem;
 }
 
-.about-parcours-certif-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+.parcours-icon img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
 }
 
-.about-parcours-certif-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.about-parcours-certif-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.25);
-}
-
-.about-parcours-certif-card {
-    position: relative;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--radius-xl);
-    padding: 3.5rem 3rem;
-    max-width: 600px;
-    text-align: center;
-    margin: 2rem;
-}
-
-.about-parcours-certif-card h2 {
+.parcours-name {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-    position: relative;
-    display: inline-block;
+    font-size: 1.2rem;
+    color: var(--color-heading);
+    margin-bottom: 0.4rem;
 }
 
-.about-parcours-certif-card h2::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 2px;
-    background: var(--color-sage-dark);
-    margin: 0.75rem auto 0;
+.parcours-school {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    letter-spacing: 0.03em;
 }
 
-.about-parcours-intro {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-style: italic;
+.parcours-closing {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
     color: var(--color-text);
     line-height: 1.7;
-    margin: 1.5rem 0 2rem;
-}
-
-.about-parcours-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.75rem;
-    margin-bottom: 2rem;
-}
-
-.about-parcours-item {
     text-align: center;
-}
-
-.about-parcours-item-icon {
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-}
-
-.about-parcours-item h4 {
-    font-family: var(--font-heading);
-    font-size: 1.35rem;
-    color: var(--color-primary);
-    margin-bottom: 0.25rem;
-}
-
-.about-parcours-school {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--color-text-light);
-    font-weight: 500;
-}
-
-.about-parcours-closing {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-style: italic;
-    color: var(--color-primary);
-    line-height: 1.6;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
+    padding: 0 2rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 900px) {
@@ -319,8 +373,8 @@
 }
 
 @media (max-width: 768px) {
-    .about-parcours-certif {
-        min-height: auto;
+    .parcours-timeline {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -333,9 +387,11 @@
         grid-column: auto;
     }
 
-    .about-parcours-certif-card {
-        padding: 2.5rem 1.75rem;
-        margin: 1rem;
+    .parcours-timeline {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

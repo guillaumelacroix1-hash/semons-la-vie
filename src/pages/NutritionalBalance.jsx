@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import ServiceSidebar from '../components/ServiceSidebar';
 import ServiceHeroZoom from '../components/ServiceHeroZoom';
+import PageBottom from '../components/PageBottom';
 import './ServicePage.css';
 
 const faqData = [
@@ -43,6 +44,7 @@ const FaqItem = ({ question, answer }) => {
 
 const NutritionalBalance = () => {
     return (
+        <>
         <div className="service-page animate-in" style={{ '--service-color': '#7AA476' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">
@@ -189,6 +191,8 @@ const NutritionalBalance = () => {
                 </div>
             </div>
         </div>
+        <PageBottom />
+        </>
     );
 };
 

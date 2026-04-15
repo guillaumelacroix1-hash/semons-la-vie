@@ -33,7 +33,7 @@ const Hero = () => {
             <div className="hero-overlay">
                 <div className="hero-card animate-in">
                     <img
-                        src="https://whitesmoke-gazelle-148393.hostingersite.com/wp-content/uploads/2025/10/icon-semons-la-vie.svg"
+                        src={`${import.meta.env.BASE_URL}icon-hero.svg`}
                         alt=""
                         className="hero-icon"
                     />
@@ -41,13 +41,15 @@ const Hero = () => {
                         Naturopathe &<br />Sophrologue
                     </h1>
                     <p className="hero-text">
-                        À travers la respiration, la détente et une hygiène de vie consciente,
-                        je t'aide à retrouver l'harmonie entre ton corps et ton esprit. Mon approche,
-                        à la fois douce et profonde, sème les graines d'un équilibre durable, pour que
-                        tu cultives jour après jour sérénité, confiance et vitalité.
+                        J'accompagne les femmes qui se sentent perdues face à leur santé à retrouver
+                        clarté, confiance et autonomie.
+                    </p>
+                    <p className="hero-text">
+                        À travers la respiration, l'écoute du corps et des pratiques concrètes,
+                        je t'aide à te reconnecter à toi et à mieux comprendre ce dont tu as besoin.
                     </p>
                     <div className="hero-buttons">
-                        <Link to="/qui-suis-je" className="btn-primary">À propos de moi</Link>
+                        <Link to="/qui-suis-je" className="btn-primary">Mon histoire</Link>
                     </div>
                 </div>
             </div>

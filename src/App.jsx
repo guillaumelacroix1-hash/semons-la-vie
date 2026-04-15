@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import PreFooter from './components/PreFooter';
 import Home from './pages/Home';
 import Naturopathy from './pages/Naturopathy';
 import Sophrology from './pages/Sophrology';
@@ -70,13 +69,6 @@ function ScrollRevealInit() {
   return null;
 }
 
-function ConditionalPreFooter() {
-  const location = useLocation();
-  // La Home a déjà son propre PreFooter intégré
-  if (location.pathname === '/') return null;
-  return <PreFooter />;
-}
-
 function App() {
   return (
     <Router basename={import.meta.env.BASE_URL}>
@@ -99,7 +91,6 @@ function App() {
             <Route path="/evenements/:id" element={<EventDetail />} />
           </Routes>
         </main>
-        <ConditionalPreFooter />
         <Footer />
       </div>
     </Router>

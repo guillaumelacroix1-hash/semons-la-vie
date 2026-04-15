@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ArrowRight } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
@@ -18,93 +18,96 @@ const Contact = () => {
 
     return (
         <div className="contact-page animate-in">
-            <div className="container">
-                <div className="contact-header">
-                    <h1>Me contacter</h1>
-                    <p>Contactez-moi facilement en ligne, par téléphone ou en personne.</p>
+            {/* Hero banner */}
+            <div className="contact-hero">
+                <div className="contact-hero-bg">
+                    <img
+                        src={`${import.meta.env.BASE_URL}services/Sophrologie.jpg`}
+                        alt="Contact"
+                    />
                 </div>
+                <div className="contact-hero-content">
+                    <span className="section-label" style={{ color: 'white' }}>Contact</span>
+                    <h1>Envie d'échanger ?</h1>
+                    <p>Écris-moi un message ou contacte-moi directement, je te réponds avec plaisir.</p>
+                </div>
+            </div>
 
-                <div className="contact-grid">
-                    {/* Formulaire */}
-                    <form className="contact-form" onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="name">Nom</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                            />
+            <div className="container">
+                <div className="contact-layout">
+                    <div className="contact-photo-side">
+                        <img
+                            src={`${import.meta.env.BASE_URL}cloclo.png`}
+                            alt="Chloé Wisser"
+                        />
+                        <div className="contact-photo-overlay">
+                            <strong>Chloé Wisser</strong>
+                            <span>Naturopathe & Sophrologue</span>
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="email">E-mail</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="message">Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="6"
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <button type="submit" className="btn-primary">Envoyer</button>
-                    </form>
+                    </div>
 
-                    {/* Infos */}
-                    <div className="contact-info">
-                        <div className="contact-info-card">
-                            <MapPin size={20} />
-                            <div>
-                                <h3>Adresse</h3>
-                                <p>Espace Honnebee<br />35, rue des Vauzelles<br />16100 Châteaubernard</p>
+                    <div className="contact-form-side">
+                        <form className="contact-form" onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <label htmlFor="name">Nom</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Ton nom"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                />
                             </div>
-                        </div>
-
-                        <div className="contact-info-card">
-                            <Phone size={20} />
-                            <div>
-                                <h3>Téléphone</h3>
-                                <p><a href="tel:0661493586">06.61.49.35.86</a></p>
+                            <div className="form-group">
+                                <label htmlFor="email">E-mail</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="ton@email.fr"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                />
                             </div>
-                        </div>
-
-                        <div className="contact-info-card">
-                            <Mail size={20} />
-                            <div>
-                                <h3>E-mail</h3>
-                                <p><a href="mailto:contact@semons-la-vie.fr">contact@semons-la-vie.fr</a></p>
+                            <div className="form-group">
+                                <label htmlFor="message">Message</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Dis-moi comment je peux t'aider…"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                />
                             </div>
-                        </div>
+                            <button type="submit" className="btn-primary">
+                                Envoyer <ArrowRight size={16} />
+                            </button>
+                        </form>
 
-                        <div className="contact-info-card">
-                            <div style={{ width: 20 }}></div>
-                            <div>
-                                <h3>Horaires</h3>
-                                <p>Lundi – Vendredi : 9h – 18h<br />Samedi : 9h – 12h</p>
+                        <div className="contact-details">
+                            <a href="tel:0661493586" className="contact-detail-item">
+                                <Phone size={16} />
+                                <span>06.61.49.35.86</span>
+                            </a>
+                            <a href="mailto:contact@semons-la-vie.fr" className="contact-detail-item">
+                                <Mail size={16} />
+                                <span>contact@semons-la-vie.fr</span>
+                            </a>
+                            <div className="contact-detail-item">
+                                <MapPin size={16} />
+                                <span>Espace Honnebee, 35 rue des Vauzelles, 16100 Châteaubernard</span>
+                            </div>
+                            <div className="contact-detail-item">
+                                <Clock size={16} />
+                                <span>Lun–Ven : 9h–18h · Sam : 9h–12h</span>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                {/* Citation */}
-                <div className="contact-quote">
-                    <blockquote>
-                        «&nbsp;Je fais ma part, j'ouvre mon cœur et je laisse rayonner ma lumière&nbsp;»
-                    </blockquote>
-                    <p>— Chloé Wisser</p>
                 </div>
             </div>
         </div>
