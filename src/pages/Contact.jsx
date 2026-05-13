@@ -22,7 +22,7 @@ const Contact = () => {
             <div className="contact-hero">
                 <div className="contact-hero-bg">
                     <img
-                        src={`${import.meta.env.BASE_URL}services/Sophrologie.jpg`}
+                        src={`${import.meta.env.BASE_URL}contact.jpg`}
                         alt="Contact"
                     />
                 </div>
