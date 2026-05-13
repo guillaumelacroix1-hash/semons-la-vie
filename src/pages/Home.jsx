@@ -242,7 +242,7 @@ const Home = () => {
                     <div className="services-tabs-header reveal">
                         <div className="services-tabs-header-left">
                             <span className="section-label">Mes formules</span>
-                            <h2 className="section-title" style={{ whiteSpace: 'nowrap' }}>
+                            <h2 className="section-title">
                                 Des packs adaptés à tes besoins et à ton rythme
                             </h2>
                         </div>

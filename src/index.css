@@ -346,6 +346,16 @@ button {
   }
 }
 
+/* Mobile: drop horizontal translation on reveal-left/right to avoid initial overflow */
+@media (max-width: 900px) {
+  .reveal-left, .reveal-right {
+    transform: translateY(20px);
+  }
+  .reveal-left.revealed, .reveal-right.revealed {
+    transform: translateY(0);
+  }
+}
+
 /* ========== WAVE SEPARATORS ========== */
 .wave-top,
 .wave-bottom {
