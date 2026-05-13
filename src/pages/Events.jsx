@@ -17,7 +17,7 @@ const Events = () => {
             <div className="events-hero">
                 <div className="events-hero-bg">
                     <img
-                        src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1600&auto=format&fit=crop"
+                        src={`${import.meta.env.BASE_URL}evenements.jpg`}
                         alt="Événements"
                     />
                 </div>

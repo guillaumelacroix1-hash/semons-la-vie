@@ -28,8 +28,8 @@ const Contact = () => {
                 </div>
                 <div className="contact-hero-content">
                     <span className="section-label" style={{ color: 'white' }}>Contact</span>
-                    <h1>Envie d'échanger ?</h1>
-                    <p>Écris-moi un message ou contacte-moi directement, je te réponds avec plaisir.</p>
+                    <h1>Et si on échangeait ?</h1>
+                    <p>Écris-moi un message ou contacte-moi directement, je prendrai le temps de te répondre avec plaisir.</p>
                 </div>
             </div>
 
@@ -78,14 +78,14 @@ const Contact = () => {
                                     id="message"
                                     name="message"
                                     rows="5"
-                                    placeholder="Dis-moi comment je peux t'aider…"
+                                    placeholder="Décris-moi ce dont tu aurais besoin en ce moment…"
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
                                 />
                             </div>
                             <button type="submit" className="btn-primary">
-                                Envoyer <ArrowRight size={16} />
+                                Faire le premier pas <ArrowRight size={16} />
                             </button>
                         </form>
 
@@ -104,7 +104,7 @@ const Contact = () => {
                             </div>
                             <div className="contact-detail-item">
                                 <Clock size={16} />
-                                <span>Lun–Ven : 9h–18h · Sam : 9h–12h</span>
+                                <span>Lundi et jeudi : 8h – 20h</span>
                             </div>
                         </div>
                     </div>

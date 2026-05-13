@@ -166,6 +166,17 @@
     margin-bottom: 1.5rem;
 }
 
+.about-closing-text p.about-closing-emphasis {
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: var(--color-primary);
+    font-size: 1.85rem;
+    line-height: 1.4;
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--color-primary);
+}
+
 .about-closing-image {
     border-radius: var(--radius-xl);
     overflow: hidden;
@@ -254,6 +265,7 @@
     width: 64px;
     height: 64px;
     object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(36%) sepia(48%) saturate(1063%) hue-rotate(218deg) brightness(89%) contrast(89%);
 }
 
 .about-valeur-item h3 {

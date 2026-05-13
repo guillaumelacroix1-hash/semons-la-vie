@@ -8,19 +8,19 @@ const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Semons+la+Vie+-+Natur
 const testimonials = [
     {
         text: "Un moment de pur bien-être ! Chloé a su créer une ambiance apaisante dès les premières minutes, avec des gestes doux et précis. Le massage m'a profondément détendu et m'a permis de me recentrer. J'ai passé une excellente nuit, calme et reposante.",
-        name: "Amélie L.", role: "Rituel AromaTouch", initials: "AL"
+        name: "Amélie L.", role: "Rituel AromaTouch®", initials: "AL"
     },
     {
         text: "Mon mari et moi avons participé à un atelier de crusine. Chloé nous a fait découvrir une autre manière de cuisiner, nous avons découvert plein de nouvelles saveurs pour cuisiner sainement et tout ça dans une ambiance bienveillante et chaleureuse. À refaire !",
         name: "Titi C.", role: "Ateliers culinaires", initials: "TC"
     },
     {
-        text: "Très agréable, le massage AromaTouch, il a dénoué tous les nœuds de mon dos et l'odeur des huiles est juste incroyable. Je recommande sans hésiter ce pur moment de détente.",
-        name: "Élodie N.", role: "Rituel AromaTouch", initials: "EN"
+        text: "Très agréable, le massage AromaTouch, il a dénoué tous les noeuds de mon dos et l'odeur des huiles est juste incroyable. Je recommande sans hésiter ce pur moment de détente.",
+        name: "Élodie N.", role: "Rituel AromaTouch®", initials: "EN"
     },
     {
         text: "Une professionnelle très à l'écoute et attentionnée. J'ai bénéficié du massage détente aux huiles essentielles, pratiqué avec soin par Chloé, les odeurs des huiles participant à une détente profonde du corps et de l'esprit. Je recommande à 100% !!",
-        name: "Clémence R.", role: "Rituel AromaTouch", initials: "CR"
+        name: "Clémence R.", role: "Rituel AromaTouch®", initials: "CR"
     },
     {
         text: "J'ai adoré cet atelier de cuisine crue ! Un heureux moment de partage et de découverte pour une cuisine facile, saine, savoureuse et différente à refaire et à réinventer en toute simplicité à la maison.",
@@ -32,7 +32,7 @@ const testimonials = [
     },
     {
         text: "Ce moment pour un soin avec Chloé a été très agréable, relaxant, vraiment je recommande, elle est très à l'écoute...",
-        name: "Béatrice H.", role: "Rituel AromaTouch", initials: "BH"
+        name: "Béatrice H.", role: "Rituel AromaTouch®", initials: "BH"
     },
     {
         text: "Chloé est douce et professionnelle. Elle met à l'aise. Elle a toute ma confiance. Je vous la recommande sans hésiter.",
@@ -40,7 +40,7 @@ const testimonials = [
     },
     {
         text: "Hier j'ai eu la chance de recevoir le massage AromaTouch, une belle expérience. Ce massage m'a détendu, je suis ressortie apaisée, sereine et je ressens encore les bienfaits. Si tu as envie de prendre un moment pour toi, de lâcher prise, je te conseille ce massage.",
-        name: "Aurélie R.", role: "Rituel AromaTouch", initials: "AR"
+        name: "Aurélie R.", role: "Rituel AromaTouch®", initials: "AR"
     },
     {
         text: "J'ai participé à un atelier de crusine sur la lacto-fermentation avec ma maman pour son anniversaire et nous avons passé un super moment.",
@@ -184,19 +184,21 @@ const PageBottom = () => {
                 </div>
                 <div className="quote-overlay">
                     <div className="quote-card reveal-scale">
-                        <p className="quote-text">
-                            Je fais ma part, j'ouvre mon coeur et je laisse rayonner ma lumière
-                        </p>
-                        <p className="quote-author">– Chloé Wisser</p>
-                        <div className="quote-bottom-row">
+                        <div className="quote-card-inner">
                             <img
                                 src={`${import.meta.env.BASE_URL}logo-footer.svg`}
                                 alt="Colibri Semons la Vie"
                                 className="quote-colibri-img"
                             />
-                            <div className="quote-buttons">
-                                <Link to="/qui-suis-je" className="btn-primary">À propos de moi</Link>
-                                <a href="https://www.sumupbookings.com/semons-la-vie" target="_blank" rel="noopener noreferrer" className="btn-outline">Réserver une séance</a>
+                            <div className="quote-card-content">
+                                <p className="quote-text">
+                                    Je fais ma part, j'ouvre mon coeur et je laisse rayonner ma lumière
+                                </p>
+                                <p className="quote-author">– Chloé Wisser</p>
+                                <div className="quote-buttons">
+                                    <Link to="/qui-suis-je" className="btn-primary">À propos de moi</Link>
+                                    <a href="https://www.sumupbookings.com/semons-la-vie" target="_blank" rel="noopener noreferrer" className="btn-outline">Réserver une séance</a>
+                                </div>
                             </div>
                         </div>
                     </div>

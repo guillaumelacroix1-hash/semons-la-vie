@@ -13,7 +13,7 @@ const faqData = [
     },
     {
         q: 'Est-ce un massage thérapeutique ?',
-        a: 'L\'AromaTouch® est un soin de bien-être. Il ne remplace pas un suivi médical ou paramédical.',
+        a: 'Non. Le rituel AromaTouch® est une approche de bien-être, centrée sur la détente et le relâchement du corps et du mental. Il ne se substitue pas à un accompagnement médical ou paramédical.',
     },
     {
         q: 'Est-ce adapté en période de fatigue ou de stress ?',
@@ -44,17 +44,17 @@ const Massage = () => {
         <div className="service-page animate-in" style={{ '--service-color': '#5B5EAB' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">
-                <ServiceHeroZoom src={`${import.meta.env.BASE_URL}services/massage.jpg`} alt="Massage AromaTouch" />
+                <ServiceHeroZoom src={`${import.meta.env.BASE_URL}services/massage.jpg`} alt="Rituel AromaTouch®" />
                 <div className="service-hero-banner-content">
-                    <h1>Massage AromaTouch®</h1>
+                    <h1>Rituel AromaTouch®</h1>
                     <p className="hero-subtitle">
-                        Un rituel profond pour harmoniser corps, cœur & esprit
+                        Un rituel profond pour harmoniser corps, coeur & esprit
                     </p>
                     <p className="hero-desc">
-                        L'AromaTouch® est un soin aux huiles essentielles qui invite à un relâchement profond du corps
+                        L'AromaTouch® est un rituel aux huiles essentielles qui invite à un relâchement profond du corps
                         et du système nerveux. À travers des gestes lents, répétitifs et enveloppants, il favorise une
                         détente globale et un retour à l'équilibre intérieur. C'est un moment pour revenir au corps,
-                        aux sensations… et laisser le mental s'apaiser au fil du massage.
+                        aux sensations… et laisser le mental s'apaiser au fil du rituel.
                     </p>
                     <div className="service-hero-meta-row">
                         <span className="service-meta-tag">1h</span>
@@ -66,7 +66,7 @@ const Massage = () => {
 
             {/* Two-column layout */}
             <div className="service-layout">
-                <ServiceSidebar active="Massage AromaTouch®" />
+                <ServiceSidebar active="Rituel AromaTouch®" />
 
                 <div className="service-content">
                     {/* Qu'est-ce que l'AromaTouch® ? */}
@@ -114,7 +114,7 @@ const Massage = () => {
                     {/* Le déroulement de la séance */}
                     <div className="service-content-section">
                         <h2>Le déroulement de la séance (1h)</h2>
-                        <p>Le soin commence par un temps d'accueil et d'installation.</p>
+                        <p>Le rituel commence par un temps d'accueil et d'installation.</p>
 
                         <h3>Bain de pieds d'ancrage</h3>
                         <p>
@@ -160,8 +160,8 @@ const Massage = () => {
                                     <span className="service-pack-price">65€</span>
                                 </div>
                                 <p>
-                                    Un soin ponctuel (1h) pour harmoniser corps, cœur et esprit. Idéal en période de stress,
-                                    de fatigue nerveuse ou simplement pour s'offrir un moment de profonde détente.
+                                    Un rituel ponctuel (1h) pour harmoniser corps, coeur et esprit. Idéal en période de stress,
+                                    de fatigue nerveuse ou simplement pour t'offrir un moment de profonde détente.
                                 </p>
                             </div>
                             <div className="service-pack-card featured">
@@ -171,7 +171,7 @@ const Massage = () => {
                                     <span className="service-pack-price"><s>260€</s> 220€</span>
                                 </div>
                                 <p>
-                                    Un rituel de 4 massages à programmer au fil des saisons pour accompagner ton corps dans
+                                    Un rituel en 4 séances à programmer au fil des saisons, pour accompagner ton corps dans
                                     ses transitions naturelles.
                                 </p>
                                 <ul className="service-pack-features">
@@ -187,14 +187,13 @@ const Massage = () => {
                     <div className="service-content-section">
                         <h3>Mon intention</h3>
                         <p>
-                            À travers le soin AromaTouch®, ce que je souhaite avant tout offrir, c'est un moment de
-                            détente profonde et de relâchement. Revenir au corps, aux sensations, et laisser le mental
-                            s'apaiser au fur et à mesure du massage. C'est un espace de pause, d'intégration et de
-                            reconnexion.
+                            À travers le rituel AromaTouch®, ce que je souhaite avant tout t'offrir, c'est un moment
+                            de profonde détente et de relâchement. Revenir au corps, aux sensations, et laisser le
+                            mental s'apaiser progressivement. Un espace de pause, d'intégration et de reconnexion à toi.
                         </p>
                         <p>
                             L'AromaTouch® peut s'intégrer dans une démarche globale d'équilibre du terrain ou de
-                            gestion émotionnelle.
+                            régulation émotionnelle.
                         </p>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '1rem' }}>
                             <Link to="/naturopathie" className="service-inline-link">

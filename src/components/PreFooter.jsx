@@ -82,19 +82,21 @@ const PreFooter = () => {
                 </div>
                 <div className="quote-overlay">
                     <div className="quote-card">
-                        <p className="quote-text">
-                            Je fais ma part, j'ouvre mon coeur et je laisse rayonner ma lumière
-                        </p>
-                        <p className="quote-author">– Chloé Wisser</p>
-                        <div className="quote-bottom-row">
+                        <div className="quote-card-inner">
                             <img
                                 src={`${import.meta.env.BASE_URL}logo-footer.svg`}
                                 alt="Colibri Semons la Vie"
                                 className="quote-colibri-img"
                             />
-                            <div className="quote-buttons">
-                                <Link to="/qui-suis-je" className="btn-primary">À propos de moi</Link>
-                                <a href="https://www.sumupbookings.com/semons-la-vie" target="_blank" rel="noopener noreferrer" className="btn-outline">Réserver une séance</a>
+                            <div className="quote-card-content">
+                                <p className="quote-text">
+                                    Je fais ma part, j'ouvre mon coeur et je laisse rayonner ma lumière
+                                </p>
+                                <p className="quote-author">– Chloé Wisser</p>
+                                <div className="quote-buttons">
+                                    <Link to="/qui-suis-je" className="btn-primary">À propos de moi</Link>
+                                    <a href="https://www.sumupbookings.com/semons-la-vie" target="_blank" rel="noopener noreferrer" className="btn-outline">Réserver une séance</a>
+                                </div>
                             </div>
                         </div>
                     </div>

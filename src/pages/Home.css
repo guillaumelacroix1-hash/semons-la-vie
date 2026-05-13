@@ -683,8 +683,19 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     border-radius: var(--radius-xl);
     padding: 3rem 2.5rem;
-    max-width: 580px;
+    max-width: 760px;
     position: relative;
+}
+
+.quote-card-inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.quote-card-content {
+    flex: 1;
+    min-width: 0;
 }
 
 .quote-text {
@@ -694,7 +705,7 @@
     line-height: 1.35;
     margin-bottom: 0.75rem;
     color: var(--color-heading);
-    text-align: right;
+    text-align: left;
 }
 
 .quote-author {
@@ -702,20 +713,14 @@
     color: var(--color-text-light);
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
-    text-align: right;
-}
-
-.quote-bottom-row {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 1.5rem;
+    text-align: left;
 }
 
 .quote-colibri-img {
-    width: 100px;
+    width: 200px;
     height: auto;
-    opacity: 0.8;
+    opacity: 0.85;
+    flex-shrink: 0;
 }
 
 .quote-buttons {
@@ -1368,14 +1373,19 @@
         justify-content: center;
     }
 
-    .quote-bottom-row {
+    .quote-card-inner {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 1.25rem;
+    }
+
+    .quote-text,
+    .quote-author {
+        text-align: center;
     }
 
     .quote-colibri-img {
-        width: 80px;
+        width: 140px;
     }
 
     .quote-buttons {

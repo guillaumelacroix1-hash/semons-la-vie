@@ -48,7 +48,7 @@ const practices = [
         link: '/sophrologie',
     },
     {
-        title: 'Massage AromaTouch®',
+        title: 'Rituel AromaTouch®',
         subtitle: 'Harmoniser les énergies et revenir à soi.',
         desc: 'Un soin doux et enveloppant réalisé avec des huiles essentielles pour un profond relâchement.',
         image: `${import.meta.env.BASE_URL}service-bg-8.webp`,

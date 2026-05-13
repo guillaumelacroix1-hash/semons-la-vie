@@ -7,7 +7,7 @@ const services = [
     { label: 'Phytothérapie', link: '/phytotherapie', color: '#7AA476', dark: '#4A7046' },
     { label: 'Rééquilibrage alimentaire', link: '/reequilibrage-alimentaire', color: '#7AA476', dark: '#4A7046' },
     { label: 'Sophrologie', link: '/sophrologie', color: '#E8C8D8', dark: '#8B3A60', textDark: true },
-    { label: 'Massage AromaTouch®', link: '/massage', color: '#5B5EAB', dark: '#3D3F7A' },
+    { label: 'Rituel AromaTouch®', link: '/massage', color: '#5B5EAB', dark: '#3D3F7A' },
     { label: 'Ateliers culinaires', link: '/ateliers-culinaires', color: '#7AA476', dark: '#4A7046' },
 ];
 

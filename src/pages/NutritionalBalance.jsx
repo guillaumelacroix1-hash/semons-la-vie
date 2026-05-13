@@ -180,12 +180,31 @@ const NutritionalBalance = () => {
                         </p>
                     </div>
 
+                    {/* Tarifs */}
+                    <div className="service-content-section">
+                        <h2>Tarifs</h2>
+                        <div className="service-packs">
+                            <div className="service-pack-card">
+                                <div className="service-pack-header">
+                                    <h4>Consultation en rééquilibrage alimentaire</h4>
+                                    <span className="service-pack-price">60€</span>
+                                </div>
+                                <p>Un accompagnement personnalisé (1h) pour repenser ton alimentation et adopter de nouvelles habitudes favorisant vitalité et bien-être.</p>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* FAQ */}
                     <section className="faq-section">
                         <h2>Questions fréquentes</h2>
                         {faqData.map((item, i) => (
                             <FaqItem key={i} question={item.q} answer={item.a} />
                         ))}
+                        <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', fontStyle: 'italic', marginTop: '1.5rem' }}>
+                            <strong>Remarque importante :</strong> Le rééquilibrage alimentaire ne se substitue pas
+                            à un suivi médical, mais peut être un complément précieux, dans une démarche globale
+                            de mieux-être.
+                        </p>
                     </section>
 
                 </div>

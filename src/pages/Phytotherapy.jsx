@@ -48,7 +48,7 @@ const Phytotherapy = () => {
         <div className="service-page animate-in" style={{ '--service-color': '#7AA476' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">
-                <ServiceHeroZoom src={`${import.meta.env.BASE_URL}services/Phytothérapie.jpg`} alt="Phytothérapie" />
+                <ServiceHeroZoom src={`${import.meta.env.BASE_URL}services/aromatherapie.webp`} alt="Phytothérapie" />
                 <div className="service-hero-banner-content">
                     <h1>Phytothérapie</h1>
                     <p className="hero-subtitle">
@@ -164,6 +164,20 @@ const Phytotherapy = () => {
                             physique qu'émotionnel. Apprendre à les utiliser avec conscience permet de redevenir
                             acteur de sa santé en s'appuyant sur les ressources du vivant.
                         </p>
+                    </div>
+
+                    {/* Tarifs */}
+                    <div className="service-content-section">
+                        <h2>Tarifs</h2>
+                        <div className="service-packs">
+                            <div className="service-pack-card">
+                                <div className="service-pack-header">
+                                    <h4>Consultation en phytothérapie</h4>
+                                    <span className="service-pack-price">60€</span>
+                                </div>
+                                <p>Un protocole sur-mesure (1h) à base d'huiles essentielles, bourgeons et fleurs de Bach, pour apaiser les émotions et rétablir l'équilibre intérieur.</p>
+                            </div>
+                        </div>
                     </div>
 
                     {/* FAQ */}

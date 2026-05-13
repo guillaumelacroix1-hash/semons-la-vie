@@ -42,7 +42,7 @@ const services = [
         desc: 'Apprends à préparer des recettes végétales, crues et gourmandes lors d\'ateliers conviviaux.'
     },
     {
-        id: 'massage', label: 'Rituel AromaTouch', icon: <img src={`${import.meta.env.BASE_URL}icons/service/aromatouch.svg`} alt="" className="service-svg-icon" />, link: '/massage',
+        id: 'massage', label: 'Rituel AromaTouch®', icon: <img src={`${import.meta.env.BASE_URL}icons/service/aromatouch.svg`} alt="" className="service-svg-icon" />, link: '/massage',
         color: '#5B5EAB',
         image: `${import.meta.env.BASE_URL}services/massage.jpg`,
         desc: 'Une expérience aux huiles essentielles pour favoriser la détente, relâcher les tensions et harmoniser le corps et l\'esprit.'
@@ -256,7 +256,7 @@ const Home = () => {
                                 { id: 'naturo', label: 'Naturopathie', icon: <img src={`${import.meta.env.BASE_URL}icons/service/naturopathie.svg`} alt="" className="service-svg-icon" />, color: '#ffcf00', textColor: '#7A6200' },
                                 { id: 'sophro', label: 'Sophrologie', icon: <img src={`${import.meta.env.BASE_URL}icons/service/sophrologie.svg`} alt="" className="service-svg-icon" />, color: '#ffcfe7', textColor: '#8B3A60' },
                                 { id: 'crusine', label: 'Ateliers culinaires', icon: <img src={`${import.meta.env.BASE_URL}icons/service/crusine.svg`} alt="" className="service-svg-icon" />, color: '#bdd7ba', textColor: '#2D5A28' },
-                                { id: 'massage', label: 'Rituel AromaTouch', icon: <img src={`${import.meta.env.BASE_URL}icons/service/aromatouch.svg`} alt="" className="service-svg-icon" />, color: '#6e70cc', textColor: '#1E1B4B' },
+                                { id: 'massage', label: 'Rituel AromaTouch®', icon: <img src={`${import.meta.env.BASE_URL}icons/service/aromatouch.svg`} alt="" className="service-svg-icon" />, color: '#6e70cc', textColor: 'white' },
                             ].map((tab, i) => (
                                 <button
                                     key={tab.id}
@@ -405,10 +405,10 @@ const Home = () => {
                             {/* Massage packs */}
                             <div className={`services-tab-panel service-massage ${activeService === 3 ? 'active' : ''}`}>
                                 <div className="services-tab-image">
-                                    <img src={`${import.meta.env.BASE_URL}services/massage.jpg`} alt="Rituel AromaTouch" />
+                                    <img src={`${import.meta.env.BASE_URL}services/massage.jpg`} alt="Rituel AromaTouch®" />
                                 </div>
                                 <div className="services-tab-info">
-                                    <h3>Rituel AromaTouch</h3>
+                                    <h3>Rituel AromaTouch®</h3>
                                     <div className="packs-list">
                                         <div className="pack-item">
                                             <div className="pack-header">
@@ -426,7 +426,7 @@ const Home = () => {
                                         </div>
                                     </div>
                                     <Link to="/massage" className="btn-primary" style={{ marginTop: '1rem' }}>
-                                        Découvrir le massage <ArrowRight size={16} />
+                                        Découvrir le rituel <ArrowRight size={16} />
                                     </Link>
                                 </div>
                             </div>
@@ -497,9 +497,9 @@ const Home = () => {
                                 link: '/ateliers-culinaires'
                             },
                             {
-                                name: 'Rituel AromaTouch',
+                                name: 'Rituel AromaTouch®',
                                 color: '#6e70cc',
-                                textColor: '#1E1B4B',
+                                textColor: 'white',
                                 objective: 'Apaiser le corps et le système nerveux',
                                 duration: '1h',
                                 features: [

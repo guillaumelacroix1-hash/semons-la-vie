@@ -32,28 +32,21 @@ const About = () => {
                     <div className="about-story-text">
                         <h2>Mon histoire</h2>
                         <p>
-                            Je m'appelle Chloé, passionnée par l'équilibre entre le corps et l'esprit.
-                            Dès ma licence de psychologie, j'ai été fascinée par les mystères de la psyché humaine :
-                            comprendre comment chacun de nous peut accéder à plus de sérénité, de confiance et de
-                            bonheur est devenu mon moteur. Grandir dans un environnement bienveillant m'a très tôt
-                            donné le goût du partage et de l'aide à l'autre ; c'est ce même désir d'accompagner qui
-                            m'a menée à créer ce site et à t'accueillir dans mon univers.
+                            Je m'appelle Chloé. Si j'accompagne aujourd'hui des femmes sur le chemin de la santé
+                            globale, ce n'est pas le fruit du hasard. C'est le résultat d'un parcours qui a commencé
+                            bien plus tôt que je ne l'imaginais.
                         </p>
                         <p>
-                            Ce chemin, je ne l'ai pas emprunté par hasard.
-                            Mon parcours a débuté bien plus tôt que je ne le réalisais : à tout juste un an et demi,
-                            une tumeur cancéreuse au niveau de l'abdomen a nécessité son ablation, suivie de plusieurs
-                            cures de chimiothérapie, avant de laisser place, après des années de contrôles réguliers,
-                            à une vie d'enfant presque ordinaire. À quatorze ans, une occlusion intestinale m'a à
-                            nouveau conduite au bloc opératoire, me rappelant que la santé est un trésor qu'il faut
-                            sans cesse préserver.
+                            Très jeune, mon corps m'a appris que la santé est précieuse. À un an et demi, une tumeur
+                            abdominale m'a conduite à l'hôpital. Des traitements lourds, des contrôles réguliers,
+                            un univers médical devenu familier. Je n'en garde pas un souvenir dramatique, mais une
+                            empreinte profonde : celle d'un corps fragile… et pourtant capable d'une immense résilience.
                         </p>
                         <p>
-                            Pensant avant tout à mon bien-être, mes parents ont très tôt adopté une alimentation
-                            sans viande rouge — uniquement volaille et poisson —, riche en légumes et en fruits,
-                            avec un maximum de plats faits maison au quotidien. Ils intégraient également plantes
-                            et méthodes douces pour soutenir la santé de toute la famille, m'ouvrant dès le plus
-                            jeune âge à une vision globale mêlant accompagnement professionnel et ressources de la nature.
+                            Puis, à quatorze ans, une occlusion intestinale m'a ramenée au bloc opératoire. Cette
+                            fois, j'étais consciente. J'ai compris que le corps n'est jamais acquis. Qu'il demande
+                            attention, respect, écoute. Et que prendre soin de lui est à la fois une responsabilité
+                            et un acte d'amour.
                         </p>
                     </div>
                 </section>
@@ -62,11 +55,15 @@ const About = () => {
                 <section className="about-mosaic-section">
                     <div className="about-mosaic-left">
                         <p>
-                            Ces expériences m'ont appris deux choses essentielles : la résilience naît de l'alliance
-                            entre savoir-faire et bienveillance, et chacun peut devenir acteur de sa santé. C'est
-                            cette conviction personnelle qui guide aujourd'hui ma mission : t'offrir un accompagnement
-                            global, fondé sur l'expertise et l'écoute, pour que tu trouves, toi aussi, les clés d'un
-                            bien-être durable et profondément enraciné dans l'espoir et la confiance.
+                            Ces expériences ont semé en moi une conviction simple et forte : la santé n'est pas
+                            seulement l'absence de maladie. C'est un équilibre vivant. Et nous pouvons apprendre
+                            à en devenir actrices.
+                        </p>
+                        <p>
+                            Avec le temps, j'ai aussi compris autre chose. Ce que l'on vit dans son corps peut
+                            parfois devenir flou. Confus. On cherche des réponses, on lit, on teste… et malgré
+                            tout, on ne se comprend plus vraiment. Je connais cette sensation. Et je sais combien
+                            elle peut éroder la confiance.
                         </p>
                         <div className="about-mosaic-img-large">
                             <img src={`${B}qsn/qsn3.jpg`} alt="" />
@@ -78,14 +75,22 @@ const About = () => {
                             <img src={`${B}qsn/qsn.webp`} alt="" />
                         </div>
                         <p>
-                            Pour moi, la sophrologie est une histoire de famille : après une première carrière,
-                            mon père s'est reconverti en sophrologue, et c'est tout naturellement qu'il m'a donné
-                            envie de découvrir cette méthode de bien-être. Je me suis ainsi formée à l'Institut
-                            Catherine Aliotta, où j'ai trouvé un précieux équilibre entre respiration, relaxation
-                            et visualisation positive : des outils concrets pour apaiser le stress et renouer avec
-                            ses propres ressources. Titulaire du Certificat Professionnel de Sophrologue (RNCP) et
-                            membre de la Chambre Syndicale de Sophrologie, je m'engage chaque jour à respecter un
-                            code de déontologie qui garantit rigueur et bienveillance.
+                            J'ai grandi dans un environnement où l'on faisait attention à ce que l'on mettait
+                            dans son assiette, où les plantes avaient leur place, où l'on cherchait des solutions
+                            naturelles en complément du suivi médical. Très tôt, j'ai compris que le corps, les
+                            émotions, le mental et l'énergie ne fonctionnent pas séparément. Tout est lié.
+                        </p>
+                        <p>
+                            Mon parcours en psychologie m'a permis d'explorer la complexité de la psyché humaine.
+                            Pourquoi réagissons-nous ainsi ? Pourquoi répétons-nous certains schémas ? Cette quête
+                            de compréhension ne m'a jamais quittée.
+                        </p>
+                        <p>
+                            Puis la sophrologie est entrée dans ma vie. Presque naturellement. Comme un pont entre
+                            le corps et l'esprit. À l'Institut Catherine Aliotta, j'ai découvert des outils concrets,
+                            simples et puissants. Respirer autrement. Relâcher. Visualiser. Revenir à soi. C'est là
+                            que j'ai compris combien le mental et le corps dialoguent en permanence — et combien il
+                            est possible d'apprendre à les réconcilier.
                         </p>
                     </div>
                 </section>
@@ -94,26 +99,34 @@ const About = () => {
                 <section className="about-closing-section">
                     <div className="about-closing-text">
                         <p>
-                            Désireuse d'offrir un accompagnement vraiment holistique, j'ai poursuivi mon chemin
-                            en naturopathie et ai achevé ma formation à Dargère Univers en 2024. J'y ai approfondi
-                            l'art de l'autoguérison par des moyens naturels : nutrition, plantes, hygiène de vie…
-                            Chaque notion apprise enrichit ma palette de compétences pour t'aider à retrouver ton
-                            pouvoir d'acteur·rice de ta propre santé.
+                            Mais je ressentais le besoin d'aller plus loin. De comprendre plus finement le
+                            fonctionnement du corps. La naturopathie s'est imposée comme une évidence. Formée
+                            chez Dargère Univers, j'y ai approfondi la nutrition, l'hygiène de vie, les plantes,
+                            la physiologie… et surtout cette idée essentielle : chaque terrain est unique.
+                        </p>
+                        <p className="about-closing-emphasis">
+                            Il n'existe pas de protocole universel.<br />
+                            Il existe des femmes uniques.
                         </p>
                         <p>
-                            Pour compléter cet éventail, j'ai suivi une formation en crusine avec Les cRAWquantes,
-                            afin de proposer des ateliers gourmands et ludiques qui reconnectent le plaisir de manger
-                            à nos besoins physiologiques et à la planète. Plus récemment, j'ai ajouté à mon offre
-                            la technique AromaTouch de dōTerra, pour offrir détente profonde et rééquilibrage
-                            énergétique par le toucher et les huiles essentielles.
+                            J'ai également enrichi mon approche avec la crusine (Les cRAWquantes), pour reconnecter
+                            le plaisir de manger à la vitalité, et avec la technique AromaTouch de dōTERRA, pour
+                            redonner au toucher sa place dans l'équilibre du corps.
                         </p>
                         <p>
-                            Je continue par ailleurs à me former en permanence : lectures spécialisées,
-                            partenariats enrichissants et nouvelles formations en cours de préparation me
-                            permettent d'élargir sans cesse mes savoirs et mes outils.
+                            Mais au-delà des formations, ce qui me guide reste très simple.
+                        </p>
+                        <p className="about-closing-emphasis">
+                            Je ne détiens pas ta vérité.<br />
+                            Je t'accompagne à retrouver la tienne.
+                        </p>
+                        <p>
+                            Je continue à apprendre. À lire. À tester sur moi. À ajuster. Parce que la santé n'est
+                            pas figée. Elle évolue. Elle se cultive. Elle s'expérimente.
                         </p>
                         <h2 className="about-closing-quote">
-                            Bienvenue ! J'ai hâte de te rencontrer et de partager avec toi ce chemin vers un bien-être durable et harmonieux.
+                            Et au coeur de tout cela, il y a une chose que je n'oublie jamais : la joie de vivre
+                            mérite d'être retrouvée.
                         </h2>
                     </div>
                     <div className="about-closing-image">
@@ -197,7 +210,7 @@ const About = () => {
                             { name: 'Sophrologie', icon: 'sophrologie', link: '/sophrologie', color: '#E8C8D8' },
                             { name: 'Phytothérapie', icon: 'phytotherapie', link: '/phytotherapie', color: '#7AA476' },
                             { name: 'Rééquilibrage alimentaire', icon: 'reequilibrage', link: '/reequilibrage-alimentaire', color: '#A8C5A0' },
-                            { name: 'Massage AromaTouch®', icon: 'massage', link: '/massage', color: '#6e70cc' },
+                            { name: 'Rituel AromaTouch®', icon: 'massage', link: '/massage', color: '#6e70cc' },
                             { name: 'Ateliers de crusine', icon: 'crusine', link: '/ateliers-culinaires', color: '#bdd7ba' },
                         ].map((s) => (
                             <Link to={s.link} key={s.name} className="about-pratique-card">

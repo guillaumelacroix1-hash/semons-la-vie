@@ -73,7 +73,7 @@ const Navbar = () => {
                                 </div>
                             </div>
                             <Link to="/sophrologie" onClick={closeAll}>Sophrologie</Link>
-                            <Link to="/massage" onClick={closeAll}>Massage AromaTouch®</Link>
+                            <Link to="/massage" onClick={closeAll}>Rituel AromaTouch®</Link>
                             <Link to="/ateliers-culinaires" onClick={closeAll}>Ateliers culinaires</Link>
                         </div>
                     </div>
