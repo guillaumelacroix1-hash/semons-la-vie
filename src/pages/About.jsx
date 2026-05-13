@@ -210,7 +210,7 @@ const About = () => {
                             { name: 'Sophrologie', icon: 'sophrologie', link: '/sophrologie', color: '#E8C8D8' },
                             { name: 'Phytothérapie', icon: 'phytotherapie', link: '/phytotherapie', color: '#7AA476' },
                             { name: 'Rééquilibrage alimentaire', icon: 'reequilibrage', link: '/reequilibrage-alimentaire', color: '#A8C5A0' },
-                            { name: 'Rituel AromaTouch®', icon: 'massage', link: '/massage', color: '#6e70cc' },
+                            { name: 'Rituel AromaTouch®', icon: 'aromatouch', link: '/massage', color: '#6e70cc' },
                             { name: 'Ateliers de crusine', icon: 'crusine', link: '/ateliers-culinaires', color: '#bdd7ba' },
                         ].map((s) => (
                             <Link to={s.link} key={s.name} className="about-pratique-card">

@@ -287,6 +287,7 @@
     }
 
     .nav-dropdown-menu {
+        display: none;
         position: static;
         min-width: unset;
         background: var(--color-bg-light);
@@ -294,9 +295,17 @@
         border-radius: var(--radius-sm);
         padding: 0.5rem 0;
         margin-top: 0.5rem;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .nav-dropdown.open > .nav-dropdown-menu {
+        display: block;
     }
 
     .nav-sub-menu {
+        display: none;
         position: static;
         min-width: unset;
         background: rgba(91, 94, 171, 0.05);
@@ -304,6 +313,13 @@
         border-radius: var(--radius-sm);
         padding: 0.25rem 0;
         margin: 0.25rem 0 0.25rem 1rem;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .nav-dropdown-item.open > .nav-sub-menu {
+        display: block;
     }
 
     .nav-dropdown-menu > a,
