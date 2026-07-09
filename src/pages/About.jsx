@@ -57,9 +57,12 @@ const About = () => {
                     </div>
                 </section>
 
-                {/* ===== SECTION 2 — texte + images mosaïque ===== */}
+                {/* ===== SECTION 2 — image sticky + texte continu ===== */}
                 <section className="about-mosaic-section">
-                    <div className="about-mosaic-left">
+                    <div className="about-mosaic-image">
+                        <img src={`${B}qsn/chloe-jus.jpg`} alt="Chloé Wisser" />
+                    </div>
+                    <div className="about-mosaic-text">
                         <p>
                             Ces expériences ont semé en moi une conviction simple et forte : la santé n'est pas
                             seulement l'absence de maladie. C'est un équilibre vivant. Et nous pouvons apprendre
@@ -71,11 +74,6 @@ const About = () => {
                             tout, on ne se comprend plus vraiment. Je connais cette sensation. Et je sais combien
                             elle peut éroder la confiance.
                         </p>
-                        <div className="about-mosaic-img-large">
-                            <img src={`${B}qsn/chloe-jus.jpg`} alt="Chloé Wisser" />
-                        </div>
-                    </div>
-                    <div className="about-mosaic-right">
                         <p>
                             J'ai grandi dans un environnement où l'on faisait attention à ce que l'on mettait
                             dans son assiette, où les plantes avaient leur place, où l'on cherchait des solutions

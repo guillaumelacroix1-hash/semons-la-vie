@@ -101,56 +101,36 @@
     margin-bottom: 1.5rem;
 }
 
-/* ========== MOSAÏQUE — layout asymétrique ========== */
+/* ========== MOSAÏQUE — image sticky + texte continu ========== */
+/* L'image reste visible (sticky) pendant que le texte, plus long, défile à côté :
+   évite le grand vide blanc qui apparaissait quand les 2 colonnes de texte
+   avaient des hauteurs très différentes. */
 .about-mosaic-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
     gap: 4rem;
     margin-bottom: 5rem;
+    align-items: start;
 }
 
-.about-mosaic-left p,
-.about-mosaic-right p {
+.about-mosaic-image {
+    position: sticky;
+    top: 6rem;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.about-mosaic-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-mosaic-text p {
     font-size: 1.02rem;
     line-height: 1.9;
     color: var(--color-text);
     margin-bottom: 1.5rem;
-}
-
-.about-mosaic-img-large {
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-}
-
-.about-mosaic-img-large img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.about-mosaic-thumbs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.about-mosaic-thumbs img {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: var(--radius-lg);
-}
-
-.about-mosaic-img-plate {
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-}
-
-.about-mosaic-img-plate img {
-    width: 100%;
-    height: auto;
-    display: block;
 }
 
 /* ========== CLOSING — texte gauche + image droite ========== */
@@ -239,6 +219,10 @@
     .about-mosaic-section {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .about-mosaic-image {
+        position: static;
     }
 
     .about-closing-section {
@@ -424,6 +408,16 @@
 @media (max-width: 768px) {
     .parcours-timeline {
         grid-template-columns: repeat(2, 1fr);
+        padding: 0 0.5rem;
+        gap: 1rem;
+    }
+
+    .about-parcours {
+        padding: 3.5rem 0;
+    }
+
+    .about-pratiques {
+        padding: 3.5rem 1.25rem;
     }
 }
 
@@ -438,9 +432,7 @@
 
     .parcours-timeline {
         grid-template-columns: 1fr;
-        max-width: 320px;
-        margin-left: auto;
-        margin-right: auto;
+        padding: 0 1rem;
     }
 }
 

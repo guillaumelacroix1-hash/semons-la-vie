@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Star, ArrowRight } from 'lucide-react';
 import { events } from '../data/events';
 import './PageBottom.css';
@@ -63,6 +63,8 @@ const fallbackTestimonials = [
 ];
 
 const PageBottom = () => {
+    const { pathname } = useLocation();
+    const onAboutPage = pathname === '/qui-suis-je';
     const [reviews, setReviews] = useState(null);
 
     useEffect(() => {
@@ -207,8 +209,10 @@ const PageBottom = () => {
                                 </p>
                                 <p className="quote-author">– Chloé Wisser</p>
                                 <div className="quote-buttons">
-                                    <Link to="/qui-suis-je" className="btn-primary">À propos de moi</Link>
-                                    <a href="https://www.sumupbookings.com/semons-la-vie" target="_blank" rel="noopener noreferrer" className="btn-outline">Réserver une séance</a>
+                                    {!onAboutPage && (
+                                        <Link to="/qui-suis-je" className="btn-primary">À propos de moi</Link>
+                                    )}
+                                    <a href="https://www.sumupbookings.com/semons-la-vie" target="_blank" rel="noopener noreferrer" className={onAboutPage ? 'btn-primary' : 'btn-outline'}>Réserver une séance</a>
                                 </div>
                             </div>
                         </div>
@@ -226,7 +230,7 @@ const PageBottom = () => {
                     </p>
                     <div className="cta-buttons">
                         <a href="https://www.sumupbookings.com/semons-la-vie" target="_blank" rel="noopener noreferrer" className="btn-primary">Prendre rendez-vous</a>
-                        <a href="mailto:contact@semons-la-vie.fr" className="btn-outline">M'envoyer un message</a>
+                        <Link to="/contact" className="btn-outline">M'envoyer un message</Link>
                     </div>
                 </div>
             </section>

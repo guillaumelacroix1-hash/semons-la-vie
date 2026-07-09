@@ -99,10 +99,12 @@
     .hero {
         min-height: 70vh;
         margin: 0.25rem 0.75rem;
+        flex-direction: column;
+        padding-bottom: 1.5rem;
     }
 
     .hero-overlay {
-        padding: 8rem 1.5rem 3rem;
+        padding: 8rem 1.5rem 1.5rem;
     }
 
     .hero-card {
@@ -110,8 +112,16 @@
         max-width: 100%;
     }
 
+    /* Le badge "praticienne certifiée" passe en flux normal sous la carte
+       pour ne plus se superposer à elle sur les écrans étroits. */
     .hero-trust {
-        bottom: 1rem;
-        right: 1.5rem;
+        position: static;
+        margin-top: 1rem;
+        text-align: center;
+        padding: 0 1.5rem;
+    }
+
+    .hero-stars {
+        justify-content: center;
     }
 }

@@ -8,7 +8,7 @@ import Wave from '../components/Wave';
 import PracticesCarousel from '../components/PracticesCarousel';
 import PageBottom from '../components/PageBottom';
 import '../components/DrawSvgIcon.css';
-import { Leaf, Wind, Utensils, Sparkles, Check, ArrowRight, Phone, Mail, MapPin, Flower2, Apple } from 'lucide-react';
+import { Leaf, Wind, Utensils, Sparkles, Check, ArrowRight, Phone, Mail, MapPin, Flower2, Apple, ArrowLeftRight } from 'lucide-react';
 import './Home.css';
 
 const services = [
@@ -56,6 +56,15 @@ const Home = () => {
     const practicesRef = useRef(null);
     const servicesScrollRef = useRef(null);
     const servicesTrackRef = useRef(null);
+    const tabContentRef = useRef(null);
+
+    const selectServiceTab = (i) => {
+        setActiveService(i);
+        // Sur mobile, les onglets et le contenu sont empilés : sans ce scroll,
+        // le panneau qui vient de changer reste hors écran et on croit que le
+        // bouton ne fait rien.
+        tabContentRef.current?.scrollIntoView({ behavior: 'auto', block: 'nearest' });
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -183,6 +192,10 @@ const Home = () => {
                             />
                         ))}
                     </div>
+                    <div className="hscroll-swipe-hint">
+                        <ArrowLeftRight size={16} />
+                        Fais glisser pour découvrir les autres accompagnements
+                    </div>
                 </div>
             </section>
 
@@ -268,7 +281,7 @@ const Home = () => {
                                     key={tab.id}
                                     className={`services-tab-btn ${activeService === i ? 'active' : ''}`}
                                     style={activeService === i ? { background: tab.color, color: tab.textColor } : {}}
-                                    onClick={() => setActiveService(i)}
+                                    onClick={() => selectServiceTab(i)}
                                 >
                                     <span className="services-tab-icon">{tab.icon}</span>
                                     <span className="services-tab-label">{tab.label}</span>
@@ -283,7 +296,7 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="services-tab-content">
+                        <div className="services-tab-content" ref={tabContentRef}>
                             {/* Naturopathie packs */}
                             <div className={`services-tab-panel service-naturo ${activeService === 0 ? 'active' : ''}`}>
                                 <div className="services-tab-image">

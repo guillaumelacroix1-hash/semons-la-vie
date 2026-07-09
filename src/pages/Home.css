@@ -160,9 +160,36 @@
     }
 
     .services-hscroll-track .service-card-carousel {
-        flex: 0 0 85vw;
+        flex: 0 0 78vw;
         height: 420px;
         scroll-snap-align: center;
+    }
+
+}
+
+/* Indication qu'il s'agit d'un carrousel horizontal (mobile uniquement) */
+.hscroll-swipe-hint {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+
+.hscroll-swipe-hint svg {
+    animation: hscroll-hint-bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes hscroll-hint-bounce {
+    0%, 100% { transform: translateX(0); opacity: 0.6; }
+    50% { transform: translateX(6px); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .hscroll-swipe-hint {
+        display: flex;
     }
 }
 
@@ -1080,6 +1107,14 @@
     align-items: flex-end;
     gap: 2rem;
     margin-bottom: 3rem;
+}
+
+@media (max-width: 640px) {
+    .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
 }
 
 .services-header-right {

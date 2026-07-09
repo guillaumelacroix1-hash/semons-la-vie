@@ -226,6 +226,15 @@ a.contact-detail-item:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .contact-hero {
+        min-height: 35vh;
+        margin: 0.25rem 0.75rem;
+    }
+
+    .contact-hero-content {
+        padding: 2rem 1.5rem;
+    }
+
     .contact-layout {
         grid-template-columns: 1fr;
         gap: 2.5rem;
