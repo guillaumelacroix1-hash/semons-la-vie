@@ -2,12 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import PageBottom from '../components/PageBottom';
+import Seo from '../components/Seo';
 import './About.css';
 
 const About = () => {
     const B = import.meta.env.BASE_URL;
     return (
         <>
+        <Seo
+            title="Qui suis-je ? Chloé Wisser, naturopathe & sophrologue"
+            description="Découvre le parcours de Chloé Wisser : naturopathe certifiée (École Dargère Univers), sophrologue (Institut Catherine Aliotta), formée à la crusine et au Rituel AromaTouch®."
+            path="/qui-suis-je"
+        />
         <div className="about-page animate-in">
 
             {/* ===== HERO — même style que la page événements ===== */}

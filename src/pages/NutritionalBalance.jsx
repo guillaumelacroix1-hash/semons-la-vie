@@ -4,6 +4,7 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 import ServiceSidebar from '../components/ServiceSidebar';
 import ServiceHeroZoom from '../components/ServiceHeroZoom';
 import PageBottom from '../components/PageBottom';
+import Seo from '../components/Seo';
 import './ServicePage.css';
 
 const faqData = [
@@ -45,6 +46,11 @@ const FaqItem = ({ question, answer }) => {
 const NutritionalBalance = () => {
     return (
         <>
+        <Seo
+            title="Rééquilibrage alimentaire près de Cognac · Semons la Vie"
+            description="Consultation en rééquilibrage alimentaire : bilan complet, pistes d'ajustement concrètes et accompagnement progressif, sans régime ni frustration. En cabinet ou en visio."
+            path="/reequilibrage-alimentaire"
+        />
         <div className="service-page animate-in" style={{ '--service-color': '#7AA476' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">

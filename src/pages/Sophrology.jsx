@@ -4,6 +4,7 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 import ServiceSidebar from '../components/ServiceSidebar';
 import ServiceHeroZoom from '../components/ServiceHeroZoom';
 import PageBottom from '../components/PageBottom';
+import Seo from '../components/Seo';
 import './ServicePage.css';
 
 const faqData = [
@@ -45,6 +46,11 @@ const FaqItem = ({ question, answer }) => {
 const Sophrology = () => {
     return (
         <>
+        <Seo
+            title="Sophrologie à Châteaubernard (Cognac) · Semons la Vie"
+            description="Séances de sophrologie individuelles ou en groupe : respiration, relaxation et visualisation pour apaiser le stress et mieux vivre tes émotions. En cabinet ou en visio."
+            path="/sophrologie"
+        />
         <div className="service-page animate-in" style={{ '--service-color': '#E8C8D8', '--service-btn-text': '#8B3A60' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">

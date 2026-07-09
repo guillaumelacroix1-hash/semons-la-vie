@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Calendar, Clock, MapPin, Users, ArrowLeft, Check, ArrowRight, Sparkles } from 'lucide-react';
 import { events, formatDate } from '../data/events';
+import Seo from '../components/Seo';
 import './Events.css';
+
+const SITE_URL = 'https://www.semons-la-vie.fr';
 
 const EventDetail = () => {
     const { id } = useParams();
@@ -52,8 +55,42 @@ const EventDetail = () => {
         }
     };
 
+    const absoluteImage = event.image.startsWith('http') ? event.image : `${SITE_URL}${event.image}`;
+
     return (
         <div className="events-page animate-in">
+            <Seo
+                title={`${event.title} · Événement Semons la Vie`}
+                description={event.shortDesc}
+                path={`/evenements/${event.id}`}
+                image={absoluteImage}
+                type="article"
+            />
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'Event',
+                    name: event.title,
+                    startDate: event.date,
+                    description: event.shortDesc,
+                    image: absoluteImage,
+                    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+                    eventStatus: 'https://schema.org/EventScheduled',
+                    location: {
+                        '@type': 'Place',
+                        name: event.location,
+                        address: { '@type': 'PostalAddress', addressLocality: event.location, addressCountry: 'FR' },
+                    },
+                    offers: {
+                        '@type': 'Offer',
+                        price: event.price,
+                        priceCurrency: 'EUR',
+                        availability: event.spotsLeft > 0 ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut',
+                        url: `${SITE_URL}/evenements/${event.id}`,
+                    },
+                    organizer: { '@type': 'Person', name: 'Chloé Wisser', url: SITE_URL },
+                })}
+            </script>
             {/* Hero */}
             <div className="event-detail-hero">
                 <div className="event-detail-hero-bg">

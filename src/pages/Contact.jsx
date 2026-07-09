@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, ArrowRight } from 'lucide-react';
+import Seo from '../components/Seo';
 import './Contact.css';
 
 const Contact = () => {
@@ -18,6 +19,11 @@ const Contact = () => {
 
     return (
         <div className="contact-page animate-in">
+            <Seo
+                title="Contact · Semons la Vie · Chloé Wisser"
+                description="Contacte Chloé Wisser, naturopathe et sophrologue à Châteaubernard : 06 61 49 35 86, contact@semons-la-vie.fr. Espace Honnebee, 35 rue des Vauzelles."
+                path="/contact"
+            />
             {/* Hero banner */}
             <div className="contact-hero">
                 <div className="contact-hero-bg">

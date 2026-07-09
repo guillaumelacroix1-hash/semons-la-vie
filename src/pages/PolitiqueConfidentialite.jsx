@@ -1,9 +1,15 @@
 import React from 'react';
+import Seo from '../components/Seo';
 import './LegalPage.css';
 
 const PolitiqueConfidentialite = () => {
     return (
         <div className="legal-page animate-in">
+            <Seo
+                title="Politique de confidentialité · Semons la Vie"
+                description="Politique de confidentialité du site semons-la-vie.fr : données collectées, finalités, durées de conservation et droits RGPD."
+                path="/politique-de-confidentialite"
+            />
             <div className="legal-content">
                 <h1>Politique de confidentialité</h1>
                 <p className="legal-updated">Dernière mise à jour : 9 juillet 2026</p>

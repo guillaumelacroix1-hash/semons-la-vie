@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
+import Seo from '../components/Seo';
 import ServiceCard from '../components/ServiceCard';
 import DrawSvgIcon from '../components/DrawSvgIcon';
 import Wave from '../components/Wave';
@@ -115,6 +116,11 @@ const Home = () => {
 
     return (
         <>
+            <Seo
+                title="Semons la Vie · Naturopathe & Sophrologue à Châteaubernard (Cognac)"
+                description="Chloé Wisser t'accompagne vers un équilibre durable : naturopathie, sophrologie, phytothérapie, rééquilibrage alimentaire, Rituel AromaTouch® et ateliers de crusine près de Cognac."
+                path="/"
+            />
             <Hero />
 
             {/* About Section */}

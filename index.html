@@ -1,10 +1,83 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Semons la Vie — Naturopathie & Sophrologie</title>
+    <meta name="theme-color" content="#5B5EAB" />
+
+    <!-- Titre par défaut : le titre, la description et la canonical de chaque page
+         sont injectés par React 19 (composant Seo). Les balises OG ci-dessous servent
+         de fallback pour les scrapers sociaux qui n'exécutent pas le JS. -->
+    <title>Semons la Vie · Naturopathie & Sophrologie à Châteaubernard (Cognac)</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Semons la Vie" />
+    <meta property="og:title" content="Semons la Vie · Naturopathie & Sophrologie à Châteaubernard (Cognac)" />
+    <meta property="og:description" content="Chloé Wisser, naturopathe et sophrologue près de Cognac. Accompagnements personnalisés pour retrouver équilibre et vitalité, à ton rythme." />
+    <meta property="og:url" content="https://www.semons-la-vie.fr/" />
+    <meta property="og:image" content="https://www.semons-la-vie.fr/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Semons la Vie · Naturopathie & Sophrologie" />
+    <meta name="twitter:description" content="Chloé Wisser, naturopathe et sophrologue près de Cognac. Accompagnements personnalisés pour retrouver équilibre et vitalité." />
+    <meta name="twitter:image" content="https://www.semons-la-vie.fr/og-image.jpg" />
+
+    <!-- Schema.org : entreprise locale -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "@id": "https://www.semons-la-vie.fr/#business",
+      "name": "Semons la Vie",
+      "legalName": "Chloé Wisser EI",
+      "description": "Naturopathie, sophrologie, phytothérapie, rééquilibrage alimentaire, Rituel AromaTouch® et ateliers de crusine à Châteaubernard, près de Cognac.",
+      "url": "https://www.semons-la-vie.fr/",
+      "telephone": "+33661493586",
+      "email": "contact@semons-la-vie.fr",
+      "image": "https://www.semons-la-vie.fr/og-image.jpg",
+      "logo": "https://www.semons-la-vie.fr/logo-replace4.png",
+      "priceRange": "60€ - 290€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Espace Honnebee, 35 rue des Vauzelles",
+        "addressLocality": "Châteaubernard",
+        "postalCode": "16100",
+        "addressCountry": "FR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Thursday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Chloé Wisser",
+        "jobTitle": "Naturopathe et sophrologue",
+        "url": "https://www.semons-la-vie.fr/qui-suis-je"
+      },
+      "sameAs": [
+        "https://www.facebook.com/share/19gMCjSjFE/",
+        "https://www.instagram.com/semonslavie"
+      ],
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Naturopathie", "url": "https://www.semons-la-vie.fr/naturopathie" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sophrologie", "url": "https://www.semons-la-vie.fr/sophrologie" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Phytothérapie", "url": "https://www.semons-la-vie.fr/phytotherapie" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rééquilibrage alimentaire", "url": "https://www.semons-la-vie.fr/reequilibrage-alimentaire" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rituel AromaTouch®", "url": "https://www.semons-la-vie.fr/massage" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ateliers de crusine", "url": "https://www.semons-la-vie.fr/ateliers-culinaires" } }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

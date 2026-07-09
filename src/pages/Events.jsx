@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, MapPin, Clock, Users } from 'lucide-react';
 import { events, formatDate } from '../data/events';
+import Seo from '../components/Seo';
 import './Events.css';
 
 const categories = ['Tous', ...new Set(events.map(e => e.category))];
@@ -13,6 +14,11 @@ const Events = () => {
 
     return (
         <div className="events-page animate-in">
+            <Seo
+                title="Ateliers & événements bien-être · Semons la Vie"
+                description="Les prochains événements de Semons la Vie : ateliers de crusine, journées santé & vitalité, week-ends de jeûne et sophrologie de groupe près de Cognac."
+                path="/evenements"
+            />
             {/* Hero */}
             <div className="events-hero">
                 <div className="events-hero-bg">

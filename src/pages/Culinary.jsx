@@ -4,6 +4,7 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 import ServiceSidebar from '../components/ServiceSidebar';
 import ServiceHeroZoom from '../components/ServiceHeroZoom';
 import PageBottom from '../components/PageBottom';
+import Seo from '../components/Seo';
 import './ServicePage.css';
 
 const crusineImages = [
@@ -60,6 +61,11 @@ const Culinary = () => {
 
     return (
         <>
+        <Seo
+            title="Ateliers de Crusine · Cuisine vivante & gourmande · Semons la Vie"
+            description="Ateliers de crusine près de Cognac : apprends une cuisine crue, végétale et gourmande en petit groupe. Recettes simples, ingrédients bio et convivialité."
+            path="/ateliers-culinaires"
+        />
         <div className="service-page animate-in" style={{ '--service-color': '#7AA476' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">
