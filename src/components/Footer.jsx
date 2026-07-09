@@ -31,6 +31,13 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                <div className="footer-legal-links">
+                    <Link to="/mentions-legales">Mentions légales</Link>
+                    <span className="footer-legal-sep">·</span>
+                    <Link to="/cgv">CGV</Link>
+                    <span className="footer-legal-sep">·</span>
+                    <Link to="/politique-de-confidentialite">Politique de confidentialité</Link>
+                </div>
                 <div className="footer-bottom">
                     © {new Date().getFullYear()} Semons la Vie — Chloé Wisser. Tous droits réservés.
                 </div>

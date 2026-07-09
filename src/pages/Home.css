@@ -1338,6 +1338,27 @@
     border-color: var(--color-primary);
 }
 
+.footer-legal-links {
+    text-align: center;
+    font-size: 0.82rem;
+    margin-bottom: 0.75rem;
+}
+
+.footer-legal-links a {
+    color: var(--color-text-light);
+    transition: var(--transition);
+}
+
+.footer-legal-links a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.footer-legal-sep {
+    margin: 0 0.6rem;
+    color: var(--color-text-light);
+}
+
 .footer-bottom {
     text-align: center;
     font-size: 0.82rem;

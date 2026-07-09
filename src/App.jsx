@@ -13,6 +13,9 @@ import NutritionalBalance from './pages/NutritionalBalance';
 import Contact from './pages/Contact';
 import Events from './pages/Events';
 import EventDetail from './pages/EventDetail';
+import MentionsLegales from './pages/MentionsLegales';
+import CGV from './pages/CGV';
+import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -89,6 +92,9 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/evenements" element={<Events />} />
             <Route path="/evenements/:id" element={<EventDetail />} />
+            <Route path="/mentions-legales" element={<MentionsLegales />} />
+            <Route path="/cgv" element={<CGV />} />
+            <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
           </Routes>
         </main>
         <Footer />
