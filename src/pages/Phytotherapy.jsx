@@ -101,7 +101,7 @@ const Phytotherapy = () => {
                             correspondent le mieux à ta situation, dans une approche personnalisée et progressive.
                         </p>
                         <p>
-                            La phytothérapie constitue l'un des outils majeurs de la naturopathie. Pour les personnes
+                            La phytothérapie constitue l'un des outils de la naturopathie. Pour les personnes
                             souhaitant travailler sur leur terrain dans sa globalité, elle peut s'intégrer dans un
                             accompagnement naturopathique complet.
                         </p>
@@ -121,6 +121,10 @@ const Phytotherapy = () => {
                         </p>
 
                         <h3>Consultation en phytothérapie — 1h</h3>
+                        <p>
+                            Avant la séance, je te transmets un questionnaire alimentaire afin de mieux comprendre
+                            tes habitudes et ton fonctionnement digestif.
+                        </p>
                         <p>
                             La séance commence par un temps d'échange permettant de comprendre ton motif de consultation,
                             ton terrain et ton mode de vie.

@@ -149,7 +149,7 @@ const Naturopathy = () => {
                         </p>
                         <p>
                             Parmi les outils utilisés, la phytothérapie occupe une place importante dans
-                            l'accompagnement naturopathique. Si tu souhaites approfondir l'utilisation des plantes
+                            mon accompagnement en naturopathie. Si tu souhaites approfondir l'utilisation des plantes
                             et découvrir plus en détail leurs bienfaits, je propose également un accompagnement
                             spécifique dédié à la phytothérapie.
                         </p>

@@ -87,10 +87,6 @@ const Massage = () => {
                             L'association du toucher et de l'odorat agit à la fois sur le plan physique, émotionnel
                             et énergétique. Les gestes sont doux, rythmés, profondément enveloppants.
                         </p>
-                        <p>
-                            Ce soin ne se substitue pas à un suivi médical, mais il constitue un soutien précieux
-                            dans une démarche globale de bien-être.
-                        </p>
                     </div>
 
                     {/* Les bienfaits du soin */}
@@ -118,8 +114,8 @@ const Massage = () => {
 
                         <h3>Bain de pieds d'ancrage</h3>
                         <p>
-                            Tu débutes par un bain de pieds au sel d'Epsom enrichi de l'huile essentielle Balance®,
-                            pour favoriser l'ancrage et la détente.
+                            Tu débutes par un bain de pieds au sel d'Epsom enrichi de la synergie d'huiles
+                            essentielles Balance®, pour favoriser l'ancrage et la détente.
                         </p>
 
                         <h3>Installation & relaxation guidée</h3>
