@@ -236,6 +236,65 @@ const Sophrology = () => {
                         </p>
                     </div>
 
+                    {/* Séances de groupe — Voyage au cœur de soi */}
+                    <div className="service-content-section">
+                        <h2>Séances de groupe : Voyage au cœur de soi, au fil des saisons</h2>
+                        <p>
+                            Offre-toi chaque semaine un moment pour respirer, relâcher les tensions et retrouver
+                            l'équilibre. Des séances de sophrologie liées à la saison pour accueillir les
+                            changements avec douceur : respiration, relaxation et visualisation pour écouter
+                            ton corps et apaiser le mental.
+                        </p>
+                        <ul>
+                            <li>Apprendre à gérer le stress et les émotions,</li>
+                            <li>prendre un temps pour toi chaque semaine,</li>
+                            <li>retrouver vitalité et équilibre au fil des saisons,</li>
+                            <li>découvrir des techniques simples pour plus de sérénité.</li>
+                        </ul>
+                        <p>
+                            <strong>Quand ?</strong> Tous les jeudis de 18h30 à 19h30, de septembre à avril
+                            (hors vacances scolaires)<br />
+                            <strong>Où ?</strong> Cabinet partagé à Cognac<br />
+                            <strong>Pour qui ?</strong> Séances accessibles à tous, débutants comme confirmés
+                        </p>
+
+                        <h3>Choisis ton rythme</h3>
+                        <div className="service-packs">
+                            <div className="service-pack-card">
+                                <div className="service-pack-header">
+                                    <h4>Séance à l'unité</h4>
+                                    <span className="service-pack-price">12€</span>
+                                </div>
+                                <p>Pour pratiquer librement, au gré de tes envies et de tes disponibilités.</p>
+                            </div>
+                            <div className="service-pack-card">
+                                <div className="service-pack-header">
+                                    <h4>Carte liberté</h4>
+                                    <span className="service-pack-price">100€</span>
+                                </div>
+                                <p>10 séances + 1 offerte, à utiliser à ton rythme tout au long de l'année.</p>
+                            </div>
+                            <div className="service-pack-card">
+                                <div className="service-pack-header">
+                                    <h4>1 session</h4>
+                                    <span className="service-pack-price">120€</span>
+                                </div>
+                                <p>Une demi-année de pratique : de septembre à décembre, ou de janvier à avril.</p>
+                            </div>
+                            <div className="service-pack-card featured">
+                                <span className="service-pack-badge">Le plus avantageux</span>
+                                <div className="service-pack-header">
+                                    <h4>Année complète</h4>
+                                    <span className="service-pack-price">220€</span>
+                                </div>
+                                <p>Toutes les séances de septembre à avril, pour installer un vrai rendez-vous hebdomadaire avec toi-même.</p>
+                            </div>
+                        </div>
+                        <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', fontStyle: 'italic', marginTop: '1.5rem' }}>
+                            ✨ 1 séance découverte offerte en septembre !
+                        </p>
+                    </div>
+
                     {/* FAQ */}
                     <section className="faq-section">
                         <h2>Questions fréquentes</h2>
