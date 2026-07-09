@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Star, ArrowRight } from 'lucide-react';
 import './PageBottom.css';
 
 const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Semons+la+Vie+-+Naturopathie+%26+Sophrologie/data=!4m2!3m1!1s0x0:0xe1ad6ebf2d9f6588';
 
-const testimonials = [
+// Flux des vrais avis Google (widget Featurable). En cas d'échec du fetch,
+// on retombe sur les avis ci-dessous (snapshot manuel des mêmes avis Google).
+const FEATURABLE_URL = 'https://api.featurable.com/v2/widgets/0ee869c5-afe0-4264-b719-af88d3ab28d4';
+
+const truncate = (text, max = 300) => {
+    if (text.length <= max) return text;
+    const cut = text.slice(0, max);
+    return `${cut.slice(0, cut.lastIndexOf(' '))}…`;
+};
+
+const initialsOf = (name) =>
+    name.split(/\s+/).map((w) => w[0]).filter(Boolean).slice(0, 2).join('').toUpperCase();
+
+const fallbackTestimonials = [
     {
         text: "Un moment de pur bien-être ! Chloé a su créer une ambiance apaisante dès les premières minutes, avec des gestes doux et précis. Le massage m'a profondément détendu et m'a permis de me recentrer. J'ai passé une excellente nuit, calme et reposante.",
         name: "Amélie L.", role: "Rituel AromaTouch®", initials: "AL"
@@ -49,6 +62,31 @@ const testimonials = [
 ];
 
 const PageBottom = () => {
+    const [reviews, setReviews] = useState(null);
+
+    useEffect(() => {
+        let cancelled = false;
+        fetch(FEATURABLE_URL)
+            .then((r) => (r.ok ? r.json() : Promise.reject(new Error('featurable fetch failed'))))
+            .then((data) => {
+                if (cancelled) return;
+                const fetched = (data.widget?.reviews || [])
+                    .filter((r) => (r.originalText || r.text) && (r.rating?.value ?? 0) >= 4)
+                    .map((r) => ({
+                        text: truncate((r.originalText || r.text).trim()),
+                        name: r.author?.name || 'Cliente',
+                        role: 'Avis Google',
+                        avatar: r.author?.avatarUrl || null,
+                        rating: r.rating?.value ?? 5,
+                    }));
+                if (fetched.length) setReviews(fetched);
+            })
+            .catch(() => { /* fallback silencieux sur les avis statiques */ });
+        return () => { cancelled = true; };
+    }, []);
+
+    const testimonials = reviews || fallbackTestimonials;
+
     return (
         <>
             {/* Ateliers & événements */}
@@ -150,13 +188,17 @@ const PageBottom = () => {
                         {[...testimonials, ...testimonials].map((t, i) => (
                             <div key={i} className="testimonial-card">
                                 <div className="testimonial-stars">
-                                    {[...Array(5)].map((_, j) => (
+                                    {[...Array(t.rating ?? 5)].map((_, j) => (
                                         <Star key={j} size={16} fill="#FFCF00" color="#FFCF00" />
                                     ))}
                                 </div>
                                 <p className="testimonial-text">"{t.text}"</p>
                                 <div className="testimonial-author">
-                                    <div className="testimonial-avatar">{t.initials}</div>
+                                    <div className="testimonial-avatar">
+                                        {t.avatar
+                                            ? <img src={t.avatar} alt={t.name} referrerPolicy="no-referrer" />
+                                            : (t.initials || initialsOf(t.name))}
+                                    </div>
                                     <div>
                                         <div className="testimonial-name">{t.name}</div>
                                         <div className="testimonial-role">{t.role}</div>
