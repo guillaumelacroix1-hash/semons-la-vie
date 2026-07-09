@@ -9,6 +9,8 @@ const EventDetail = () => {
     const event = events.find(e => e.id === id);
     const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
     const [submitted, setSubmitted] = useState(false);
+    const [sending, setSending] = useState(false);
+    const [sendError, setSendError] = useState(false);
 
     if (!event) {
         return (
@@ -25,9 +27,29 @@ const EventDetail = () => {
 
     const otherEvents = events.filter(e => e.id !== id).slice(0, 3);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setSubmitted(true);
+        setSending(true);
+        setSendError(false);
+        try {
+            const r = await fetch('/api/send-booking', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    eventTitle: event.title,
+                    eventDate: formatDate(event.date),
+                    eventTime: event.time,
+                    eventLocation: event.location,
+                    ...form,
+                }),
+            });
+            if (!r.ok) throw new Error('send failed');
+            setSubmitted(true);
+        } catch {
+            setSendError(true);
+        } finally {
+            setSending(false);
+        }
     };
 
     return (
@@ -163,9 +185,15 @@ const EventDetail = () => {
                                         value={form.message}
                                         onChange={e => setForm({ ...form, message: e.target.value })}
                                     />
-                                    <button type="submit" className="btn-primary" style={{ width: '100%' }}>
-                                        Je réserve ma place
+                                    <button type="submit" className="btn-primary" style={{ width: '100%' }} disabled={sending}>
+                                        {sending ? 'Envoi en cours…' : 'Je réserve ma place'}
                                     </button>
+                                    {sendError && (
+                                        <p className="event-booking-error">
+                                            Oups, l'envoi n'a pas fonctionné. Réessaie dans un instant, ou contacte
+                                            directement Chloé au 06 61 49 35 86 ou par email à contact@semons-la-vie.fr.
+                                        </p>
+                                    )}
                                 </form>
                             ) : (
                                 <div className="event-booking-success">
