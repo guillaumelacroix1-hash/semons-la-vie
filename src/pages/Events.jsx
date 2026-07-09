@@ -66,7 +66,7 @@ const Events = () => {
                                 <h3>{event.title}</h3>
                                 <p className="event-card-desc">{event.shortDesc}</p>
                                 <div className="event-card-details">
-                                    <span><Calendar size={14} /> {formatDate(event.date)}</span>
+                                    <span><Calendar size={14} /> {event.dateLabel || formatDate(event.date)}</span>
                                     <span><Clock size={14} /> {event.duration}</span>
                                     <span><MapPin size={14} /> {event.location.split(',')[0]}</span>
                                     <span><Users size={14} /> {event.spotsLeft} places restantes</span>

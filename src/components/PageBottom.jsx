@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Star, ArrowRight } from 'lucide-react';
+import { events } from '../data/events';
 import './PageBottom.css';
 
 const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Semons+la+Vie+-+Naturopathie+%26+Sophrologie/data=!4m2!3m1!1s0x0:0xe1ad6ebf2d9f6588';
@@ -120,56 +121,24 @@ const PageBottom = () => {
                     </div>
 
                     <div className="workshops-grid reveal-stagger">
-                        <div className="workshop-card">
-                            <img
-                                src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=600&auto=format&fit=crop"
-                                alt="Atelier petit-déjeuner"
-                                className="workshop-img"
-                            />
-                            <div className="workshop-body">
-                                <span className="workshop-tag green">Crusine</span>
-                                <h4>Petit-déjeuner vitalité</h4>
-                                <p>Démarre ta journée avec énergie grâce à des recettes crues, simples et délicieuses.</p>
-                                <div className="workshop-meta">
-                                    <span className="workshop-price">65€</span>
-                                    <Link to="/ateliers-culinaires" className="workshop-link">S'inscrire <ArrowRight size={14} /></Link>
+                        {events.slice(0, 3).map((ev) => (
+                            <div className="workshop-card" key={ev.id}>
+                                <img
+                                    src={ev.image}
+                                    alt={ev.title}
+                                    className="workshop-img"
+                                />
+                                <div className="workshop-body">
+                                    <span className={`workshop-tag ${ev.categoryColor}`}>{ev.category}</span>
+                                    <h4>{ev.title}</h4>
+                                    <p>{ev.shortDesc}</p>
+                                    <div className="workshop-meta">
+                                        <span className="workshop-price">{ev.price}€</span>
+                                        <Link to={`/evenements/${ev.id}`} className="workshop-link">S'inscrire <ArrowRight size={14} /></Link>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="workshop-card">
-                            <img
-                                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop"
-                                alt="Week-end jeûne"
-                                className="workshop-img"
-                            />
-                            <div className="workshop-body">
-                                <span className="workshop-tag purple">Bien-être</span>
-                                <h4>Week-end de jeûne</h4>
-                                <p>Un week-end pour se ressourcer, ralentir et offrir à ton corps une pause régénérante en pleine nature.</p>
-                                <div className="workshop-meta">
-                                    <span className="workshop-price">190€</span>
-                                    <Link to="/contact" className="workshop-link">S'inscrire <ArrowRight size={14} /></Link>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="workshop-card">
-                            <img
-                                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=600&auto=format&fit=crop"
-                                alt="Journée bien-être"
-                                className="workshop-img"
-                            />
-                            <div className="workshop-body">
-                                <span className="workshop-tag sage">Santé</span>
-                                <h4>Journée santé & vitalité</h4>
-                                <p>Une journée complète pour explorer la naturopathie, la sophrologie et repartir avec des outils concrets.</p>
-                                <div className="workshop-meta">
-                                    <span className="workshop-price">95€</span>
-                                    <Link to="/contact" className="workshop-link">S'inscrire <ArrowRight size={14} /></Link>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>

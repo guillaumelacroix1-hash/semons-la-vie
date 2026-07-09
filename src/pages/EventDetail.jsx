@@ -72,6 +72,7 @@ const EventDetail = () => {
                     '@type': 'Event',
                     name: event.title,
                     startDate: event.date,
+                    ...(event.endDate ? { endDate: event.endDate } : {}),
                     description: event.shortDesc,
                     image: absoluteImage,
                     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
@@ -103,7 +104,7 @@ const EventDetail = () => {
                     <span className={`event-card-tag ${event.categoryColor}`}>{event.category}</span>
                     <h1>{event.title}</h1>
                     <div className="event-detail-meta">
-                        <span><Calendar size={16} /> {formatDate(event.date)}</span>
+                        <span><Calendar size={16} /> {event.dateLabel || formatDate(event.date)}</span>
                         <span><Clock size={16} /> {event.time}</span>
                         <span><MapPin size={16} /> {event.location}</span>
                     </div>
@@ -119,6 +120,19 @@ const EventDetail = () => {
                             {event.description.split('\n\n').map((p, i) => (
                                 <p key={i}>{p}</p>
                             ))}
+                            {event.program && (
+                                <>
+                                    <h3 className="event-program-title">Au programme :</h3>
+                                    <ul className="event-includes-list">
+                                        {event.program.map((item, i) => (
+                                            <li key={i}>
+                                                <Sparkles size={16} className="event-check-icon" />
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </>
+                            )}
                         </section>
 
                         <section className="event-detail-section">
@@ -133,9 +147,38 @@ const EventDetail = () => {
                             </ul>
                         </section>
 
+                        {event.extras && (
+                            <section className="event-detail-section">
+                                <h2>En supplément (facultatif)</h2>
+                                <ul className="event-includes-list">
+                                    {event.extras.map((item, i) => (
+                                        <li key={i}>
+                                            <Sparkles size={16} className="event-check-icon" />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                        )}
+
                         <section className="event-detail-section">
                             <h2>Pour qui ?</h2>
-                            <p>{event.forWhom}</p>
+                            {event.forWhomList ? (
+                                <>
+                                    {event.forWhomIntro && <p>{event.forWhomIntro}</p>}
+                                    <ul className="event-includes-list">
+                                        {event.forWhomList.map((item, i) => (
+                                            <li key={i}>
+                                                <Sparkles size={16} className="event-check-icon" />
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    {event.forWhomOutro && <p>{event.forWhomOutro}</p>}
+                                </>
+                            ) : (
+                                <p>{event.forWhom}</p>
+                            )}
                         </section>
 
                         {event.takeaway && (
@@ -158,7 +201,7 @@ const EventDetail = () => {
                                 <MapPin size={20} />
                                 <div>
                                     <strong>{event.location}</strong>
-                                    <p>Les indications détaillées te seront envoyées après inscription.</p>
+                                    <p>{event.locationNote || 'Les indications détaillées te seront envoyées après inscription.'}</p>
                                 </div>
                             </div>
                         </section>
@@ -175,7 +218,7 @@ const EventDetail = () => {
                             <div className="event-booking-info">
                                 <div className="event-booking-row">
                                     <Calendar size={16} />
-                                    <span>{formatDate(event.date)}</span>
+                                    <span>{event.dateLabel || formatDate(event.date)}</span>
                                 </div>
                                 <div className="event-booking-row">
                                     <Clock size={16} />
