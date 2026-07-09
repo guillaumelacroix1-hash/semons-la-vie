@@ -151,7 +151,7 @@ const Home = () => {
                         </div>
                         <div className="about-img reveal-right">
                             <img
-                                src={`${import.meta.env.BASE_URL}chloe-2.jpeg`}
+                                src={`${import.meta.env.BASE_URL}chloe-lecture.jpg`}
                                 alt="Chloé Wisser"
                             />
                         </div>

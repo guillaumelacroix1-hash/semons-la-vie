@@ -69,7 +69,7 @@ const Culinary = () => {
         <div className="service-page animate-in" style={{ '--service-color': '#7AA476' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">
-                <ServiceHeroZoom src={`${import.meta.env.BASE_URL}crusine/WhatsApp%20Image%202026-04-01%20at%2015.16.23%20(5).jpeg`} alt="Ateliers de Crusine" />
+                <ServiceHeroZoom src={`${import.meta.env.BASE_URL}crusine/atelier-jus.jpg`} alt="Ateliers de Crusine" />
                 <div className="service-hero-banner-content">
                     <h1>Ateliers de Crusine</h1>
                     <p className="hero-subtitle">

@@ -33,7 +33,7 @@ const About = () => {
                 {/* ===== MON HISTOIRE — photo gauche, texte droite ===== */}
                 <section className="about-story-section">
                     <div className="about-story-photo">
-                        <img src={`${B}chloe-home.jpeg`} alt="Chloé Wisser" />
+                        <img src={`${B}qsn/chloe-portrait.jpg`} alt="Chloé Wisser" />
                     </div>
                     <div className="about-story-text">
                         <h2>Mon histoire</h2>
@@ -72,7 +72,7 @@ const About = () => {
                             elle peut éroder la confiance.
                         </p>
                         <div className="about-mosaic-img-large">
-                            <img src={`${B}qsn/qsn-ceramiste.jpg`} alt="" />
+                            <img src={`${B}qsn/chloe-bureau.jpg`} alt="Chloé Wisser prenant des notes à son bureau" />
                         </div>
                     </div>
                     <div className="about-mosaic-right">

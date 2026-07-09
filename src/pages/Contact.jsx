@@ -5,16 +5,31 @@ import './Contact.css';
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [sending, setSending] = useState(false);
+    const [sent, setSent] = useState(false);
+    const [sendError, setSendError] = useState(false);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        window.location.href = `mailto:contact@semons-la-vie.fr?subject=Contact depuis le site&body=${encodeURIComponent(
-            `Nom: ${formData.name}\n\n${formData.message}`
-        )}`;
+        setSending(true);
+        setSendError(false);
+        try {
+            const r = await fetch('/api/send-contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+            if (!r.ok) throw new Error('send failed');
+            setSent(true);
+        } catch {
+            setSendError(true);
+        } finally {
+            setSending(false);
+        }
     };
 
     return (
@@ -43,7 +58,7 @@ const Contact = () => {
                 <div className="contact-layout">
                     <div className="contact-photo-side">
                         <img
-                            src={`${import.meta.env.BASE_URL}cloclo.png`}
+                            src={`${import.meta.env.BASE_URL}contact-chloe.jpg`}
                             alt="Chloé Wisser"
                         />
                         <div className="contact-photo-overlay">
@@ -53,6 +68,15 @@ const Contact = () => {
                     </div>
 
                     <div className="contact-form-side">
+                        {sent ? (
+                            <div className="contact-form-success">
+                                <h3>Message envoyé !</h3>
+                                <p>
+                                    Merci pour ton message, je reviendrai vers toi très vite.
+                                    À très bientôt !
+                                </p>
+                            </div>
+                        ) : (
                         <form className="contact-form" onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label htmlFor="name">Nom</label>
@@ -90,10 +114,17 @@ const Contact = () => {
                                     required
                                 />
                             </div>
-                            <button type="submit" className="btn-primary">
-                                Faire le premier pas <ArrowRight size={16} />
+                            <button type="submit" className="btn-primary" disabled={sending}>
+                                {sending ? 'Envoi en cours…' : <>Faire le premier pas <ArrowRight size={16} /></>}
                             </button>
+                            {sendError && (
+                                <p className="contact-form-error">
+                                    Oups, l'envoi n'a pas fonctionné. Réessaie dans un instant, ou écris-moi
+                                    directement à contact@semons-la-vie.fr.
+                                </p>
+                            )}
                         </form>
+                        )}
 
                         <div className="contact-details">
                             <a href="tel:0661493586" className="contact-detail-item">
