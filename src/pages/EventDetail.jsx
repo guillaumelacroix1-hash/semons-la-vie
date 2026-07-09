@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Calendar, Clock, MapPin, Users, ArrowLeft, Check, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, ArrowLeft, Check, ArrowRight, Sparkles } from 'lucide-react';
 import { events, formatDate } from '../data/events';
 import './Events.css';
 
@@ -78,6 +78,20 @@ const EventDetail = () => {
                             <h2>Pour qui ?</h2>
                             <p>{event.forWhom}</p>
                         </section>
+
+                        {event.takeaway && (
+                            <section className="event-detail-section">
+                                <h2>Tu repartiras avec…</h2>
+                                <ul className="event-includes-list">
+                                    {event.takeaway.map((item, i) => (
+                                        <li key={i}>
+                                            <Sparkles size={16} className="event-check-icon" />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                        )}
 
                         <section className="event-detail-section">
                             <h2>Lieu</h2>
@@ -157,12 +171,15 @@ const EventDetail = () => {
                                 <div className="event-booking-success">
                                     <Check size={32} />
                                     <h4>Demande envoyée !</h4>
-                                    <p>Chloé te recontactera très vite pour confirmer ta réservation.</p>
+                                    <p>
+                                        Merci pour ta réservation, je reviendrai vers toi très bientôt pour confirmer
+                                        ton inscription et t'envoyer toutes les informations pratiques.
+                                    </p>
                                 </div>
                             )}
 
                             <p className="event-booking-note">
-                                Le paiement se fait sur place ou par virement. Chloé te contactera pour confirmer ta participation.
+                                {event.bookingNote || 'Le paiement se fait sur place ou par virement. Chloé te contactera pour confirmer ta participation.'}
                             </p>
                         </div>
                     </aside>

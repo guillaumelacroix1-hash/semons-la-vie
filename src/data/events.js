@@ -53,6 +53,44 @@ Ce séjour est pensé pour les personnes qui souhaitent découvrir le jeûne en 
         forWhom: 'Adultes en bonne santé générale. Un questionnaire de santé sera envoyé avant l\'inscription. Contre-indiqué en cas de grossesse, troubles alimentaires ou pathologie lourde.',
     },
     {
+        id: 'un-ete-aux-parfums-dorient',
+        title: 'Un été aux parfums d\'Orient',
+        category: 'Crusine',
+        categoryColor: 'green',
+        date: '2026-06-20',
+        time: '10h00 – 12h00',
+        duration: '2h',
+        location: 'Bréville',
+        price: 65,
+        spots: 8,
+        spotsLeft: 8,
+        image: `${import.meta.env.BASE_URL}events/crusine-orient.jpg`,
+        shortDesc: 'Découvre une cuisine vivante inspirée des parfums d\'Orient : gourmande, fraîche et pleine de vitalité.',
+        description: `L'été invite aux couleurs, aux épices douces et aux saveurs qui font voyager… Lors de cet atelier, je t'invite à découvrir une cuisine vivante inspirée des parfums d'Orient : gourmande, fraîche et pleine de vitalité.
+
+Ensemble, nous revisiterons plusieurs recettes emblématiques dans une version 100% crue, sans gluten et riche en nutriments, pour explorer une autre façon de cuisiner : plus légère, créative et respectueuse des besoins du corps.
+
+Au programme : aubergines à la marocaine, taboulé libanais et ses falafels, et makrouts revisités.
+
+L'objectif n'est pas seulement d'apprendre des recettes, mais aussi de découvrir qu'il est possible d'allier plaisir, gourmandise et vitalité.`,
+        includes: [
+            'Toutes les recettes en format papier',
+            'Les ingrédients bio fournis',
+            'Préparation sur place',
+            'Conseils et astuces pour refaire les recettes chez toi',
+            'Un temps d\'échange convivial en petit groupe',
+        ],
+        forWhom: 'Ouvert à toutes les personnes curieuses de découvrir une autre manière de cuisiner. Aucune expérience particulière n\'est nécessaire. Adapté aux personnes souhaitant découvrir une alimentation plus vivante, végétale et pleine de saveurs.',
+        takeaway: [
+            'Les recettes détaillées pour les refaire chez toi',
+            'De nouvelles idées d\'associations et d\'épices',
+            'Des astuces simples pour intégrer davantage de vitalité dans ton quotidien',
+            'Une autre vision de la cuisine : gourmande, créative et accessible',
+            'Un joli moment de partage et d\'inspiration',
+        ],
+        bookingNote: 'Ton inscription sera confirmée après réception du règlement. Les informations pratiques ainsi que l\'adresse exacte te seront envoyées après validation de ton inscription.',
+    },
+    {
         id: 'journee-sante-vitalite',
         title: 'Journée santé & vitalité',
         category: 'Santé',
