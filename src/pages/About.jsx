@@ -30,10 +30,18 @@ const About = () => {
 
             <div className="container">
 
-                {/* ===== MON HISTOIRE — photo gauche, texte droite ===== */}
+                {/* ===== MON HISTOIRE — bento gauche, texte droite ===== */}
                 <section className="about-story-section">
-                    <div className="about-story-photo">
-                        <img src={`${B}chloe-lecture.jpg`} alt="Chloé Wisser" />
+                    <div className="about-story-bento">
+                        <div className="about-bento-main">
+                            <img src={`${B}chloe-lecture.jpg`} alt="Chloé Wisser" />
+                        </div>
+                        <div className="about-bento-cover">
+                            <img src={`${B}qsn/bento-cuisine.jpg`} alt="Chloé lors d'un atelier de crusine" />
+                        </div>
+                        <div className="about-bento-accent">
+                            <img src={`${B}qsn/bento-fleurs.jpg`} alt="" />
+                        </div>
                     </div>
                     <div className="about-story-text">
                         <h2>Mon histoire</h2>
@@ -125,8 +133,13 @@ const About = () => {
                             pas figée. Elle évolue. Elle se cultive. Elle s'expérimente.
                         </p>
                     </div>
-                    <div className="about-closing-image">
-                        <img src={`${B}qsn/qsn-atelier.jpg`} alt="Chloé en atelier de crusine" />
+                    <div className="about-closing-bento">
+                        <div className="about-bento-main">
+                            <img src={`${B}qsn/qsn-atelier.jpg`} alt="Chloé en atelier de crusine" />
+                        </div>
+                        <div className="about-bento-accent">
+                            <img src={`${B}qsn/bento-bureau.jpg`} alt="" />
+                        </div>
                     </div>
                 </section>
 
