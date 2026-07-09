@@ -692,3 +692,20 @@
         padding: 1.5rem;
     }
 }
+
+/* ========== SÉANCES DE GROUPE (Sophrologie) — encart distinctif ========== */
+.service-group-sessions {
+    background: rgba(232, 200, 216, 0.25);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem 2rem;
+}
+
+.service-group-sessions .service-pack-card {
+    background: white;
+}
+
+@media (max-width: 768px) {
+    .service-group-sessions {
+        padding: 1.75rem 1.25rem;
+    }
+}

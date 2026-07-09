@@ -33,7 +33,7 @@ const About = () => {
                 {/* ===== MON HISTOIRE — photo gauche, texte droite ===== */}
                 <section className="about-story-section">
                     <div className="about-story-photo">
-                        <img src={`${B}qsn/chloe-portrait.jpg`} alt="Chloé Wisser" />
+                        <img src={`${B}chloe-lecture.jpg`} alt="Chloé Wisser" />
                     </div>
                     <div className="about-story-text">
                         <h2>Mon histoire</h2>
@@ -72,7 +72,7 @@ const About = () => {
                             elle peut éroder la confiance.
                         </p>
                         <div className="about-mosaic-img-large">
-                            <img src={`${B}qsn/chloe-bureau.jpg`} alt="Chloé Wisser prenant des notes à son bureau" />
+                            <img src={`${B}qsn/chloe-jus.jpg`} alt="Chloé Wisser" />
                         </div>
                     </div>
                     <div className="about-mosaic-right">
@@ -126,14 +126,20 @@ const About = () => {
                             Je continue à apprendre. À lire. À tester sur moi. À ajuster. Parce que la santé n'est
                             pas figée. Elle évolue. Elle se cultive. Elle s'expérimente.
                         </p>
-                        <h2 className="about-closing-quote">
-                            Et au coeur de tout cela, il y a une chose que je n'oublie jamais :
-                            <span className="about-closing-quote-final">La joie de vivre mérite d'être retrouvée.</span>
-                        </h2>
                     </div>
                     <div className="about-closing-image">
                         <img src={`${B}qsn/qsn-atelier.jpg`} alt="Chloé en atelier de crusine" />
                     </div>
+                </section>
+
+                {/* Citation de clôture — pleine largeur */}
+                <section className="about-quote-band">
+                    <p className="about-quote-intro">
+                        Et au coeur de tout cela, il y a une chose que je n'oublie jamais :
+                    </p>
+                    <h2 className="about-quote-main">
+                        « La joie de vivre mérite d'être retrouvée. »
+                    </h2>
                 </section>
 
                 {/* Mes valeurs */}

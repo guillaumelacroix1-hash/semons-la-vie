@@ -243,7 +243,7 @@ const Sophrology = () => {
                     </div>
 
                     {/* Séances de groupe — Voyage au cœur de soi */}
-                    <div className="service-content-section">
+                    <div className="service-content-section service-group-sessions">
                         <h2>Séances de groupe : Voyage au cœur de soi, au fil des saisons</h2>
                         <p>
                             Offre-toi chaque semaine un moment pour respirer, relâcher les tensions et retrouver

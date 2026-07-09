@@ -58,8 +58,8 @@ const Contact = () => {
                 <div className="contact-layout">
                     <div className="contact-photo-side">
                         <img
-                            src={`${import.meta.env.BASE_URL}contact-chloe.jpg`}
-                            alt="Chloé Wisser"
+                            src={`${import.meta.env.BASE_URL}contact-telephone.jpg`}
+                            alt="Chloé Wisser au téléphone"
                         />
                         <div className="contact-photo-overlay">
                             <strong>Chloé Wisser</strong>
