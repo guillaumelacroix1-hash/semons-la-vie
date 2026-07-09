@@ -13,7 +13,7 @@ const About = () => {
             {/* ===== HERO — même style que la page événements ===== */}
             <section className="about-banner">
                 <div className="about-banner-bg">
-                    <img src={`${B}qsn/qsn-banner.jpg`} alt="" />
+                    <img src={`${B}qsn/qsn-banner-meadow.jpg`} alt="" />
                 </div>
                 <div className="about-banner-content">
                     <span className="section-label" style={{ color: 'white' }}>À propos de moi</span>
@@ -66,14 +66,10 @@ const About = () => {
                             elle peut éroder la confiance.
                         </p>
                         <div className="about-mosaic-img-large">
-                            <img src={`${B}qsn/qsn3.jpg`} alt="" />
+                            <img src={`${B}qsn/qsn-ceramiste.jpg`} alt="" />
                         </div>
                     </div>
                     <div className="about-mosaic-right">
-                        <div className="about-mosaic-thumbs">
-                            <img src={`${B}qsn/qsn3.webp`} alt="" />
-                            <img src={`${B}qsn/qsn.webp`} alt="" />
-                        </div>
                         <p>
                             J'ai grandi dans un environnement où l'on faisait attention à ce que l'on mettait
                             dans son assiette, où les plantes avaient leur place, où l'on cherchait des solutions
@@ -117,20 +113,20 @@ const About = () => {
                             Mais au-delà des formations, ce qui me guide reste très simple.
                         </p>
                         <p className="about-closing-emphasis">
-                            Je ne détiens pas ta vérité.<br />
-                            Je t'accompagne à retrouver la tienne.
+                            Je n'ai pas toutes les réponses.<br />
+                            Je t'accompagne à retrouver les tiennes.
                         </p>
                         <p>
                             Je continue à apprendre. À lire. À tester sur moi. À ajuster. Parce que la santé n'est
                             pas figée. Elle évolue. Elle se cultive. Elle s'expérimente.
                         </p>
                         <h2 className="about-closing-quote">
-                            Et au coeur de tout cela, il y a une chose que je n'oublie jamais : la joie de vivre
-                            mérite d'être retrouvée.
+                            Et au coeur de tout cela, il y a une chose que je n'oublie jamais :
+                            <span className="about-closing-quote-final">La joie de vivre mérite d'être retrouvée.</span>
                         </h2>
                     </div>
                     <div className="about-closing-image">
-                        <img src={`${B}qsn/qsn.jpg`} alt="" />
+                        <img src={`${B}qsn/qsn-atelier.jpg`} alt="Chloé en atelier de crusine" />
                     </div>
                 </section>
 
@@ -148,8 +144,8 @@ const About = () => {
                             { file: 'joie-gratitude', title: 'Joie & gratitude', text: 'Savourer chaque instant et honorer ce qui nous nourrit.' },
                             { file: 'douceur-bienveillance', title: 'Douceur & bienveillance', text: 'Accueillir, sans jugement envers soi ou les autres.' },
                             { file: 'transmission', title: 'Transmission', text: 'Partager mes savoirs pour te rendre autonome.' },
-                            { file: 'sante-responsable', title: 'Santé responsable', text: 'Bio, local, de saison pour un bien-être durable.' },
-                            { file: 'ecoute-partage', title: 'Écoute & partage', text: 'Suivre ton instinct et grandir ensemble.' },
+                            { file: 'sante-responsable', title: 'Santé consciente', text: 'Retrouver une façon de prendre soin de soi plus respectueuse et durable.' },
+                            { file: 'ecoute-partage', title: 'Écoute & autonomie', text: 'T\'aider à retrouver confiance dans ce que ton corps te raconte.' },
                         ].map((v, i) => (
                             <div className="about-valeur-item" key={i}>
                                 <div className="about-valeur-icon">
@@ -175,8 +171,8 @@ const About = () => {
                     <div className="parcours-timeline">
                         {[
                             { year: '2019', name: 'Sophrologie', school: 'Institut Catherine Aliotta', icon: 'sophrologie', color: '#ffcfe7', textColor: '#8B3A60' },
-                            { year: '2022', name: 'Crusine vivante', school: 'Les cRAWquantes', icon: 'crusine', color: '#bdd7ba', textColor: '#2D5A28' },
                             { year: '2021–2024', name: 'Naturopathie', school: 'École Dargère Univers', icon: 'naturopathie', color: '#ffcf00', textColor: '#7A6200' },
+                            { year: '2022', name: 'Crusine vivante', school: 'Les cRAWquantes', icon: 'crusine', color: '#bdd7ba', textColor: '#2D5A28' },
                             { year: '2025', name: 'AromaTouch®', school: 'dōTerra', icon: 'aromatouch', color: '#6e70cc', textColor: '#fff' },
                         ].map((item, i) => (
                             <div className="parcours-card" key={i}>
@@ -191,6 +187,11 @@ const About = () => {
                         ))}
                     </div>
 
+                    <p className="parcours-mention">
+                        Formation en alimentation émotionnelle en cours : pour enrichir mon approche du lien
+                        entre émotions, comportement alimentaire et santé globale.
+                    </p>
+
                     <p className="parcours-closing">
                         Un parcours au croisement du corps, des émotions et de la nature… que je mets
                         aujourd'hui au service de ton bien-être.
@@ -201,8 +202,8 @@ const About = () => {
                 <section className="about-pratiques">
                     <h2>Mes pratiques</h2>
                     <p>
-                        Explore ton corps, ton souffle et tes émotions pour une transformation en douceur :
-                        de la compréhension à l'harmonisation physique, émotionnelle et énergétique.
+                        Un espace pour écouter ton corps, accueillir tes émotions et retrouver un équilibre
+                        qui te ressemble.
                     </p>
                     <div className="about-pratiques-grid reveal-stagger">
                         {[
