@@ -37,10 +37,10 @@ const About = () => {
                             <img src={`${B}chloe-lecture.jpg`} alt="Chloé Wisser" />
                         </div>
                         <div className="about-bento-cover">
-                            <img src={`${B}qsn/bento-cuisine.jpg`} alt="Chloé lors d'un atelier de crusine" />
+                            <img src={`${B}qsn/bento-extracteur.jpg`} alt="Jus verts fraîchement extraits" />
                         </div>
                         <div className="about-bento-accent">
-                            <img src={`${B}qsn/bento-fleurs.jpg`} alt="" />
+                            <img src={`${B}qsn/bento-livre.jpg`} alt="" />
                         </div>
                     </div>
                     <div className="about-story-text">
@@ -65,11 +65,8 @@ const About = () => {
                     </div>
                 </section>
 
-                {/* ===== SECTION 2 — image sticky + texte continu ===== */}
+                {/* ===== SECTION 2 — texte à gauche, image sticky à droite ===== */}
                 <section className="about-mosaic-section">
-                    <div className="about-mosaic-image">
-                        <img src={`${B}qsn/chloe-jus.jpg`} alt="Chloé Wisser" />
-                    </div>
                     <div className="about-mosaic-text">
                         <p>
                             Ces expériences ont semé en moi une conviction simple et forte : la santé n'est pas
@@ -100,6 +97,9 @@ const About = () => {
                             que j'ai compris combien le mental et le corps dialoguent en permanence — et combien il
                             est possible d'apprendre à les réconcilier.
                         </p>
+                    </div>
+                    <div className="about-mosaic-image">
+                        <img src={`${B}qsn/chloe-jus.jpg`} alt="Chloé Wisser" />
                     </div>
                 </section>
 
@@ -133,13 +133,8 @@ const About = () => {
                             pas figée. Elle évolue. Elle se cultive. Elle s'expérimente.
                         </p>
                     </div>
-                    <div className="about-closing-bento">
-                        <div className="about-bento-main">
-                            <img src={`${B}qsn/qsn-atelier.jpg`} alt="Chloé en atelier de crusine" />
-                        </div>
-                        <div className="about-bento-accent">
-                            <img src={`${B}qsn/bento-bureau.jpg`} alt="" />
-                        </div>
+                    <div className="about-closing-image">
+                        <img src={`${B}qsn/chloe-atelier-bandana.jpg`} alt="Chloé en atelier" />
                     </div>
                 </section>
 

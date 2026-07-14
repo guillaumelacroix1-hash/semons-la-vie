@@ -297,7 +297,7 @@ const Sophrology = () => {
                             </div>
                         </div>
                         <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', fontStyle: 'italic', marginTop: '1.5rem' }}>
-                            ✨ 1 séance découverte offerte en septembre !
+                            1 séance découverte offerte en septembre !
                         </p>
                     </div>
 
