@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown, Calendar, MapPin, Users, Sparkles } from 'lucide-react';
 import ServiceSidebar from '../components/ServiceSidebar';
 import ServiceHeroZoom from '../components/ServiceHeroZoom';
 import PageBottom from '../components/PageBottom';
@@ -244,27 +244,51 @@ const Sophrology = () => {
 
                     {/* Séances de groupe — Voyage au cœur de soi */}
                     <div className="service-content-section service-group-sessions">
-                        <h2>Séances de groupe : Voyage au cœur de soi, au fil des saisons</h2>
-                        <p>
-                            Offre-toi chaque semaine un moment pour respirer, relâcher les tensions et retrouver
-                            l'équilibre. Des séances de sophrologie liées à la saison pour accueillir les
-                            changements avec douceur : respiration, relaxation et visualisation pour écouter
-                            ton corps et apaiser le mental.
+                        <span className="group-sessions-kicker">Les séances de sophrologie en groupe</span>
+                        <h2>Voyage au cœur de soi, au fil des saisons</h2>
+                        <p className="group-sessions-lead">
+                            Offre-toi chaque semaine un moment pour ralentir, respirer et retrouver ton équilibre.
                         </p>
-                        <ul>
-                            <li>Apprendre à gérer le stress et les émotions,</li>
-                            <li>prendre un temps pour toi chaque semaine,</li>
-                            <li>retrouver vitalité et équilibre au fil des saisons,</li>
-                            <li>découvrir des techniques simples pour plus de sérénité.</li>
+                        <p>
+                            Au fil des saisons, les séances associent sophrologie (respiration, relaxation,
+                            visualisation) et, lorsque cela est pertinent, la diffusion ou l'utilisation d'huiles
+                            essentielles soigneusement choisies pour soutenir le thème du jour. En complément des
+                            pratiques vécues pendant la séance, je partage des conseils issus de la naturopathie
+                            (alimentation, hygiène de vie, plantes ou routines bien-être) afin que tu puisses
+                            intégrer facilement ces apprentissages dans ton quotidien.
+                        </p>
+                        <h3>Au fil des semaines, tu apprendras à :</h3>
+                        <ul className="group-learn-list">
+                            <li><Sparkles size={16} /> relâcher les tensions du corps et du mental,</li>
+                            <li><Sparkles size={16} /> apprendre des techniques simples pour mieux gérer le stress et les émotions,</li>
+                            <li><Sparkles size={16} /> mieux vivre les changements de saison,</li>
+                            <li><Sparkles size={16} /> t'offrir un véritable rendez-vous avec toi-même chaque semaine.</li>
                         </ul>
                         <p>
-                            <strong>Quand ?</strong> Tous les jeudis de 18h30 à 19h30, de septembre à avril
-                            (hors vacances scolaires)<br />
-                            <strong>Où ?</strong> Cabinet partagé à Cognac<br />
-                            <strong>Pour qui ?</strong> Séances accessibles à tous, débutants comme confirmés
+                            Chaque rencontre est une parenthèse de ressourcement, mais aussi un espace de
+                            transmission. Tu repars avec des outils concrets et accessibles pour prendre soin
+                            de toi, bien au-delà de la séance.
                         </p>
 
-                        <h3>Choisis ton rythme</h3>
+                        <div className="group-info-cards">
+                            <div className="group-info-card">
+                                <Calendar size={22} />
+                                <h4>Quand ?</h4>
+                                <p>Tous les jeudis de 18h30 à 19h30, de septembre à avril (hors vacances scolaires)</p>
+                            </div>
+                            <div className="group-info-card">
+                                <MapPin size={22} />
+                                <h4>Où ?</h4>
+                                <p>À l'Espace Honnebee à Châteaubernard</p>
+                            </div>
+                            <div className="group-info-card">
+                                <Users size={22} />
+                                <h4>Pour qui ?</h4>
+                                <p>Séances accessibles à tous, débutants comme confirmés</p>
+                            </div>
+                        </div>
+
+                        <h3>Choisis la formule qui te convient</h3>
                         <div className="service-packs">
                             <div className="service-pack-card">
                                 <div className="service-pack-header">

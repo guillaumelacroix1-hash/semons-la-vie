@@ -50,7 +50,7 @@ const Massage = () => {
         <div className="service-page animate-in" style={{ '--service-color': '#5B5EAB' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">
-                <ServiceHeroZoom src={`${import.meta.env.BASE_URL}services/massage.jpg`} alt="Rituel AromaTouch®" />
+                <ServiceHeroZoom src={`${import.meta.env.BASE_URL}services/aromatouch-cover.jpg`} alt="Rituel AromaTouch®" />
                 <div className="service-hero-banner-content">
                     <h1>Rituel AromaTouch®</h1>
                     <p className="hero-subtitle">

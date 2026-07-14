@@ -705,8 +705,80 @@
     background: white;
 }
 
+.group-sessions-kicker {
+    display: block;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #8B3A60;
+    margin-bottom: 0.35rem;
+}
+
+.group-sessions-lead {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-heading);
+}
+
+.group-learn-list {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+}
+
+.group-learn-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+
+.group-learn-list svg {
+    flex-shrink: 0;
+    color: #8B3A60;
+    transform: translateY(2px);
+}
+
+.group-info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0 2.5rem;
+}
+
+.group-info-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+}
+
+.group-info-card svg {
+    color: #8B3A60;
+    margin-bottom: 0.6rem;
+}
+
+.group-info-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    color: var(--color-heading);
+    margin-bottom: 0.5rem;
+}
+
+.group-info-card p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
 @media (max-width: 768px) {
     .service-group-sessions {
         padding: 1.75rem 1.25rem;
+    }
+
+    .group-info-cards {
+        grid-template-columns: 1fr;
     }
 }

@@ -39,13 +39,13 @@ const services = [
     {
         id: 'ateliers', label: 'Ateliers de crusine', icon: <img src={`${import.meta.env.BASE_URL}icons/service/crusine.svg`} alt="" className="service-svg-icon" />, link: '/ateliers-culinaires',
         color: '#7AA476',
-        image: `${import.meta.env.BASE_URL}crusine/WhatsApp%20Image%202026-04-01%20at%2015.16.23%20(5).jpeg`,
+        image: `${import.meta.env.BASE_URL}crusine/atelier-jus.jpg`,
         desc: 'Apprends à préparer des recettes végétales, crues et gourmandes lors d\'ateliers conviviaux.'
     },
     {
         id: 'massage', label: 'Rituel AromaTouch®', icon: <img src={`${import.meta.env.BASE_URL}icons/service/aromatouch.svg`} alt="" className="service-svg-icon" />, link: '/massage',
         color: '#5B5EAB',
-        image: `${import.meta.env.BASE_URL}services/massage.jpg`,
+        image: `${import.meta.env.BASE_URL}services/aromatouch-cover.jpg`,
         desc: 'Une expérience aux huiles essentielles pour favoriser la détente, relâcher les tensions et harmoniser le corps et l\'esprit.'
     },
 ];
@@ -387,7 +387,7 @@ const Home = () => {
                             {/* Ateliers culinaires packs */}
                             <div className={`services-tab-panel service-crusine ${activeService === 2 ? 'active' : ''}`}>
                                 <div className="services-tab-image">
-                                    <img src={`${import.meta.env.BASE_URL}crusine/WhatsApp%20Image%202026-04-01%20at%2015.16.23%20(5).jpeg`} alt="Ateliers culinaires" />
+                                    <img src={`${import.meta.env.BASE_URL}crusine/atelier-jus.jpg`} alt="Ateliers culinaires" />
                                 </div>
                                 <div className="services-tab-info">
                                     <h3>Ateliers Culinaires</h3>
@@ -424,7 +424,7 @@ const Home = () => {
                             {/* Massage packs */}
                             <div className={`services-tab-panel service-massage ${activeService === 3 ? 'active' : ''}`}>
                                 <div className="services-tab-image">
-                                    <img src={`${import.meta.env.BASE_URL}services/massage.jpg`} alt="Rituel AromaTouch®" />
+                                    <img src={`${import.meta.env.BASE_URL}services/aromatouch-cover.jpg`} alt="Rituel AromaTouch®" />
                                 </div>
                                 <div className="services-tab-info">
                                     <h3>Rituel AromaTouch®</h3>
