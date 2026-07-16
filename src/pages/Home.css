@@ -1224,6 +1224,21 @@
     color: var(--color-heading);
 }
 
+.workshop-date {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.workshop-date svg {
+    flex-shrink: 0;
+}
+
 .workshop-card p {
     font-size: 0.9rem;
     color: var(--color-text-light);

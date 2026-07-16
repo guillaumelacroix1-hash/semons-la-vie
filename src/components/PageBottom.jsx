@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Star, ArrowRight } from 'lucide-react';
-import { events } from '../data/events';
+import { Star, ArrowRight, Calendar } from 'lucide-react';
+import { events, formatDate } from '../data/events';
 import './PageBottom.css';
 
 const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Semons+la+Vie+-+Naturopathie+%26+Sophrologie/data=!4m2!3m1!1s0x0:0xe1ad6ebf2d9f6588';
@@ -133,6 +133,7 @@ const PageBottom = () => {
                                 <div className="workshop-body">
                                     <span className={`workshop-tag ${ev.categoryColor}`}>{ev.category}</span>
                                     <h4>{ev.title}</h4>
+                                    <span className="workshop-date"><Calendar size={14} /> {ev.dateLabel || formatDate(ev.date)}</span>
                                     <p>{ev.shortDesc}</p>
                                     <div className="workshop-meta">
                                         <span className="workshop-price">{ev.price}€</span>

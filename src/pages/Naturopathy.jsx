@@ -247,14 +247,12 @@ const Naturopathy = () => {
                             <div className="service-pack-card">
                                 <div className="service-pack-header">
                                     <h4>Rééquilibrage alimentaire</h4>
-                                    <span className="service-pack-price">60€</span>
                                 </div>
                                 <p>Un accompagnement personnalisé (1h) pour repenser ton alimentation et adopter de nouvelles habitudes favorisant vitalité et bien-être.</p>
                             </div>
                             <div className="service-pack-card">
                                 <div className="service-pack-header">
                                     <h4>Phytothérapie</h4>
-                                    <span className="service-pack-price">60€</span>
                                 </div>
                                 <p>Un protocole sur-mesure (1h) à base d'huiles essentielles, bourgeons et fleurs de Bach, pour apaiser les émotions et rétablir l'équilibre intérieur.</p>
                             </div>

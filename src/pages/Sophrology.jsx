@@ -244,8 +244,8 @@ const Sophrology = () => {
 
                     {/* Séances de groupe — Voyage au cœur de soi */}
                     <div className="service-content-section service-group-sessions">
+                        <h2>Voyage au coeur de soi, au fil des saisons</h2>
                         <span className="group-sessions-kicker">Les séances de sophrologie en groupe</span>
-                        <h2>Voyage au cœur de soi, au fil des saisons</h2>
                         <p className="group-sessions-lead">
                             Offre-toi chaque semaine un moment pour ralentir, respirer et retrouver ton équilibre.
                         </p>
@@ -302,7 +302,7 @@ const Sophrology = () => {
                                     <h4>Carte liberté</h4>
                                     <span className="service-pack-price">100€</span>
                                 </div>
-                                <p>10 séances + 1 offerte, à utiliser à ton rythme tout au long de l'année.</p>
+                                <p>10 séances, à utiliser à ton rythme tout au long de l'année.</p>
                             </div>
                             <div className="service-pack-card">
                                 <div className="service-pack-header">
@@ -321,7 +321,7 @@ const Sophrology = () => {
                             </div>
                         </div>
                         <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', fontStyle: 'italic', marginTop: '1.5rem' }}>
-                            1 séance découverte offerte en septembre !
+                            1 séance découverte offerte !
                         </p>
                     </div>
 
