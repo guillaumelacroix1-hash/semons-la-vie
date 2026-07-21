@@ -105,6 +105,9 @@ const About = () => {
 
                 {/* ===== SECTION 3 — texte gauche + image droite ===== */}
                 <section className="about-closing-section">
+                    <div className="about-closing-image">
+                        <img src={`${B}qsn/chloe-atelier-bandana.jpg`} alt="Chloé en atelier" />
+                    </div>
                     <div className="about-closing-text">
                         <p>
                             Mais je ressentais le besoin d'aller plus loin. De comprendre plus finement le
@@ -132,9 +135,6 @@ const About = () => {
                             Je continue à apprendre. À lire. À tester sur moi. À ajuster. Parce que la santé n'est
                             pas figée. Elle évolue. Elle se cultive. Elle s'expérimente.
                         </p>
-                    </div>
-                    <div className="about-closing-image">
-                        <img src={`${B}qsn/chloe-atelier-bandana.jpg`} alt="Chloé en atelier" />
                     </div>
                 </section>
 
