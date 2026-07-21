@@ -65,10 +65,9 @@
     margin: 0;
 }
 
-/* ========== MON HISTOIRE — bento + texte ========== */
-/* align-items par défaut (stretch) : la colonne bento prend exactement la
-   hauteur de la colonne de texte, quelle que soit sa longueur. Les 3 tuiles
-   se répartissent cette hauteur, donc jamais de vide en dessous. */
+/* ========== MON HISTOIRE — photo seule + texte ========== */
+/* align-items par défaut (stretch) : la photo prend exactement la hauteur
+   de la colonne de texte (object-fit: cover), donc jamais de vide. */
 .about-story-section {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
@@ -76,25 +75,41 @@
     margin-bottom: 5rem;
 }
 
-.about-story-bento {
+.about-story-photo {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    min-height: 420px;
+}
+
+.about-story-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Bento de la section mosaïque (sticky pendant que le texte défile) */
+.about-mosaic-bento {
+    position: sticky;
+    top: 6rem;
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 1rem;
-    min-height: 420px;
+    height: 560px;
 }
 
-.about-story-bento .about-bento-main {
+.about-mosaic-bento .about-bento-main {
     grid-row: 1 / 3;
     grid-column: 1;
 }
 
-.about-story-bento .about-bento-cover {
+.about-mosaic-bento .about-bento-cover {
     grid-row: 1;
     grid-column: 2;
 }
 
-.about-story-bento .about-bento-accent {
+.about-mosaic-bento .about-bento-accent {
     grid-row: 2;
     grid-column: 2;
 }
@@ -129,9 +144,9 @@
     margin-bottom: 1.5rem;
 }
 
-/* ========== MOSAÏQUE — texte à gauche, image sticky à droite ========== */
-/* L'image reste visible (sticky) pendant que le texte, plus long, défile à côté :
-   évite le grand vide blanc qui apparaissait quand les 2 colonnes de texte
+/* ========== MOSAÏQUE — texte à gauche, bento sticky à droite ========== */
+/* Le bento reste visible (sticky) pendant que le texte, plus long, défile à côté :
+   évite le grand vide blanc qui apparaissait quand les 2 colonnes
    avaient des hauteurs très différentes. */
 .about-mosaic-section {
     display: grid;
@@ -139,19 +154,6 @@
     gap: 4rem;
     margin-bottom: 5rem;
     align-items: start;
-}
-
-.about-mosaic-image {
-    position: sticky;
-    top: 6rem;
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-}
-
-.about-mosaic-image img {
-    width: 100%;
-    height: auto;
-    display: block;
 }
 
 .about-mosaic-text p {
@@ -243,12 +245,13 @@
         gap: 2rem;
     }
 
-    .about-story-bento,
+    .about-story-photo,
     .about-closing-image {
         min-height: 320px;
     }
 
-    /* En colonne unique, l'image cover ne doit pas devenir démesurée */
+    /* En colonne unique, les images cover ne doivent pas devenir démesurées */
+    .about-story-photo,
     .about-closing-image {
         max-height: 420px;
     }
@@ -258,8 +261,9 @@
         gap: 2rem;
     }
 
-    .about-mosaic-image {
+    .about-mosaic-bento {
         position: static;
+        height: 420px;
     }
 
     .about-closing-section {

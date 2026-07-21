@@ -30,18 +30,10 @@ const About = () => {
 
             <div className="container">
 
-                {/* ===== MON HISTOIRE — bento gauche, texte droite ===== */}
+                {/* ===== MON HISTOIRE — photo seule à gauche, texte droite ===== */}
                 <section className="about-story-section">
-                    <div className="about-story-bento">
-                        <div className="about-bento-main">
-                            <img src={`${B}chloe-lecture.jpg`} alt="Chloé Wisser" />
-                        </div>
-                        <div className="about-bento-cover">
-                            <img src={`${B}qsn/bento-extracteur.jpg`} alt="Jus verts fraîchement extraits" />
-                        </div>
-                        <div className="about-bento-accent">
-                            <img src={`${B}qsn/bento-livre.jpg`} alt="" />
-                        </div>
+                    <div className="about-story-photo">
+                        <img src={`${B}chloe-lecture.jpg`} alt="Chloé Wisser" />
                     </div>
                     <div className="about-story-text">
                         <h2>Mon histoire</h2>
@@ -98,8 +90,16 @@ const About = () => {
                             est possible d'apprendre à les réconcilier.
                         </p>
                     </div>
-                    <div className="about-mosaic-image">
-                        <img src={`${B}qsn/chloe-jus.jpg`} alt="Chloé Wisser" />
+                    <div className="about-mosaic-bento">
+                        <div className="about-bento-main">
+                            <img src={`${B}qsn/chloe-jus.jpg`} alt="Chloé Wisser" />
+                        </div>
+                        <div className="about-bento-cover">
+                            <img src={`${B}qsn/bento-pomme.jpg`} alt="Préparation d'un jus frais à l'extracteur" />
+                        </div>
+                        <div className="about-bento-accent">
+                            <img src={`${B}qsn/bento-livre.jpg`} alt="" />
+                        </div>
                     </div>
                 </section>
 
