@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Calendar, Clock, MapPin, Users, ArrowLeft, Check, ArrowRight, Sparkles } from 'lucide-react';
 import { events, formatDate } from '../data/events';
@@ -14,6 +14,7 @@ const EventDetail = () => {
     const [submitted, setSubmitted] = useState(false);
     const [sending, setSending] = useState(false);
     const [sendError, setSendError] = useState(false);
+    const honeypotRef = useRef(null);
 
     if (!event) {
         return (
@@ -44,6 +45,7 @@ const EventDetail = () => {
                     eventTime: event.time,
                     eventLocation: event.location,
                     ...form,
+                    website: honeypotRef.current?.value || '',
                 }),
             });
             if (!r.ok) throw new Error('send failed');
@@ -239,6 +241,16 @@ const EventDetail = () => {
 
                             {!submitted ? (
                                 <form className="event-booking-form" onSubmit={handleSubmit}>
+                                    {/* Honeypot anti-bot : masqué aux humains, rempli par les robots */}
+                                    <input
+                                        ref={honeypotRef}
+                                        type="text"
+                                        name="website"
+                                        tabIndex="-1"
+                                        autoComplete="off"
+                                        aria-hidden="true"
+                                        className="hp-field"
+                                    />
                                     <input
                                         type="text"
                                         placeholder="Ton nom complet"

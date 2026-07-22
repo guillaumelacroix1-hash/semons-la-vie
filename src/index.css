@@ -436,3 +436,12 @@ button {
 .bg-light {
   background-color: var(--color-bg-light);
 }
+/* Champ honeypot anti-bot : invisible et hors du flux, jamais rempli par un humain */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}

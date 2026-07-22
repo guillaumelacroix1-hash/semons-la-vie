@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Phone, Mail, MapPin, Clock, ArrowRight } from 'lucide-react';
 import Seo from '../components/Seo';
 import './Contact.css';
@@ -8,6 +8,7 @@ const Contact = () => {
     const [sending, setSending] = useState(false);
     const [sent, setSent] = useState(false);
     const [sendError, setSendError] = useState(false);
+    const honeypotRef = useRef(null);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,7 +22,7 @@ const Contact = () => {
             const r = await fetch('/api/send-contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, website: honeypotRef.current?.value || '' }),
             });
             if (!r.ok) throw new Error('send failed');
             setSent(true);
@@ -78,6 +79,16 @@ const Contact = () => {
                             </div>
                         ) : (
                         <form className="contact-form" onSubmit={handleSubmit}>
+                            {/* Honeypot anti-bot : masqué aux humains, rempli par les robots */}
+                            <input
+                                ref={honeypotRef}
+                                type="text"
+                                name="website"
+                                tabIndex="-1"
+                                autoComplete="off"
+                                aria-hidden="true"
+                                className="hp-field"
+                            />
                             <div className="form-group">
                                 <label htmlFor="name">Nom</label>
                                 <input

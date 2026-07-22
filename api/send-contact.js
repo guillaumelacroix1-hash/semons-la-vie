@@ -8,7 +8,13 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Méthode non autorisée' });
     }
 
-    const { name, email, message } = req.body || {};
+    const { name, email, message, website } = req.body || {};
+
+    // Honeypot anti-bot : ce champ est masqué en CSS, seuls les robots le remplissent.
+    // On répond OK pour ne pas leur signaler le filtre, mais on n'envoie rien.
+    if (website) {
+        return res.status(200).json({ ok: true });
+    }
 
     if (!name || !email || !message) {
         return res.status(400).json({ error: 'Champs requis manquants' });
