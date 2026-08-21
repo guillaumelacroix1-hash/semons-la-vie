@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, MapPin, Clock, Users } from 'lucide-react';
-import { events, formatDate } from '../data/events';
+import { upcomingEvents, formatDate } from '../data/events';
 import Seo from '../components/Seo';
 import './Events.css';
 
-const categories = ['Tous', ...new Set(events.map(e => e.category))];
-
 const Events = () => {
     const [filter, setFilter] = useState('Tous');
+    const events = useMemo(() => upcomingEvents(), []);
+    const categories = useMemo(() => ['Tous', ...new Set(events.map(e => e.category))], [events]);
 
     const filtered = filter === 'Tous' ? events : events.filter(e => e.category === filter);
 
@@ -38,7 +38,20 @@ const Events = () => {
             </div>
 
             <div className="container">
+                {/* Aucun événement à venir : message d'attente plutôt qu'une page vide */}
+                {events.length === 0 && (
+                    <div className="events-empty">
+                        <h2>De nouvelles dates arrivent bientôt</h2>
+                        <p>
+                            Aucun événement n'est programmé pour le moment. Écris-moi pour être prévenue
+                            en priorité des prochains ateliers et séjours.
+                        </p>
+                        <Link to="/contact" className="btn-primary">Me contacter</Link>
+                    </div>
+                )}
+
                 {/* Filtres */}
+                {events.length > 0 && (
                 <div className="events-filters">
                     {categories.map(cat => (
                         <button
@@ -50,6 +63,7 @@ const Events = () => {
                         </button>
                     ))}
                 </div>
+                )}
 
                 {/* Liste */}
                 <div className="events-grid">

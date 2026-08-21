@@ -593,3 +593,26 @@
         padding: 2rem 1.5rem;
     }
 }
+
+/* État vide : aucun événement à venir */
+.events-empty {
+    text-align: center;
+    max-width: 560px;
+    margin: 4rem auto 5rem;
+    padding: 3rem 2rem;
+    background: var(--color-bg-light);
+    border-radius: var(--radius-xl);
+}
+
+.events-empty h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--color-heading);
+    margin-bottom: 1rem;
+}
+
+.events-empty p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 1.75rem;
+}

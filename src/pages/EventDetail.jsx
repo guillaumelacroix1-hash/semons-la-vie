@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Calendar, Clock, MapPin, Users, ArrowLeft, Check, ArrowRight, Sparkles } from 'lucide-react';
-import { events, formatDate } from '../data/events';
+import { events, upcomingEvents, formatDate } from '../data/events';
 import Seo from '../components/Seo';
 import './Events.css';
 
@@ -29,7 +29,7 @@ const EventDetail = () => {
         );
     }
 
-    const otherEvents = events.filter(e => e.id !== id).slice(0, 3);
+    const otherEvents = upcomingEvents().filter(e => e.id !== id).slice(0, 3);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

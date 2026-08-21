@@ -153,7 +153,78 @@ Un week-end pour ralentir, souffler et revenir à l'essentiel.`,
         ],
         locationNote: 'Le lieu exact ainsi que toutes les informations pratiques seront envoyés après validation de l\'inscription.',
     },
+    {
+        id: 'weekend-jeune-doux-royan-octobre',
+        title: 'Un week-end pour te reconnecter à ton corps : jeûne doux & régénération',
+        category: 'Bien-être',
+        categoryColor: 'purple',
+        date: '2026-10-23',
+        endDate: '2026-10-25',
+        dateLabel: 'Du vendredi 23 au dimanche 25 octobre 2026',
+        time: 'Arrivée vendredi 18h – Départ dimanche 18h',
+        duration: '3 jours / 2 nuits',
+        location: 'Royan, à deux pas de l\'océan',
+        price: 250,
+        spots: 6,
+        spotsLeft: 6,
+        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop',
+        shortDesc: 'Trois jours de jeûne doux et de repos physiologique à deux pas de l\'océan, pour ralentir, récupérer et retrouver ta vitalité.',
+        description: `Parfois, notre corps demande simplement une pause. Une pause du rythme quotidien, des sollicitations permanentes, des habitudes qui s'accumulent… pour retrouver plus de légèreté, d'écoute et de vitalité.
+
+Durant ce week-end, je t'invite à vivre une expérience douce autour du jeûne et du repos physiologique, dans un cadre ressourçant à quelques pas de l'océan.
+
+L'objectif n'est pas la performance ni la privation, mais de créer les conditions favorables pour laisser le corps ralentir, récupérer et retrouver son intelligence naturelle.
+
+Un week-end pour ralentir, souffler et revenir à l'essentiel.`,
+        program: [
+            'Accompagnement autour du jeûne doux',
+            'Mouvements et réveils corporels',
+            'Sophrologie, relaxation et respirations',
+            'Balades au bord de l\'océan',
+            'Temps calmes et moments de récupération',
+            'Hammam/sauna aux thermes de Saujon',
+            'Temps d\'échanges et de partage',
+        ],
+        includes: [
+            'Hébergement durant les 3 jours / 2 nuits',
+            'Accompagnement pendant toute la durée du séjour',
+            'Sophrologie et temps de relaxation',
+            'Activités et temps de partage',
+            'Supports pratiques et conseils',
+        ],
+        extras: [
+            'Rituel AromaTouch®',
+            'Massage bien-être assis',
+        ],
+        forWhomIntro: 'Ce week-end est fait pour toi si :',
+        forWhomList: [
+            'Tu ressens le besoin de faire une pause',
+            'Tu te sens fatiguée ou surchargée',
+            'Tu souhaites vivre une expérience de reconnexion au corps',
+            'Tu veux découvrir le jeûne dans un cadre rassurant et accompagné',
+        ],
+        forWhomOutro: 'Ce séjour est accessible aux débutantes. Certaines contre-indications au jeûne existent : un échange préalable permettra de vérifier ensemble si ce séjour est adapté à ta situation.',
+        takeaway: [
+            'Une sensation de légèreté physique et mentale',
+            'Des outils simples pour ralentir au quotidien',
+            'Une meilleure écoute de ton corps',
+            'Une expérience ressourçante vécue pour toi',
+            'Plus de clarté, de calme et de vitalité',
+        ],
+        locationNote: 'Le lieu exact ainsi que toutes les informations pratiques seront envoyés après validation de l\'inscription.',
+    },
 ];
+
+// Les listings n'affichent que les événements à venir : un événement dont la date
+// (ou la date de fin, pour un séjour) est passée disparaît automatiquement, sans
+// intervention. Les pages de détail restent accessibles par URL directe.
+export const upcomingEvents = () => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return events
+        .filter((e) => new Date(`${e.endDate || e.date}T23:59:59`) >= today)
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+};
 
 export const formatDate = (dateStr) => {
     const date = new Date(dateStr + 'T00:00:00');

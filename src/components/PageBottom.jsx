@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Star, ArrowRight, Calendar } from 'lucide-react';
-import { events, formatDate } from '../data/events';
+import { upcomingEvents, formatDate } from '../data/events';
 import './PageBottom.css';
 
 const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Semons+la+Vie+-+Naturopathie+%26+Sophrologie/data=!4m2!3m1!1s0x0:0xe1ad6ebf2d9f6588';
@@ -89,10 +89,12 @@ const PageBottom = () => {
     }, []);
 
     const testimonials = reviews || fallbackTestimonials;
+    const nextEvents = upcomingEvents().slice(0, 3);
 
     return (
         <>
-            {/* Ateliers & événements */}
+            {/* Ateliers & événements — masqué s'il n'y a aucune date à venir */}
+            {nextEvents.length > 0 && (
             <section
                 className="workshops-section"
                 id="ateliers"
@@ -123,7 +125,7 @@ const PageBottom = () => {
                     </div>
 
                     <div className="workshops-grid reveal-stagger">
-                        {events.slice(0, 3).map((ev) => (
+                        {nextEvents.map((ev) => (
                             <div className="workshop-card" key={ev.id}>
                                 <img
                                     src={ev.image}
@@ -145,6 +147,7 @@ const PageBottom = () => {
                     </div>
                 </div>
             </section>
+            )}
 
             {/* Témoignages */}
             <section className="testimonials-section">
