@@ -218,13 +218,15 @@ Un week-end pour ralentir, souffler et revenir à l'essentiel.`,
 // Les listings n'affichent que les événements à venir : un événement dont la date
 // (ou la date de fin, pour un séjour) est passée disparaît automatiquement, sans
 // intervention. Les pages de détail restent accessibles par URL directe.
-export const upcomingEvents = () => {
+export const filterUpcoming = (list) => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    return events
+    return (list || [])
         .filter((e) => new Date(`${e.endDate || e.date}T23:59:59`) >= today)
         .sort((a, b) => new Date(a.date) - new Date(b.date));
 };
+
+export const upcomingEvents = () => filterUpcoming(events);
 
 export const formatDate = (dateStr) => {
     const date = new Date(dateStr + 'T00:00:00');

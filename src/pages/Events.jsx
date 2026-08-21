@@ -1,13 +1,14 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, MapPin, Clock, Users } from 'lucide-react';
-import { upcomingEvents, formatDate } from '../data/events';
+import { formatDate } from '../data/events';
+import { useUpcomingEvents } from '../data/useEvents';
 import Seo from '../components/Seo';
 import './Events.css';
 
 const Events = () => {
     const [filter, setFilter] = useState('Tous');
-    const events = useMemo(() => upcomingEvents(), []);
+    const events = useUpcomingEvents();
     const categories = useMemo(() => ['Tous', ...new Set(events.map(e => e.category))], [events]);
 
     const filtered = filter === 'Tous' ? events : events.filter(e => e.category === filter);
@@ -82,7 +83,7 @@ const Events = () => {
                                 <div className="event-card-details">
                                     <span><Calendar size={14} /> {event.dateLabel || formatDate(event.date)}</span>
                                     <span><Clock size={14} /> {event.duration}</span>
-                                    <span><MapPin size={14} /> {event.location.split(',')[0]}</span>
+                                    <span><MapPin size={14} /> {(event.location || '').split(',')[0]}</span>
                                     <span><Users size={14} /> {event.spotsLeft} places restantes</span>
                                 </div>
                                 <div className="event-card-footer">

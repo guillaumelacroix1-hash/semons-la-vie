@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Star, ArrowRight, Calendar } from 'lucide-react';
-import { upcomingEvents, formatDate } from '../data/events';
+import { formatDate } from '../data/events';
+import { useUpcomingEvents } from '../data/useEvents';
 import './PageBottom.css';
 
 const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Semons+la+Vie+-+Naturopathie+%26+Sophrologie/data=!4m2!3m1!1s0x0:0xe1ad6ebf2d9f6588';
@@ -89,7 +90,7 @@ const PageBottom = () => {
     }, []);
 
     const testimonials = reviews || fallbackTestimonials;
-    const nextEvents = upcomingEvents().slice(0, 3);
+    const nextEvents = useUpcomingEvents().slice(0, 3);
 
     return (
         <>

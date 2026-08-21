@@ -16,6 +16,7 @@ import EventDetail from './pages/EventDetail';
 import MentionsLegales from './pages/MentionsLegales';
 import CGV from './pages/CGV';
 import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite';
+import Admin from './pages/Admin';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -72,15 +73,27 @@ function ScrollRevealInit() {
   return null;
 }
 
+// Le backoffice s'affiche sans la navigation ni le pied de page du site public.
+function SiteChrome({ children }) {
+  const { pathname } = useLocation();
+  if (pathname.startsWith('/admin')) return children;
+  return (
+    <div className="app-container">
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
+    </div>
+  );
+}
+
 function App() {
   return (
     <Router basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <ScrollRevealInit />
-      <div className="app-container">
-        <Navbar />
-        <main>
+      <SiteChrome>
           <Routes>
+            <Route path="/admin" element={<Admin />} />
             <Route path="/" element={<Home />} />
             <Route path="/naturopathie" element={<Naturopathy />} />
             <Route path="/sophrologie" element={<Sophrology />} />
@@ -96,9 +109,7 @@ function App() {
             <Route path="/cgv" element={<CGV />} />
             <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
           </Routes>
-        </main>
-        <Footer />
-      </div>
+      </SiteChrome>
     </Router>
   );
 }

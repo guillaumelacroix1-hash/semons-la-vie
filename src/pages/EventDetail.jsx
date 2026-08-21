@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Calendar, Clock, MapPin, Users, ArrowLeft, Check, ArrowRight, Sparkles } from 'lucide-react';
-import { events, upcomingEvents, formatDate } from '../data/events';
+import { formatDate, filterUpcoming } from '../data/events';
+import { useEvents } from '../data/useEvents';
 import Seo from '../components/Seo';
 import './Events.css';
 
@@ -9,6 +10,7 @@ const SITE_URL = 'https://www.semons-la-vie.fr';
 
 const EventDetail = () => {
     const { id } = useParams();
+    const events = useEvents();
     const event = events.find(e => e.id === id);
     const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
     const [submitted, setSubmitted] = useState(false);
@@ -29,7 +31,7 @@ const EventDetail = () => {
         );
     }
 
-    const otherEvents = upcomingEvents().filter(e => e.id !== id).slice(0, 3);
+    const otherEvents = filterUpcoming(events).filter(e => e.id !== id).slice(0, 3);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -57,7 +59,8 @@ const EventDetail = () => {
         }
     };
 
-    const absoluteImage = event.image.startsWith('http') ? event.image : `${SITE_URL}${event.image}`;
+    const image = event.image || '';
+    const absoluteImage = image.startsWith('http') ? image : `${SITE_URL}${image}`;
 
     return (
         <div className="events-page animate-in">
@@ -119,10 +122,10 @@ const EventDetail = () => {
                     <div className="event-detail-main">
                         <section className="event-detail-section">
                             <h2>À propos de cet événement</h2>
-                            {event.description.split('\n\n').map((p, i) => (
+                            {(event.description || '').split('\n\n').filter(Boolean).map((p, i) => (
                                 <p key={i}>{p}</p>
                             ))}
-                            {event.program && (
+                            {event.program?.length > 0 && (
                                 <>
                                     <h3 className="event-program-title">Au programme :</h3>
                                     <ul className="event-includes-list">
@@ -137,19 +140,21 @@ const EventDetail = () => {
                             )}
                         </section>
 
-                        <section className="event-detail-section">
-                            <h2>Ce qui est inclus</h2>
-                            <ul className="event-includes-list">
-                                {event.includes.map((item, i) => (
-                                    <li key={i}>
-                                        <Check size={16} className="event-check-icon" />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </section>
+                        {event.includes?.length > 0 && (
+                            <section className="event-detail-section">
+                                <h2>Ce qui est inclus</h2>
+                                <ul className="event-includes-list">
+                                    {event.includes.map((item, i) => (
+                                        <li key={i}>
+                                            <Check size={16} className="event-check-icon" />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                        )}
 
-                        {event.extras && (
+                        {event.extras?.length > 0 && (
                             <section className="event-detail-section">
                                 <h2>En supplément (facultatif)</h2>
                                 <ul className="event-includes-list">
@@ -165,7 +170,7 @@ const EventDetail = () => {
 
                         <section className="event-detail-section">
                             <h2>Pour qui ?</h2>
-                            {event.forWhomList ? (
+                            {event.forWhomList?.length > 0 ? (
                                 <>
                                     {event.forWhomIntro && <p>{event.forWhomIntro}</p>}
                                     <ul className="event-includes-list">
@@ -183,7 +188,7 @@ const EventDetail = () => {
                             )}
                         </section>
 
-                        {event.takeaway && (
+                        {event.takeaway?.length > 0 && (
                             <section className="event-detail-section">
                                 <h2>Tu repartiras avec…</h2>
                                 <ul className="event-includes-list">
