@@ -213,6 +213,43 @@ Un week-end pour ralentir, souffler et revenir à l'essentiel.`,
         ],
         locationNote: 'Le lieu exact ainsi que toutes les informations pratiques seront envoyés après validation de l\'inscription.',
     },
+    {
+        id: 'gouters-encas-crus',
+        title: 'Goûters & encas crus : des idées gourmandes à emporter',
+        category: 'Crusine',
+        categoryColor: 'green',
+        date: '2026-09-12',
+        time: '16h00 – 18h00',
+        duration: '2h',
+        location: 'Bréville',
+        price: 65,
+        spots: 8,
+        spotsLeft: 8,
+        image: '/events/gouters-encas-crus.jpg',
+        shortDesc: 'Découvre des goûters et encas 100% crus, gourmands et faciles à reproduire chez toi, dans un atelier convivial en petit groupe.',
+        description: `Pendant 2 heures, nous allons mettre les mains à la pâte, goûter, expérimenter et découvrir ensemble une autre façon de préparer nos petites pauses gourmandes.
+
+Au programme, tu pourras notamment découvrir des ingrédients parfois méconnus, des façons surprenantes d'utiliser certains aliments, le principe de la déshydratation et des cuirs de fruits, des préparations faciles à emporter pour les petites faims, et surtout des bases que tu pourras ensuite décliner selon tes envies.
+
+Parce que l'idée n'est pas simplement de repartir avec quelques recettes. J'ai envie que tu repartes aussi avec des techniques, des astuces et des idées facilement reproductibles à la maison, même sans avoir tout le matériel de crusine.
+
+Et peut-être avec cette petite pensée : « Finalement, un goûter gourmand peut aussi être simple, surprenant et plein de bonnes choses. »
+
+Les places sont volontairement limitées pour préserver un atelier chaleureux, pratique et convivial en petit groupe.`,
+        program: [
+            'Des ingrédients parfois méconnus comme la caroube, le souchet ou le sarrasin germé',
+            'Des façons surprenantes d\'utiliser certains aliments, même la patate douce crue en version sucrée',
+            'Le principe de la déshydratation et des cuirs de fruits',
+            'Des préparations faciles à emporter pour les petites faims',
+            'Des bases que tu pourras ensuite décliner selon tes envies',
+        ],
+        takeaway: [
+            'Les recettes de l\'atelier',
+            'Des conseils et astuces pour les refaire chez toi',
+            'Plein d\'idées pour des encas gourmands',
+        ],
+        locationNote: 'L\'adresse exacte à Bréville te sera envoyée après ton inscription.',
+    },
 ];
 
 // Les listings n'affichent que les événements à venir : un événement dont la date

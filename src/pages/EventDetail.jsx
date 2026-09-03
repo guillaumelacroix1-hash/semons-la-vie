@@ -168,25 +168,27 @@ const EventDetail = () => {
                             </section>
                         )}
 
-                        <section className="event-detail-section">
-                            <h2>Pour qui ?</h2>
-                            {event.forWhomList?.length > 0 ? (
-                                <>
-                                    {event.forWhomIntro && <p>{event.forWhomIntro}</p>}
-                                    <ul className="event-includes-list">
-                                        {event.forWhomList.map((item, i) => (
-                                            <li key={i}>
-                                                <Sparkles size={16} className="event-check-icon" />
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    {event.forWhomOutro && <p>{event.forWhomOutro}</p>}
-                                </>
-                            ) : (
-                                <p>{event.forWhom}</p>
-                            )}
-                        </section>
+                        {(event.forWhomList?.length > 0 || event.forWhom) && (
+                            <section className="event-detail-section">
+                                <h2>Pour qui ?</h2>
+                                {event.forWhomList?.length > 0 ? (
+                                    <>
+                                        {event.forWhomIntro && <p>{event.forWhomIntro}</p>}
+                                        <ul className="event-includes-list">
+                                            {event.forWhomList.map((item, i) => (
+                                                <li key={i}>
+                                                    <Sparkles size={16} className="event-check-icon" />
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        {event.forWhomOutro && <p>{event.forWhomOutro}</p>}
+                                    </>
+                                ) : (
+                                    <p>{event.forWhom}</p>
+                                )}
+                            </section>
+                        )}
 
                         {event.takeaway?.length > 0 && (
                             <section className="event-detail-section">
