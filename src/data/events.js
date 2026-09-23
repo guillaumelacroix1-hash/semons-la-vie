@@ -11,7 +11,7 @@ export const events = [
         price: 120,
         spots: 8,
         spotsLeft: 8,
-        image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop',
+        image: `${import.meta.env.BASE_URL}events/journee-equilibre.jpg`,
         shortDesc: 'Une journée co-animée avec Amandine (Ambellire) pour ralentir, prendre soin de ton corps, accueillir tes émotions et retrouver plus de clarté intérieure.',
         description: `Parfois, l'équilibre ne se trouve pas en faisant plus… mais en s'accordant un temps pour ralentir, ressentir et se reconnecter à soi.
 
@@ -107,7 +107,7 @@ L'objectif n'est pas seulement d'apprendre des recettes, mais aussi de découvri
         price: 250,
         spots: 6,
         spotsLeft: 6,
-        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop',
+        image: `${import.meta.env.BASE_URL}events/weekend-jeune-royan.jpg`,
         shortDesc: 'Trois jours de jeûne doux et de repos physiologique à deux pas de l\'océan, pour ralentir, récupérer et retrouver ta vitalité.',
         description: `Parfois, notre corps demande simplement une pause. Une pause du rythme quotidien, des sollicitations permanentes, des habitudes qui s'accumulent… pour retrouver plus de légèreté, d'écoute et de vitalité.
 
