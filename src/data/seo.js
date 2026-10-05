@@ -74,7 +74,8 @@ const absolute = (image) => (!image ? DEFAULT_IMAGE : image.startsWith('http') ?
 // Un même séjour revient à plusieurs dates avec le même titre et le même résumé :
 // le mois dans le titre et la date en tête de description rendent chaque page unique.
 export const eventSeo = (event) => {
-    const when = event.dateLabel || formatDate(event.date);
+    const date = event.dateLabel || formatDate(event.date);
+    const when = date.charAt(0).toUpperCase() + date.slice(1);
     const where = (event.location || '').split(',')[0];
     const month = new Date(`${event.date}T00:00:00`).toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
     return {
