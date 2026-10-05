@@ -46,11 +46,7 @@ const FaqItem = ({ question, answer }) => {
 const Phytotherapy = () => {
     return (
         <>
-        <Seo
-            title="Phytothérapie · Accompagnement par les plantes · Semons la Vie"
-            description="Consultation en phytothérapie à Châteaubernard : des recommandations de plantes personnalisées pour soutenir digestion, sommeil, stress, vitalité et équilibre hormonal."
-            path="/phytotherapie"
-        />
+        <Seo path="/phytotherapie" />
         <div className="service-page animate-in" style={{ '--service-color': '#7AA476' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">

@@ -6,11 +6,7 @@ import './LegalPage.css';
 const MentionsLegales = () => {
     return (
         <div className="legal-page animate-in">
-            <Seo
-                title="Mentions légales · Semons la Vie"
-                description="Mentions légales du site semons-la-vie.fr : éditeur, hébergeur, propriété intellectuelle et médiation de la consommation."
-                path="/mentions-legales"
-            />
+            <Seo path="/mentions-legales" />
             <div className="legal-content">
                 <h1>Mentions légales</h1>
                 <p className="legal-updated">Dernière mise à jour : 9 juillet 2026</p>

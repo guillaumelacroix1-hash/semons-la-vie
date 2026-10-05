@@ -4,9 +4,8 @@ import { Calendar, Clock, MapPin, Users, ArrowLeft, Check, ArrowRight, Sparkles 
 import { formatDate, filterUpcoming } from '../data/events';
 import { useEvents } from '../data/useEvents';
 import Seo from '../components/Seo';
+import { SITE_URL, eventSeo } from '../data/seo';
 import './Events.css';
-
-const SITE_URL = 'https://www.semons-la-vie.fr';
 
 const EventDetail = () => {
     const { id } = useParams();
@@ -64,13 +63,7 @@ const EventDetail = () => {
 
     return (
         <div className="events-page animate-in">
-            <Seo
-                title={`${event.title} · Événement Semons la Vie`}
-                description={event.shortDesc}
-                path={`/evenements/${event.id}`}
-                image={absoluteImage}
-                type="article"
-            />
+            <Seo {...eventSeo(event)} />
             <script type="application/ld+json">
                 {JSON.stringify({
                     '@context': 'https://schema.org',

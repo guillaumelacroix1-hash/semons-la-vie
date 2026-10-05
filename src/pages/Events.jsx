@@ -15,11 +15,7 @@ const Events = () => {
 
     return (
         <div className="events-page animate-in">
-            <Seo
-                title="Ateliers & événements bien-être · Semons la Vie"
-                description="Les prochains événements de Semons la Vie : ateliers de crusine, journées santé & vitalité, week-ends de jeûne et sophrologie de groupe près de Cognac."
-                path="/evenements"
-            />
+            <Seo path="/evenements" />
             {/* Hero */}
             <div className="events-hero">
                 <div className="events-hero-bg">

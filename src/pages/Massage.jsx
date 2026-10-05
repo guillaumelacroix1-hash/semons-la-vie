@@ -42,11 +42,7 @@ const FaqItem = ({ question, answer }) => {
 const Massage = () => {
     return (
         <>
-        <Seo
-            title="Rituel AromaTouch® · Soin bien-être aux huiles essentielles"
-            description="Le Rituel AromaTouch® à Châteaubernard : un soin enveloppant aux huiles essentielles dōTERRA pour relâcher les tensions, apaiser le système nerveux et retrouver l'équilibre."
-            path="/massage"
-        />
+        <Seo path="/massage" />
         <div className="service-page animate-in" style={{ '--service-color': '#5B5EAB' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">

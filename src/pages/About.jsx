@@ -9,11 +9,7 @@ const About = () => {
     const B = import.meta.env.BASE_URL;
     return (
         <>
-        <Seo
-            title="Qui suis-je ? Chloé Wisser, naturopathe & sophrologue"
-            description="Découvre le parcours de Chloé Wisser : naturopathe certifiée (École Dargère Univers), sophrologue (Institut Catherine Aliotta), formée à la crusine et au Rituel AromaTouch®."
-            path="/qui-suis-je"
-        />
+        <Seo path="/qui-suis-je" />
         <div className="about-page animate-in">
 
             {/* ===== HERO — même style que la page événements ===== */}
@@ -98,7 +94,7 @@ const About = () => {
                             <img src={`${B}qsn/bento-pomme.jpg`} alt="Préparation d'un jus frais à l'extracteur" />
                         </div>
                         <div className="about-bento-accent">
-                            <img src={`${B}qsn/bento-livre.jpg`} alt="" />
+                            <img src={`${B}qsn/bento-livre.jpg`} alt="Chloé feuilletant un ouvrage de naturopathie à son bureau" />
                         </div>
                     </div>
                 </section>

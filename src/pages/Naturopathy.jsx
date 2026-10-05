@@ -46,11 +46,7 @@ const FaqItem = ({ question, answer }) => {
 const Naturopathy = () => {
     return (
         <>
-        <Seo
-            title="Naturopathie à Châteaubernard (Cognac) · Semons la Vie"
-            description="Accompagnement naturopathique personnalisé : bilan de vitalité, alimentation, plantes et hygiène de vie pour rééquilibrer ton terrain en douceur. En cabinet ou en visio."
-            path="/naturopathie"
-        />
+        <Seo path="/naturopathie" />
         <div className="service-page animate-in" style={{ '--service-color': '#FFCF00', '--service-btn-text': '#7A6200' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">

@@ -1,7 +1,8 @@
 {
   "installCommand": "npm install --legacy-peer-deps",
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/" }
   ],
   "headers": [
     {

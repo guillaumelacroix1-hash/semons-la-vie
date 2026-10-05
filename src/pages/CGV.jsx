@@ -5,11 +5,7 @@ import './LegalPage.css';
 const CGV = () => {
     return (
         <div className="legal-page animate-in">
-            <Seo
-                title="Conditions Générales de Vente · Semons la Vie"
-                description="Conditions Générales de Vente des prestations Semons la Vie : consultations, ateliers, séjours, modalités de paiement, annulation et rétractation."
-                path="/cgv"
-            />
+            <Seo path="/cgv" />
             <div className="legal-content">
                 <h1>Conditions Générales de Vente (CGV)</h1>
                 <p className="legal-updated">

@@ -125,11 +125,7 @@ const Home = () => {
 
     return (
         <>
-            <Seo
-                title="Semons la Vie · Naturopathe & Sophrologue à Châteaubernard (Cognac)"
-                description="Chloé Wisser t'accompagne vers un équilibre durable : naturopathie, sophrologie, phytothérapie, rééquilibrage alimentaire, Rituel AromaTouch® et ateliers de crusine près de Cognac."
-                path="/"
-            />
+            <Seo path="/" />
             <Hero />
 
             {/* About Section */}

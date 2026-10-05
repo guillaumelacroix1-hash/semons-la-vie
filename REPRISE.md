@@ -36,7 +36,15 @@ Le site est en ligne et à jour. Les retours de Chloé sont appliqués. Deux dé
 
 ## Les secrets — aucun n'est dans le dépôt, et c'est voulu
 
-**Ce projet n'en a aucun.** Vérifié à la bascule : pas de `.env`, pas de clé, rien à recréer. Tu peux cloner et lancer.
+Le site s'affiche sans aucun secret. Mais les formulaires (contact, réservation) et le backoffice `/admin` passent par les fonctions de `api/`, qui lisent ces variables. Elles sont posées sur **Vercel, environnement Production** (`vercel env ls production`). En local, une copie est dans `.env.local`, jamais commité.
+
+| Variable | Sert à | Où la retrouver |
+|---|---|---|
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | Envoi des emails des formulaires | Boîte `contact@semons-la-vie.fr` chez Hostinger (hPanel → Emails) |
+| `MAIL_TO` | Destinataire des formulaires (facultatif, `contact@semons-la-vie.fr` par défaut) | — |
+| `ADMIN_PASSWORD` | Mot de passe du backoffice `/admin` | Vercel. Le changer là-bas puis redéployer |
+| `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` | Stockage des événements du backoffice | **Pas encore créées** : tant qu'elles manquent, le site lit `src/data/events.js` et l'enregistrement du backoffice échoue |
+| `RESEND_API_KEY` | Plus utilisée (remplacée par SMTP) | À supprimer |
 
 ---
 
@@ -45,6 +53,10 @@ Le site est en ligne et à jour. Les retours de Chloé sont appliqués. Deux dé
 Chacun a coûté du temps à quelqu'un. Les relire évite de les repayer.
 
 **Tout est dans le dépôt**, vérifié fichier par fichier : les 6 textes source de Chloé, le logo au format Photoshop, les 35 Mo de photos et vidéos. 219 fichiers suivis. Seul `dist/` est ignoré, et il se régénère.
+
+**Titres et descriptions Google : une seule source, `src/data/seo.js`.** Le site est une application React : sans précaution, Google reçoit le même HTML vide pour toutes les pages. Au build, `scripts/prerender-seo.mjs` écrit un fichier HTML par page (`dist/naturopathie.html`…) avec son titre, sa description et sa canonical, plus le `sitemap.xml` (pages + événements à venir). Ne pas modifier un titre dans une page : le changer dans `seo.js`. Une nouvelle page = une entrée dans `PAGES`, sinon elle n'a ni description ni place dans le sitemap. `public/sitemap.xml` n'existe plus, c'est voulu.
+
+**`vercel.json` : `cleanUrls` et la réécriture vers `/` vont ensemble.** `cleanUrls` sert `naturopathie.html` sur `/naturopathie`. Mais avec lui, une réécriture vers `/index.html` ne trouve plus le fichier : toute adresse sans HTML propre, `/admin` compris, tombait en 404. La cible doit rester `"/"`. Vérifié sur un aperçu le 5 octobre 2026.
 
 **Un fichier `SETUP-CLAUDE-CODE.md` traînait dans ce dossier par erreur** : c'est le guide de configuration de Guillaume, il nomme ses autres clients. Il n'a pas été commité, et pour cause. Ne pas l'y remettre.
 

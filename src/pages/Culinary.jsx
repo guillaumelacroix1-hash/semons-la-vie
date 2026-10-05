@@ -61,11 +61,7 @@ const Culinary = () => {
 
     return (
         <>
-        <Seo
-            title="Ateliers de Crusine · Cuisine vivante & gourmande · Semons la Vie"
-            description="Ateliers de crusine près de Cognac : apprends une cuisine crue, végétale et gourmande en petit groupe. Recettes simples, ingrédients bio et convivialité."
-            path="/ateliers-culinaires"
-        />
+        <Seo path="/ateliers-culinaires" />
         <div className="service-page animate-in" style={{ '--service-color': '#7AA476' }}>
             {/* Hero Banner */}
             <div className="service-hero-banner">
